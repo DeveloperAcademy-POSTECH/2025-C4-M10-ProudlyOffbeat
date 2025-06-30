@@ -1,0 +1,27 @@
+name: 오늘 공부한 내용 기록하기 📚
+description: 매일 배운 내용을 기록하고 리뷰해보세요
+title: "[Study Log] "
+labels: ["study-log", "self-reflection"]
+
+body:
+  - type: input
+    id: date
+    attributes:
+      label: 오늘 날짜는?
+      placeholder: 예) 2025-06-30
+    validations:
+      required: true
+
+  - type: textarea
+    id: what-will-you-learn
+    attributes:
+      label: 오늘 무엇을 배울건가요?
+      placeholder: 예) HomeKit API 구조, 스마트 전구 토글 구현 등
+    validations:
+      required: true
+
+  - type: textarea
+    id: feedback
+    attributes:
+      label: 느낀 점 / 내일 할 일
+      placeholder: 예) 이해는 됐지만 코드 구현이 부족함 → 내일은 실제 예제로 연습
