@@ -74,3 +74,5 @@ App Statement ( Mission/Value )
 | **2주차** | **음성인식과 SiriKit**            | - “다음 페이지” 음성 명령으로 HomeKit 자동화 Scene 트리거링- Speech Framework로 간단한 음성입력 받아 처리           |
 | **3주차** | **물리 인터랙션 (Cube/Button)**    | - Aqara Cube/Eve 버튼 HomeKit 연동- 물리 인터랙션 트리거로 조명과 소리 Scene 자동화                         |
 | **4주차** | **iOS 자체 앱과 HomeKit API 연동** | - 앱에서 HomeKit 장치 상태 조회/변경 실습 (HMHome, HMAccessory)- iOS 앱에서 음성명령 커스텀 처리 및 동화책 시나리오 관리 |
+
+[[뎀의 리서치]]
