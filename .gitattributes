@@ -1,0 +1,9 @@
+# Xcode 프로젝트 설정 파일에서 Git 충돌을 방지하기 위한 설정
+# project.pbxproj 파일은 파일 추가/삭제 시 자동으로 수정됨
+# Localizable.strings 파일은 프로젝트 빌드 시 내용 전체가 수시로 변경됨
+
+# 즉, 충돌이 발생하는 부분에 대해 'merge=union'은 Git이 양쪽의 변경사항을 모두 병합하도록 함 (충돌 방지의 목적)
+# 단, 동일한 줄을 수정한 경우엔 여전히 충돌이 날 수 있음 -> 여기에서 많이 Conflict 나보고 우리가 바꿔보자
+
+*.pbxproj merge=union
+*.xcstrings merge=union
