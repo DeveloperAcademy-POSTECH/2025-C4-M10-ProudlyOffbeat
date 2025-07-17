@@ -1,6 +1,6 @@
 # 기꺼이 비주류 ( ProudlyOffbeat ) - 유일무이 HomeKit
 
-<img width="1024" height="1024" alt="기꺼이 비주류 사진" src="https://github.com/user-attachments/assets/bee9e1aa-23a2-438b-b54a-21b8ab7bed32" />
+<img width="500" alt="기꺼이 비주류 사진" src="https://github.com/user-attachments/assets/bee9e1aa-23a2-438b-b54a-21b8ab7bed32" />
 
 ![Xcode](https://img.shields.io/badge/Xcode-16.4-blue?logo=xcode&logoColor=white) ![iOS](https://img.shields.io/badge/Minimum_iOS-17.5+-lightgrey?logo=apple&logoColor=white) ![Swift](https://img.shields.io/badge/Swift-6.0.2-orange?logo=swift&logoColor=white) ![Version](https://img.shields.io/badge/Version-1.0.0-green)
 
