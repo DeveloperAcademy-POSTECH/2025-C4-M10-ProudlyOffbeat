@@ -1,7 +1,7 @@
 # 🧸 기꺼이 비주류 (ProudlyOffbeat) – 유일무이 HomeKit 기반 몰입형 동화 앱
 
 <div align="center">
-<img width="600" alt="기꺼이 비주류 사진" src="https://github.com/user-attachments/assets/bee9e1aa-23a2-438b-b54a-21b8ab7bed32" />
+   <img width="600" alt="기꺼이 비주류 사진" src="https://github.com/user-attachments/assets/bee9e1aa-23a2-438b-b54a-21b8ab7bed32" />
 </div>
 
 ![Xcode](https://img.shields.io/badge/Xcode-16.4-blue?logo=xcode&logoColor=white)
