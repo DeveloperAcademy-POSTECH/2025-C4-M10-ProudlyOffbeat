@@ -17,6 +17,8 @@
 ## 🏘️ 기꺼이 비주류 Team Member
 
 <div align="center">
+   
+<img width="400" alt="기꺼이 비주류 사진" src="https://github.com/user-attachments/assets/d6789fa2-72b4-424d-8a0d-55f40e95e449" />
 
 | <a href="https://github.com/YooGyeongMo"><img src="https://github.com/YooGyeongMo.png" width="80"/><br/><b>Demian</b><br/>@YooGyeongMo</a> | <a href="https://github.com/shinmingyu"><img src="https://github.com/shinmingyu.png" width="80"/><br/><b>Echo</b><br/>@shinmingyu</a> | <a href="https://github.com/Jihan-Chae"><img src="https://github.com/Jihan-Chae.png" width="80"/><br/><b>Martin</b><br/>@Jihan-Chae</a> | <a href="https://github.com/changjaemun"><img src="https://github.com/changjaemun.png" width="80"/><br/><b>Ito</b><br/>@changjaemun</a> |
 |:--:|:--:|:--:|:--:|
@@ -32,11 +34,9 @@ iPad가 주변 기기(HomeKit)를 제어해 빛, 소리, 공간이 하나가 되
 
 아이들은 iPad 속에서 책장을 넘기며, 실제 방 안의 조명이 깜빡이고 바람 소리와 음악이 어우러진 진짜처럼 느껴지는 이야기 세계에 들어가게 됩니다.
 
-🍎 iPad는 도서관처럼 장면을 고르고 SplitView로 책을 펼쳐줍니다.
-
-📱 iPhone은 장면별 인터랙션을 제어하고, 주변 장치를 컨트롤합니다.
-
-🏡 조명, 사운드, 연출은 HomeKit으로 공간에 바로 반영됩니다.
+🍎 iPad는 도서관처럼 장면을 고르고 SplitView로 책을 펼쳐줍니다.<br>
+📱 iPhone은 장면별 인터랙션을 제어하고, 주변 장치를 컨트롤합니다.<br>
+🏡 조명, 사운드, 연출은 HomeKit으로 공간에 바로 반영됩니다.<br>
 
 >📘 자세한 기획 배경은 Notion 페이지에서 확인하실 수 있어요.
 >👉 [Notion 보러가기](https://posacademy.notion.site/21d2b843d5af80c38a4ce477f0bf7eff?source=copy_link)
