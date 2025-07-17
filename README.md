@@ -21,6 +21,12 @@
 | <a href="https://github.com/YooGyeongMo"><img src="https://github.com/YooGyeongMo.png" width="80"/><br/><b>Demian</b><br/>@YooGyeongMo</a> | <a href="https://github.com/shinmingyu"><img src="https://github.com/shinmingyu.png" width="80"/><br/><b>Echo</b><br/>@shinmingyu</a> | <a href="https://github.com/Jihan-Chae"><img src="https://github.com/Jihan-Chae.png" width="80"/><br/><b>Martin</b><br/>@Jihan-Chae</a> | <a href="https://github.com/changjaemun"><img src="https://github.com/changjaemun.png" width="80"/><br/><b>Ito</b><br/>@changjaemun</a> |
 |:--:|:--:|:--:|:--:|
 
+Demian "설교는 필요없다. **부러진 뼈가 더 큰 교훈을 새겨줄테니**"<br>
+Echo "행운은 잘 안 따랐어, **필요가 없었으니까**"<br>
+Martin "인생의 쓴맛을 보았나? 꾹 참고 씹다보면, **달달해질거야**"<br>
+Ito "산을 오르긴 힘들죠, 그러나 **정상의 전망은 그럴 가치가 충분합니다**"
+
+
 </div>
 
 ## 🧩 About the Project
