@@ -17,11 +17,11 @@
 ## 🏘️ 기꺼이 비주류 Team Member
 
 <div align="center">
-   
-<img width="400" alt="기꺼이 비주류 사진" src="https://github.com/user-attachments/assets/d6789fa2-72b4-424d-8a0d-55f40e95e449" />
 
 | <a href="https://github.com/YooGyeongMo"><img src="https://github.com/YooGyeongMo.png" width="80"/><br/><b>Demian</b><br/>@YooGyeongMo</a> | <a href="https://github.com/shinmingyu"><img src="https://github.com/shinmingyu.png" width="80"/><br/><b>Echo</b><br/>@shinmingyu</a> | <a href="https://github.com/Jihan-Chae"><img src="https://github.com/Jihan-Chae.png" width="80"/><br/><b>Martin</b><br/>@Jihan-Chae</a> | <a href="https://github.com/changjaemun"><img src="https://github.com/changjaemun.png" width="80"/><br/><b>Ito</b><br/>@changjaemun</a> |
 |:--:|:--:|:--:|:--:|
+
+<img width="400" height="1024" alt="비주류 사진" src="https://github.com/user-attachments/assets/46648ab5-01a3-4dc5-8a83-a1f820c55c47" />
 
 </div>
 
