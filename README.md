@@ -56,15 +56,7 @@ iPad가 주변 기기(HomeKit)를 제어해 빛, 소리, 공간이 하나가 되
 
 ---
 
-## ✨ 기술 스택 & 구조
-
-| Stack        | 내용                                                                 |
-|--------------|----------------------------------------------------------------------|
-| **UI**       | SwiftUI + SwiftData (선언형 UI + 간결한 로컬 persistence)           |
-| **아키텍처** | MVVM + Coordinator + Factory 기반 SOLID 설계                        |
-| **모듈화**   | 내부 폴더 기반 모듈화 (기기별 Presentation, 공통 Interaction)        |
-| **데이터**   | SwiftData 기반 Book/Scene/Interaction 모델 공유                      |
-| **네트워크** | Multipeer Connectivity, HomeKit 기반 로컬 상호작용                   |
+## ✨ 기술 스택
 
 <div align="left">
 <img src="https://img.shields.io/badge/Swift-FA7343?style=flat&logo=Swift&logoColor=white"/>
@@ -76,8 +68,7 @@ iPad가 주변 기기(HomeKit)를 제어해 빛, 소리, 공간이 하나가 되
 <img src="https://img.shields.io/badge/MultipeerConnectivity-007AFF?style=flat&logo=apple&logoColor=white"/>
 <img src="https://img.shields.io/badge/HomeKit-F9AB00?style=flat&logo=apple&logoColor=white"/>
 <img src="https://img.shields.io/badge/AVFoundation-000000?style=flat&logo=applemusic&logoColor=white"/>
-<img src="https://img.shields.io/badge/XcodePreview-147EFB?style=flat&logo=xcode&logoColor=white"/>
-<img src="https://img.shields.io/badge/ViewModifier-7F52FF?style=flat&logo=swift&logoColor=white"/>
+<img src="https://img.shields.io/badge/CoreMotion-FF6F00?style=flat&logo=sensor&logoColor=white"/>
 <img src="https://img.shields.io/badge/Figma-F24E1E?style=flat&logo=Figma&logoColor=white"/>
 <img src="https://img.shields.io/badge/GitHub-181717?style=flat&logo=GitHub&logoColor=white"/>
 <img src="https://img.shields.io/badge/Git-F05032?style=flat&logo=Git&logoColor=white"/>
