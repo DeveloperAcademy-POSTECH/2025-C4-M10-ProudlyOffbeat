@@ -66,6 +66,24 @@ iPad가 주변 기기(HomeKit)를 제어해 빛, 소리, 공간이 하나가 되
 | **데이터**   | SwiftData 기반 Book/Scene/Interaction 모델 공유                      |
 | **네트워크** | Multipeer Connectivity, HomeKit 기반 로컬 상호작용                   |
 
+<div align="left">
+<img src="https://img.shields.io/badge/Swift-FA7343?style=flat&logo=Swift&logoColor=white"/>
+<img src="https://img.shields.io/badge/SwiftUI-0D1117?style=flat&logo=swift&logoColor=white"/>
+<img src="https://img.shields.io/badge/SwiftData-4285F4?style=flat&logo=swift&logoColor=white"/>
+<img src="https://img.shields.io/badge/MVVM-6E40C9?style=flat&logo=architecture&logoColor=white"/>
+<img src="https://img.shields.io/badge/Coordinator-333333?style=flat&logo=data&logoColor=white"/>
+<img src="https://img.shields.io/badge/FactoryPattern-1B1F23?style=flat&logo=protocols&logoColor=white"/>
+<img src="https://img.shields.io/badge/MultipeerConnectivity-007AFF?style=flat&logo=apple&logoColor=white"/>
+<img src="https://img.shields.io/badge/HomeKit-F9AB00?style=flat&logo=apple&logoColor=white"/>
+<img src="https://img.shields.io/badge/AVFoundation-000000?style=flat&logo=applemusic&logoColor=white"/>
+<img src="https://img.shields.io/badge/XcodePreview-147EFB?style=flat&logo=xcode&logoColor=white"/>
+<img src="https://img.shields.io/badge/ViewModifier-7F52FF?style=flat&logo=swift&logoColor=white"/>
+<img src="https://img.shields.io/badge/Figma-F24E1E?style=flat&logo=Figma&logoColor=white"/>
+<img src="https://img.shields.io/badge/GitHub-181717?style=flat&logo=GitHub&logoColor=white"/>
+<img src="https://img.shields.io/badge/Git-F05032?style=flat&logo=Git&logoColor=white"/>
+</div>
+
+
 ---
 
 ## 🛠️ UIKit vs SwiftUI 비교
