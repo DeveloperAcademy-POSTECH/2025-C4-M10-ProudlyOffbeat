@@ -1,5 +1,7 @@
 # 기꺼이 비주류 ( ProudlyOffbeat ) - 유일무이 HomeKit
 
+<img width="1024" height="1024" alt="기꺼이 비주류 사진" src="https://github.com/user-attachments/assets/bee9e1aa-23a2-438b-b54a-21b8ab7bed32" />
+
 ![Xcode](https://img.shields.io/badge/Xcode-16.4-blue?logo=xcode&logoColor=white) ![iOS](https://img.shields.io/badge/Minimum_iOS-17.5+-lightgrey?logo=apple&logoColor=white) ![Swift](https://img.shields.io/badge/Swift-6.0.2-orange?logo=swift&logoColor=white) ![Version](https://img.shields.io/badge/Version-1.0.0-green)
 
 
@@ -78,7 +80,7 @@
 
 ---
 
-## ✅ 선택한 이유
+### ✅ 내부 폴더 선택한 이유
 
 - **초기 유연한 설계 및 빠른 반영 주기**가 중요했기 때문에, 내부 폴더 기반 모듈화 채택
 - SPM은 **재사용성과 프레임워크화**가 필요한 경우 적합하지만, 이번 프로젝트는 **기기 간 유기적 연결과 빠른 반복 개발**이 핵심
