@@ -21,8 +21,6 @@
 | <a href="https://github.com/YooGyeongMo"><img src="https://github.com/YooGyeongMo.png" width="80"/><br/><b>Demian</b><br/>@YooGyeongMo</a> | <a href="https://github.com/shinmingyu"><img src="https://github.com/shinmingyu.png" width="80"/><br/><b>Echo</b><br/>@shinmingyu</a> | <a href="https://github.com/Jihan-Chae"><img src="https://github.com/Jihan-Chae.png" width="80"/><br/><b>Martin</b><br/>@Jihan-Chae</a> | <a href="https://github.com/changjaemun"><img src="https://github.com/changjaemun.png" width="80"/><br/><b>Ito</b><br/>@changjaemun</a> |
 |:--:|:--:|:--:|:--:|
 
-<img width="400" height="1024" alt="비주류 사진" src="https://github.com/user-attachments/assets/46648ab5-01a3-4dc5-8a83-a1f820c55c47" />
-
 </div>
 
 ## 🧩 About the Project
@@ -33,6 +31,8 @@
 iPad가 주변 기기(HomeKit)를 제어해 빛, 소리, 공간이 하나가 되는 몰입 환경을 만드는 유일무이한 감각 기반 동화 앱입니다.
 
 아이들은 iPad 속에서 책장을 넘기며, 실제 방 안의 조명이 깜빡이고 바람 소리와 음악이 어우러진 진짜처럼 느껴지는 이야기 세계에 들어가게 됩니다.
+
+<img width="400" height="1024" alt="비주류 사진" src="https://github.com/user-attachments/assets/46648ab5-01a3-4dc5-8a83-a1f820c55c47" />
 
 🍎 iPad는 도서관처럼 장면을 고르고 SplitView로 책을 펼쳐줍니다.<br>
 📱 iPhone은 장면별 인터랙션을 제어하고, 주변 장치를 컨트롤합니다.<br>
