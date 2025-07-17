@@ -21,7 +21,7 @@
 | <a href="https://github.com/YooGyeongMo"><img src="https://github.com/YooGyeongMo.png" width="80"/><br/><b>Demian</b><br/>@YooGyeongMo</a> | <a href="https://github.com/shinmingyu"><img src="https://github.com/shinmingyu.png" width="80"/><br/><b>Echo</b><br/>@shinmingyu</a> | <a href="https://github.com/Jihan-Chae"><img src="https://github.com/Jihan-Chae.png" width="80"/><br/><b>Martin</b><br/>@Jihan-Chae</a> | <a href="https://github.com/changjaemun"><img src="https://github.com/changjaemun.png" width="80"/><br/><b>Ito</b><br/>@changjaemun</a> |
 |:--:|:--:|:--:|:--:|
 
-🎙️ Member Quotes
+### 🎙️ Member Quotes
 
 💪 **Ito**  
 > “산을 오르긴 힘들죠, 그러나 **정상의 전망은 그럴 가치가 충분합니다.**”
