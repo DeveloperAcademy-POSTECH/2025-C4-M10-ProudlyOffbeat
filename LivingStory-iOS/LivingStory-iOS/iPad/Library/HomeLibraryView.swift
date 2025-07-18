@@ -12,8 +12,16 @@ struct HomeLibraryView: View {
     @ObservedObject var viewModel: HomeLibraryViewModel
     
     var body: some View {
-        VStack {
-            Text("홈 라이브러리 뷰")
+        ZStack {
+            HomeBackgroundView()
+            HomeDoorView(action: {viewModel.pushToiPhonePairingView(coordinator: coordinator)})
         }
+    }
+}
+
+#Preview{
+    NavigationStack{
+        HomeLibraryView(viewModel: HomeLibraryViewModel())
+            .environmentObject(AppCoordinator())
     }
 }

@@ -40,6 +40,9 @@ struct RootNavigationView: View {
                 case .iPadLibrary:
                     factory.makeHomeLibraryView()
                     
+                case .iPhonePairing:
+                    factory.makeiPhonePairingView()
+                    
                     // iPhone
                 case .iPadPairing:
                     factory.makeiPadPairingView()

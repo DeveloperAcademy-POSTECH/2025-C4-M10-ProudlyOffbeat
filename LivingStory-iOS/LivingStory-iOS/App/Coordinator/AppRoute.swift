@@ -15,7 +15,7 @@ enum AppRoute: Hashable {
     
     // iPad 경로
     case iPadLibrary
-//    case iPhonePairing
+    case iPhonePairing
     
     // iPhone 경로
     case iPadPairing

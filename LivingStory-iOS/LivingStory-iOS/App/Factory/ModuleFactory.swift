@@ -11,6 +11,7 @@ protocol FactoryProtocol {
     //MARK: 아이패드
     func makeIntroViewForiPad() -> iPadIntroView
     func makeHomeLibraryView() -> HomeLibraryView
+    func makeiPhonePairingView() -> iPhonePairingView
     
     //MARK: 아이폰
     func makeIntroViewForiPhone() -> iPhoneIntroView
@@ -30,6 +31,11 @@ final class ModuleFactory: FactoryProtocol {
     func makeHomeLibraryView() -> HomeLibraryView {
         let viewModel = HomeLibraryViewModel()
         return HomeLibraryView(viewModel: viewModel)
+    }
+    
+    func makeiPhonePairingView() -> iPhonePairingView {
+        let viewModel = iPhonePairingViewModel()
+        return iPhonePairingView(viewModel: viewModel)
     }
     
     //MARK: 아이폰 함수 구현부
