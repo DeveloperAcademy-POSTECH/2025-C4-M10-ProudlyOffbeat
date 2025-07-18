@@ -221,7 +221,6 @@
 			isa = PBXGroup;
 			children = (
 				D564C4392E27A50E00A50B49 /* LivingStory-iOS */,
-				D564C4902E27C0AF00A50B49 /* Frameworks */,
 				D564C4212E2639F300A50B49 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -239,6 +238,7 @@
 			children = (
 				D5360FF92E27D9E4001E15B2 /* App */,
 				D53610152E27FEB4001E15B2 /* Core */,
+				D58C57FF2E291DBE00441387 /* Modules */,
 				D564C4432E27B7EE00A50B49 /* iPad */,
 				D564C4422E27B7E700A50B49 /* iPhone */,
 				D564C4362E27A50E00A50B49 /* Assets.xcassets */,
@@ -282,11 +282,51 @@
 			path = iPad;
 			sourceTree = "<group>";
 		};
-		D564C4902E27C0AF00A50B49 /* Frameworks */ = {
+		D58C57FF2E291DBE00441387 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				D58C58002E29216800441387 /* Multipeer */,
+				D58C58012E29217000441387 /* HomeKit */,
+				D58C58022E29217900441387 /* Sound */,
+				D58C58042E29218900441387 /* Interaction */,
+				D58C58032E29217E00441387 /* Orchestrator */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		D58C58002E29216800441387 /* Multipeer */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			name = Frameworks;
+			path = Multipeer;
+			sourceTree = "<group>";
+		};
+		D58C58012E29217000441387 /* HomeKit */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = HomeKit;
+			sourceTree = "<group>";
+		};
+		D58C58022E29217900441387 /* Sound */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Sound;
+			sourceTree = "<group>";
+		};
+		D58C58032E29217E00441387 /* Orchestrator */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Orchestrator;
+			sourceTree = "<group>";
+		};
+		D58C58042E29218900441387 /* Interaction */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Interaction;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
