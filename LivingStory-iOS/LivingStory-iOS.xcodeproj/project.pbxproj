@@ -32,6 +32,37 @@
 		D564C43C2E27A50E00A50B49 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D564C4362E27A50E00A50B49 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		D5360FF22E27D76D001E15B2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D5360FEA2E27D76D001E15B2 /* MultiPeerModule.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D5360FDF2E27D66E001E15B2;
+			remoteInfo = MultiPeerModule;
+		};
+		D5360FF62E27D7DC001E15B2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D5360FEA2E27D76D001E15B2 /* MultiPeerModule.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = D5360FDE2E27D66E001E15B2;
+			remoteInfo = MultiPeerModule;
+		};
+		D564C4AB2E27CBF200A50B49 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D564C4A32E27CBF200A50B49 /* HomeKitModule.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D564C4622E27B90E00A50B49;
+			remoteInfo = HomeKitModule;
+		};
+		D564C4B42E27CC3900A50B49 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D564C4A32E27CBF200A50B49 /* HomeKitModule.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = D564C4612E27B90E00A50B49;
+			remoteInfo = HomeKitModule;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXCopyFilesBuildPhase section */
 		D5360FBD2E27D057001E15B2 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -39,6 +70,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				D5360FF52E27D7C8001E15B2 /* MultiPeerModule.framework in Embed Frameworks */,
+				D5360FBC2E27D057001E15B2 /* HomeKitModule.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -70,6 +103,7 @@
 		D564C4202E2639F300A50B49 /* LivingStory-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "LivingStory-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D564C4362E27A50E00A50B49 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D564C4382E27A50E00A50B49 /* LivingStory_iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LivingStory_iOSApp.swift; sourceTree = "<group>"; };
+		D564C4A32E27CBF200A50B49 /* HomeKitModule.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = HomeKitModule.xcodeproj; path = /Users/demianyoo/Documents/GitHub/HomeKit/HomeKitModule.xcodeproj; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +111,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5360FF42E27D7C8001E15B2 /* MultiPeerModule.framework in Frameworks */,
+				D5360FBB2E27D057001E15B2 /* HomeKitModule.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -206,6 +242,7 @@
 			isa = PBXGroup;
 			children = (
 				D564C4392E27A50E00A50B49 /* LivingStory-iOS */,
+				D564C4902E27C0AF00A50B49 /* Frameworks */,
 				D564C4212E2639F300A50B49 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -265,6 +302,7 @@
 			path = iPad;
 			sourceTree = "<group>";
 		};
+
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -280,6 +318,8 @@
 			buildRules = (
 			);
 			dependencies = (
+				D5360FF72E27D7DC001E15B2 /* PBXTargetDependency */,
+				D564C4B52E27CC3900A50B49 /* PBXTargetDependency */,
 			);
 			name = "LivingStory-iOS";
 			packageProductDependencies = (
@@ -315,12 +355,39 @@
 			preferredProjectObjectVersion = 77;
 			productRefGroup = D564C4212E2639F300A50B49 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = D564C4A82E27CBF200A50B49 /* Products */;
+					ProjectRef = D564C4A32E27CBF200A50B49 /* HomeKitModule.xcodeproj */;
+				},
+				{
+					ProductGroup = D5360FEF2E27D76D001E15B2 /* Products */;
+					ProjectRef = D5360FEA2E27D76D001E15B2 /* MultiPeerModule.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				D564C41F2E2639F300A50B49 /* LivingStory-iOS */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		D5360FF32E27D76D001E15B2 /* MultiPeerModule.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = MultiPeerModule.framework;
+			remoteRef = D5360FF22E27D76D001E15B2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		D564C4AC2E27CBF200A50B49 /* HomeKitModule.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = HomeKitModule.framework;
+			remoteRef = D564C4AB2E27CBF200A50B49 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		D564C41E2E2639F300A50B49 /* Resources */ = {
@@ -364,6 +431,19 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D5360FF72E27D7DC001E15B2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = MultiPeerModule;
+			targetProxy = D5360FF62E27D7DC001E15B2 /* PBXContainerItemProxy */;
+		};
+		D564C4B52E27CC3900A50B49 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = HomeKitModule;
+			targetProxy = D564C4B42E27CC3900A50B49 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		D564C42B2E2639F500A50B49 /* Debug */ = {

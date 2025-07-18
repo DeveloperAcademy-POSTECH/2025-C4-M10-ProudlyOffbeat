@@ -177,3 +177,4 @@ gitGraph
 - `main` → 기능 개발 통합 브랜치
 - `feat/`, `fix/`, `refactor/`, `chore/` → 기능/수정/리팩토링/세팅 단위 브랜치
 - PR 규칙: `feat/#7/InteractionModule` 등 이슈 기반 브랜치 이름 + 라벨링
+
