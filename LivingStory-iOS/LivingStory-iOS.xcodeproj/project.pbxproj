@@ -40,13 +40,7 @@
 			remoteGlobalIDString = D5360FDF2E27D66E001E15B2;
 			remoteInfo = MultiPeerModule;
 		};
-		D5360FF62E27D7DC001E15B2 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D5360FEA2E27D76D001E15B2 /* MultiPeerModule.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = D5360FDE2E27D66E001E15B2;
-			remoteInfo = MultiPeerModule;
-		};
+		
 		D564C4AB2E27CBF200A50B49 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D564C4A32E27CBF200A50B49 /* HomeKitModule.xcodeproj */;
