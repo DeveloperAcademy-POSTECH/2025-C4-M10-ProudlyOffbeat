@@ -20,7 +20,7 @@ struct HomeDoorView: View {
                     Image(book.bookCoverImage)
                 }
             }
-        }
+        }.padding(.top, 70)
     }
 }
 

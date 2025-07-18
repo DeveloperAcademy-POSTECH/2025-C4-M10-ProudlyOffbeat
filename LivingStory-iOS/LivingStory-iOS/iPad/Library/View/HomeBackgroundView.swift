@@ -11,5 +11,7 @@ struct HomeBackgroundView:View{
         Image("HomeBackground")
             .resizable()
             .scaledToFill()
+            .frame(height: UIScreen.main.bounds.height)
+            .ignoresSafeArea()
     }
 }
