@@ -7,9 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A13BBF732E294EC500B91453 /* BookModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13BBF722E294EC500B91453 /* BookModel.swift */; };
+		A1D487FB2E29484100F70879 /* iPhonePairingBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D487FA2E29484100F70879 /* iPhonePairingBackgroundView.swift */; };
+		A1D487FD2E2948AA00F70879 /* PairingBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D487FC2E2948A000F70879 /* PairingBookView.swift */; };
+		A1D487FF2E29493600F70879 /* ConnectListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D487FE2E29493400F70879 /* ConnectListView.swift */; };
 		A1D706262E28DB60008694A8 /* HomeBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D706252E28DB57008694A8 /* HomeBackgroundView.swift */; };
 		A1D706282E28DFAB008694A8 /* HomeDoorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D706272E28DFAB008694A8 /* HomeDoorView.swift */; };
-		A1D7062A2E28E088008694A8 /* BookModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D706292E28E088008694A8 /* BookModel.swift */; };
 		A1D7062C2E28E715008694A8 /* iPhonePairingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D7062B2E28E70D008694A8 /* iPhonePairingViewModel.swift */; };
 		D5360FFB2E27DA0C001E15B2 /* AppRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5360FFA2E27DA08001E15B2 /* AppRoute.swift */; };
 		D5360FFD2E27DA19001E15B2 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5360FFC2E27DA13001E15B2 /* AppCoordinator.swift */; };
@@ -43,9 +46,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		A13BBF722E294EC500B91453 /* BookModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BookModel.swift; path = "LivingStory-iOS/iPad/Library/BookModel.swift"; sourceTree = SOURCE_ROOT; };
+		A1D487FA2E29484100F70879 /* iPhonePairingBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPhonePairingBackgroundView.swift; sourceTree = "<group>"; };
+		A1D487FC2E2948A000F70879 /* PairingBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairingBookView.swift; sourceTree = "<group>"; };
+		A1D487FE2E29493400F70879 /* ConnectListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectListView.swift; sourceTree = "<group>"; };
 		A1D706252E28DB57008694A8 /* HomeBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBackgroundView.swift; sourceTree = "<group>"; };
 		A1D706272E28DFAB008694A8 /* HomeDoorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDoorView.swift; sourceTree = "<group>"; };
-		A1D706292E28E088008694A8 /* BookModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BookModel.swift; path = "LivingStory-iOS/iPad/Library/BookModel.swift"; sourceTree = SOURCE_ROOT; };
 		A1D7062B2E28E70D008694A8 /* iPhonePairingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPhonePairingViewModel.swift; sourceTree = "<group>"; };
 		D5360FFA2E27DA08001E15B2 /* AppRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRoute.swift; sourceTree = "<group>"; };
 		D5360FFC2E27DA13001E15B2 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
@@ -77,10 +83,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A13BBF712E294E9100B91453 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A1D487FA2E29484100F70879 /* iPhonePairingBackgroundView.swift */,
+				A1D487FC2E2948A000F70879 /* PairingBookView.swift */,
+				A1D487FE2E29493400F70879 /* ConnectListView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		A1D706242E28DA8D008694A8 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				D53610112E27FCD5001E15B2 /* HomeLibraryView.swift */,
 				A1D706252E28DB57008694A8 /* HomeBackgroundView.swift */,
 				A1D706272E28DFAB008694A8 /* HomeDoorView.swift */,
 			);
@@ -102,6 +117,7 @@
 		D536100C2E27FC84001E15B2 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				D53610112E27FCD5001E15B2 /* HomeLibraryView.swift */,
 				A1D706242E28DA8D008694A8 /* View */,
 				D53610102E27FCCA001E15B2 /* Model */,
 				D536100F2E27FCBD001E15B2 /* ViewModel */,
@@ -114,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				D53610132E27FE67001E15B2 /* iPhonePairingView.swift */,
+				A13BBF712E294E9100B91453 /* View */,
 				A1D7062B2E28E70D008694A8 /* iPhonePairingViewModel.swift */,
 			);
 			path = iPhonePairing;
@@ -137,7 +154,7 @@
 		D53610102E27FCCA001E15B2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				A1D706292E28E088008694A8 /* BookModel.swift */,
+				A13BBF722E294EC500B91453 /* BookModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -345,8 +362,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1D487FB2E29484100F70879 /* iPhonePairingBackgroundView.swift in Sources */,
 				D5360FFD2E27DA19001E15B2 /* AppCoordinator.swift in Sources */,
 				D53610252E2804AA001E15B2 /* iPadIntroViewModel.swift in Sources */,
+				A1D487FD2E2948AA00F70879 /* PairingBookView.swift in Sources */,
+				A13BBF732E294EC500B91453 /* BookModel.swift in Sources */,
 				D53610122E27FCFB001E15B2 /* HomeLibraryView.swift in Sources */,
 				D53610292E28064A001E15B2 /* iPhoneIntroViewModel.swift in Sources */,
 				A1D7062C2E28E715008694A8 /* iPhonePairingViewModel.swift in Sources */,
@@ -358,9 +378,9 @@
 				D536101E2E27FF4B001E15B2 /* iPhoneIntroView.swift in Sources */,
 				D564C43B2E27A50E00A50B49 /* LivingStory_iOSApp.swift in Sources */,
 				D5360FFB2E27DA0C001E15B2 /* AppRoute.swift in Sources */,
-				A1D7062A2E28E088008694A8 /* BookModel.swift in Sources */,
 				D5360FFF2E27DA23001E15B2 /* RootNavigationView.swift in Sources */,
 				A1D706282E28DFAB008694A8 /* HomeDoorView.swift in Sources */,
+				A1D487FF2E29493600F70879 /* ConnectListView.swift in Sources */,
 				D536101B2E27FF34001E15B2 /* iPadIntroView.swift in Sources */,
 				D536100B2E27FBF7001E15B2 /* ModuleFactory.swift in Sources */,
 				D53610222E28032C001E15B2 /* iPadPairingView.swift in Sources */,
