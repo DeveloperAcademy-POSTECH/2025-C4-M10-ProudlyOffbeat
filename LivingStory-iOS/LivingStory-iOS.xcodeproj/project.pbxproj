@@ -28,26 +28,25 @@
 		D53610292E28064A001E15B2 /* iPhoneIntroViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53610282E280646001E15B2 /* iPhoneIntroViewModel.swift */; };
 		D536102B2E280B92001E15B2 /* HomeLibraryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D536102A2E280B8A001E15B2 /* HomeLibraryViewModel.swift */; };
 		D536102F2E280CF0001E15B2 /* iPadParingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D536102E2E280CEB001E15B2 /* iPadParingViewModel.swift */; };
+		D552B4B72E29F75D00519860 /* MulipeerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D552B4B62E29F75800519860 /* MulipeerManager.swift */; };
 		D564C43B2E27A50E00A50B49 /* LivingStory_iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D564C4382E27A50E00A50B49 /* LivingStory_iOSApp.swift */; };
 		D564C43C2E27A50E00A50B49 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D564C4362E27A50E00A50B49 /* Assets.xcassets */; };
+		D5982A9B2E2B543D00D0AF86 /* ConnectionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5982A9A2E2B543A00D0AF86 /* ConnectionState.swift */; };
+		D5982A9E2E2B562000D0AF86 /* PeerDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5982A9D2E2B561A00D0AF86 /* PeerDevice.swift */; };
+		D5982AA02E2B562900D0AF86 /* StoryIneraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5982A9F2E2B562500D0AF86 /* StoryIneraction.swift */; };
+		D5982AA32E2B5F7400D0AF86 /* SessionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5982AA22E2B5F6C00D0AF86 /* SessionService.swift */; };
+		D5982AA52E2B5F8000D0AF86 /* AdvertisingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5982AA42E2B5F7700D0AF86 /* AdvertisingService.swift */; };
+		D5982AA72E2B5F8C00D0AF86 /* BrowsingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5982AA62E2B5F8700D0AF86 /* BrowsingService.swift */; };
+		D5982AA92E2B5F9500D0AF86 /* HeartbeatService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5982AA82E2B5F9100D0AF86 /* HeartbeatService.swift */; };
+		D5982AAB2E2B5F9D00D0AF86 /* ReconnectionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5982AAA2E2B5F9A00D0AF86 /* ReconnectionService.swift */; };
+		D5982AAD2E2B5FA900D0AF86 /* DataTransmissionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5982AAC2E2B5FA300D0AF86 /* DataTransmissionService.swift */; };
+		D5982AB02E2B5FC400D0AF86 /* MultipeerAdvertising.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5982AAF2E2B5FBD00D0AF86 /* MultipeerAdvertising.swift */; };
+		D5982AB22E2B5FCD00D0AF86 /* MultipeerBrowsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5982AB12E2B5FC600D0AF86 /* MultipeerBrowsing.swift */; };
+		D5982AB42E2B5FDB00D0AF86 /* MultipeerSessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5982AB32E2B5FD300D0AF86 /* MultipeerSessionDelegate.swift */; };
+		D5982AB72E2B5FF300D0AF86 /* MCSession+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5982AB62E2B5FED00D0AF86 /* MCSession+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		D5360FF22E27D76D001E15B2 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D5360FEA2E27D76D001E15B2 /* MultiPeerModule.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = D5360FDF2E27D66E001E15B2;
-			remoteInfo = MultiPeerModule;
-		};
-		
-		D564C4AB2E27CBF200A50B49 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D564C4A32E27CBF200A50B49 /* HomeKitModule.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = D564C4622E27B90E00A50B49;
-			remoteInfo = HomeKitModule;
-		};
 		D564C4B42E27CC3900A50B49 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D564C4A32E27CBF200A50B49 /* HomeKitModule.xcodeproj */;
@@ -64,8 +63,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				D5360FF52E27D7C8001E15B2 /* MultiPeerModule.framework in Embed Frameworks */,
-				D5360FBC2E27D057001E15B2 /* HomeKitModule.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -94,10 +91,24 @@
 		D53610282E280646001E15B2 /* iPhoneIntroViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPhoneIntroViewModel.swift; sourceTree = "<group>"; };
 		D536102A2E280B8A001E15B2 /* HomeLibraryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeLibraryViewModel.swift; sourceTree = "<group>"; };
 		D536102E2E280CEB001E15B2 /* iPadParingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPadParingViewModel.swift; sourceTree = "<group>"; };
+		D552B4B62E29F75800519860 /* MulipeerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MulipeerManager.swift; sourceTree = "<group>"; };
 		D564C4202E2639F300A50B49 /* LivingStory-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "LivingStory-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D564C4362E27A50E00A50B49 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D564C4382E27A50E00A50B49 /* LivingStory_iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LivingStory_iOSApp.swift; sourceTree = "<group>"; };
 		D564C4A32E27CBF200A50B49 /* HomeKitModule.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = HomeKitModule.xcodeproj; path = /Users/demianyoo/Documents/GitHub/HomeKit/HomeKitModule.xcodeproj; sourceTree = "<absolute>"; };
+		D5982A9A2E2B543A00D0AF86 /* ConnectionState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionState.swift; sourceTree = "<group>"; };
+		D5982A9D2E2B561A00D0AF86 /* PeerDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeerDevice.swift; sourceTree = "<group>"; };
+		D5982A9F2E2B562500D0AF86 /* StoryIneraction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryIneraction.swift; sourceTree = "<group>"; };
+		D5982AA22E2B5F6C00D0AF86 /* SessionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionService.swift; sourceTree = "<group>"; };
+		D5982AA42E2B5F7700D0AF86 /* AdvertisingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertisingService.swift; sourceTree = "<group>"; };
+		D5982AA62E2B5F8700D0AF86 /* BrowsingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowsingService.swift; sourceTree = "<group>"; };
+		D5982AA82E2B5F9100D0AF86 /* HeartbeatService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartbeatService.swift; sourceTree = "<group>"; };
+		D5982AAA2E2B5F9A00D0AF86 /* ReconnectionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReconnectionService.swift; sourceTree = "<group>"; };
+		D5982AAC2E2B5FA300D0AF86 /* DataTransmissionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTransmissionService.swift; sourceTree = "<group>"; };
+		D5982AAF2E2B5FBD00D0AF86 /* MultipeerAdvertising.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipeerAdvertising.swift; sourceTree = "<group>"; };
+		D5982AB12E2B5FC600D0AF86 /* MultipeerBrowsing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipeerBrowsing.swift; sourceTree = "<group>"; };
+		D5982AB32E2B5FD300D0AF86 /* MultipeerSessionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipeerSessionDelegate.swift; sourceTree = "<group>"; };
+		D5982AB62E2B5FED00D0AF86 /* MCSession+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MCSession+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,8 +116,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D5360FF42E27D7C8001E15B2 /* MultiPeerModule.framework in Frameworks */,
-				D5360FBB2E27D057001E15B2 /* HomeKitModule.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -232,11 +241,45 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		D552B4B12E29F49200519860 /* Products */ = {
+			isa = PBXGroup;
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D552B4B32E29F6EB00519860 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				D552B4B52E29F75000519860 /* Modules */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		D552B4B42E29F6F300519860 /* MultipeerModule */ = {
+			isa = PBXGroup;
+			children = (
+				D552B4B62E29F75800519860 /* MulipeerManager.swift */,
+				D5982A9A2E2B543A00D0AF86 /* ConnectionState.swift */,
+				D5982A9D2E2B561A00D0AF86 /* PeerDevice.swift */,
+				D5982A9F2E2B562500D0AF86 /* StoryIneraction.swift */,
+				D5982AA12E2B5F5B00D0AF86 /* Services */,
+				D5982AAE2E2B5FB000D0AF86 /* Protocols */,
+				D5982AB52E2B5FE500D0AF86 /* Extensions */,
+			);
+			path = MultipeerModule;
+			sourceTree = "<group>";
+		};
+		D552B4B52E29F75000519860 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				D552B4B42E29F6F300519860 /* MultipeerModule */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
 		D564C4172E2639F300A50B49 = {
 			isa = PBXGroup;
 			children = (
 				D564C4392E27A50E00A50B49 /* LivingStory-iOS */,
-				D564C4902E27C0AF00A50B49 /* Frameworks */,
 				D564C4212E2639F300A50B49 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -253,6 +296,7 @@
 			isa = PBXGroup;
 			children = (
 				D5360FF92E27D9E4001E15B2 /* App */,
+				D552B4B32E29F6EB00519860 /* Core */,
 				D564C4432E27B7EE00A50B49 /* iPad */,
 				D564C4422E27B7E700A50B49 /* iPhone */,
 				D564C4362E27A50E00A50B49 /* Assets.xcassets */,
@@ -296,7 +340,37 @@
 			path = iPad;
 			sourceTree = "<group>";
 		};
-
+		D5982AA12E2B5F5B00D0AF86 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				D5982AA22E2B5F6C00D0AF86 /* SessionService.swift */,
+				D5982AA42E2B5F7700D0AF86 /* AdvertisingService.swift */,
+				D5982AA62E2B5F8700D0AF86 /* BrowsingService.swift */,
+				D5982AA82E2B5F9100D0AF86 /* HeartbeatService.swift */,
+				D5982AAA2E2B5F9A00D0AF86 /* ReconnectionService.swift */,
+				D5982AAC2E2B5FA300D0AF86 /* DataTransmissionService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		D5982AAE2E2B5FB000D0AF86 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				D5982AAF2E2B5FBD00D0AF86 /* MultipeerAdvertising.swift */,
+				D5982AB12E2B5FC600D0AF86 /* MultipeerBrowsing.swift */,
+				D5982AB32E2B5FD300D0AF86 /* MultipeerSessionDelegate.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		D5982AB52E2B5FE500D0AF86 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D5982AB62E2B5FED00D0AF86 /* MCSession+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -351,12 +425,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = D564C4A82E27CBF200A50B49 /* Products */;
+					ProductGroup = D552B4B12E29F49200519860 /* Products */;
 					ProjectRef = D564C4A32E27CBF200A50B49 /* HomeKitModule.xcodeproj */;
-				},
-				{
-					ProductGroup = D5360FEF2E27D76D001E15B2 /* Products */;
-					ProjectRef = D5360FEA2E27D76D001E15B2 /* MultiPeerModule.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -365,23 +435,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		D5360FF32E27D76D001E15B2 /* MultiPeerModule.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = MultiPeerModule.framework;
-			remoteRef = D5360FF22E27D76D001E15B2 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		D564C4AC2E27CBF200A50B49 /* HomeKitModule.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = HomeKitModule.framework;
-			remoteRef = D564C4AB2E27CBF200A50B49 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		D564C41E2E2639F300A50B49 /* Resources */ = {
@@ -400,25 +453,39 @@
 			buildActionMask = 2147483647;
 			files = (
 				A1D487FB2E29484100F70879 /* iPhonePairingBackgroundView.swift in Sources */,
+				D5982AA02E2B562900D0AF86 /* StoryIneraction.swift in Sources */,
 				D5360FFD2E27DA19001E15B2 /* AppCoordinator.swift in Sources */,
 				D53610252E2804AA001E15B2 /* iPadIntroViewModel.swift in Sources */,
+				D5982A9E2E2B562000D0AF86 /* PeerDevice.swift in Sources */,
+				D552B4B72E29F75D00519860 /* MulipeerManager.swift in Sources */,
 				A1D487FD2E2948AA00F70879 /* PairingBookView.swift in Sources */,
+				D5982AB42E2B5FDB00D0AF86 /* MultipeerSessionDelegate.swift in Sources */,
 				D53610122E27FCFB001E15B2 /* HomeLibraryView.swift in Sources */,
 				D53610292E28064A001E15B2 /* iPhoneIntroViewModel.swift in Sources */,
 				A1D7062C2E28E715008694A8 /* iPhonePairingViewModel.swift in Sources */,
 				D536102F2E280CF0001E15B2 /* iPadParingViewModel.swift in Sources */,
 				D53610142E27FE72001E15B2 /* iPhonePairingView.swift in Sources */,
+				D5982AA92E2B5F9500D0AF86 /* HeartbeatService.swift in Sources */,
+				D5982AAD2E2B5FA900D0AF86 /* DataTransmissionService.swift in Sources */,
 				D536102B2E280B92001E15B2 /* HomeLibraryViewModel.swift in Sources */,
+				D5982AB72E2B5FF300D0AF86 /* MCSession+Extensions.swift in Sources */,
 				A1D706262E28DB60008694A8 /* HomeBackgroundView.swift in Sources */,
 				D53610092E27FA92001E15B2 /* DeviceInfo.swift in Sources */,
+				D5982AAB2E2B5F9D00D0AF86 /* ReconnectionService.swift in Sources */,
 				D536101E2E27FF4B001E15B2 /* iPhoneIntroView.swift in Sources */,
 				D564C43B2E27A50E00A50B49 /* LivingStory_iOSApp.swift in Sources */,
 				D5360FFB2E27DA0C001E15B2 /* AppRoute.swift in Sources */,
 				D5360FFF2E27DA23001E15B2 /* RootNavigationView.swift in Sources */,
+				D5982A9B2E2B543D00D0AF86 /* ConnectionState.swift in Sources */,
+				D5982AA52E2B5F8000D0AF86 /* AdvertisingService.swift in Sources */,
+				D5982AB02E2B5FC400D0AF86 /* MultipeerAdvertising.swift in Sources */,
+				D5982AA72E2B5F8C00D0AF86 /* BrowsingService.swift in Sources */,
 				A1F4C7632E29DCFB00044760 /* BookModel.swift in Sources */,
 				A1D706282E28DFAB008694A8 /* HomeDoorView.swift in Sources */,
+				D5982AB22E2B5FCD00D0AF86 /* MultipeerBrowsing.swift in Sources */,
 				A1D487FF2E29493600F70879 /* ConnectListView.swift in Sources */,
 				D536101B2E27FF34001E15B2 /* iPadIntroView.swift in Sources */,
+				D5982AA32E2B5F7400D0AF86 /* SessionService.swift in Sources */,
 				D536100B2E27FBF7001E15B2 /* ModuleFactory.swift in Sources */,
 				D53610222E28032C001E15B2 /* iPadPairingView.swift in Sources */,
 			);
@@ -430,7 +497,6 @@
 		D5360FF72E27D7DC001E15B2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = MultiPeerModule;
-			targetProxy = D5360FF62E27D7DC001E15B2 /* PBXContainerItemProxy */;
 		};
 		D564C4B52E27CC3900A50B49 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
