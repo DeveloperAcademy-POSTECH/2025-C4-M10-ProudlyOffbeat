@@ -20,3 +20,7 @@ struct iPhonePairingView: View {
     }
 }
 
+#Preview {
+    iPhonePairingView(viewModel: iPhonePairingViewModel(), book: .pig)
+        .environmentObject(AppCoordinator())
+}
