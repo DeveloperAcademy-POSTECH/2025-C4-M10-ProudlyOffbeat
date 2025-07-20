@@ -11,8 +11,8 @@ final class HomeLibraryViewModel: ObservableObject {
     init() { }
     
     @MainActor
-    func pushToiPhonePairingView(coordinator: AppCoordinator) {
+    func pushToiPhonePairingView(coordinator: AppCoordinator, bookType: BookType) {
         print("go to iPhon Pairing")
-        coordinator.push(.iPhonePairing)
+        coordinator.push(.iPhonePairing(book: bookType))
     }
 }
