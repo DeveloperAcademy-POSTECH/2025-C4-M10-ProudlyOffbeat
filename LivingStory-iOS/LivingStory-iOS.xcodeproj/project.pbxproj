@@ -117,9 +117,11 @@
 		A13BBF712E294E9100B91453 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				A1D487FA2E29484100F70879 /* iPhonePairingBackgroundView.swift */,
 				A1D487FC2E2948A000F70879 /* PairingBookView.swift */,
+				A1D487FA2E29484100F70879 /* iPhonePairingBackgroundView.swift */,
 				A1D487FE2E29493400F70879 /* ConnectListView.swift */,
+				A15FAE842E2BE00800468F16 /* ConnectCellView.swift */,
+				A15FAE882E2BF57200468F16 /* iPhoneNoticeView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -140,6 +142,7 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+
 		A15FAE8F2E2CD93A00468F16 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -227,7 +230,8 @@
 			children = (
 				D53610132E27FE67001E15B2 /* iPhonePairingView.swift */,
 				A13BBF712E294E9100B91453 /* View */,
-				A1D7062B2E28E70D008694A8 /* iPhonePairingViewModel.swift */,
+				A15FAE8A2E2BF94A00468F16 /* ViewModel */,
+				A15FAE8B2E2BF95400468F16 /* Model */,
 			);
 			path = iPhonePairing;
 			sourceTree = "<group>";
@@ -440,6 +444,7 @@
 				A15FAE982E2CDA1800468F16 /* iPadFairyTaleViewModel.swift in Sources */,
 				A15FAEA32E2D021100468F16 /* FairyTaleModel.swift in Sources */,
 				A1D487FB2E29484100F70879 /* iPhonePairingBackgroundView.swift in Sources */,
+				A15FAE852E2BE01400468F16 /* ConnectCellView.swift in Sources */,
 				D5360FFD2E27DA19001E15B2 /* AppCoordinator.swift in Sources */,
 				D53610252E2804AA001E15B2 /* iPadIntroViewModel.swift in Sources */,
 				A15FAE9A2E2CDC8200468F16 /* FairyTaleButtonView.swift in Sources */,
@@ -449,6 +454,7 @@
 				A15FAE942E2CD9D200468F16 /* iPadFairyTaleView.swift in Sources */,
 				A15FAE892E2BF57800468F16 /* iPhoneNoticeView.swift in Sources */,
 				A1D7062C2E28E715008694A8 /* iPhonePairingViewModel.swift in Sources */,
+				A15FAE832E2BDFBE00468F16 /* PeerModel.swift in Sources */,
 				D536102F2E280CF0001E15B2 /* iPadParingViewModel.swift in Sources */,
 				D53610142E27FE72001E15B2 /* iPhonePairingView.swift in Sources */,
 				A15FAE9C2E2CE2EF00468F16 /* FairyTaleScriptView.swift in Sources */,
