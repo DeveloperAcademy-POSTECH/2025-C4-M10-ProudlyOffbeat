@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		05AB6BAA2E2CB48F00C6D004 /* ConnectCheckImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05AB6BA92E2CB48F00C6D004 /* ConnectCheckImage.swift */; };
+		05AB6BB12E2CC7D700C6D004 /* ConnectButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05AB6BB02E2CC7D700C6D004 /* ConnectButtonView.swift */; };
+		05AB6BB32E2CC88400C6D004 /* MPCimageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05AB6BB22E2CC88400C6D004 /* MPCimageView.swift */; };
 		A1D487FB2E29484100F70879 /* iPhonePairingBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D487FA2E29484100F70879 /* iPhonePairingBackgroundView.swift */; };
 		A1D487FD2E2948AA00F70879 /* PairingBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D487FC2E2948A000F70879 /* PairingBookView.swift */; };
 		A1D487FF2E29493600F70879 /* ConnectListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D487FE2E29493400F70879 /* ConnectListView.swift */; };
@@ -58,6 +60,8 @@
 
 /* Begin PBXFileReference section */
 		05AB6BA92E2CB48F00C6D004 /* ConnectCheckImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectCheckImage.swift; sourceTree = "<group>"; };
+		05AB6BB02E2CC7D700C6D004 /* ConnectButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectButtonView.swift; sourceTree = "<group>"; };
+		05AB6BB22E2CC88400C6D004 /* MPCimageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MPCimageView.swift; sourceTree = "<group>"; };
 		A1D487FA2E29484100F70879 /* iPhonePairingBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPhonePairingBackgroundView.swift; sourceTree = "<group>"; };
 		A1D487FC2E2948A000F70879 /* PairingBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairingBookView.swift; sourceTree = "<group>"; };
 		A1D487FE2E29493400F70879 /* ConnectListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectListView.swift; sourceTree = "<group>"; };
@@ -99,6 +103,16 @@
 		05AB6BA72E2CAA2000C6D004 /* Products */ = {
 			isa = PBXGroup;
 			name = Products;
+			sourceTree = "<group>";
+		};
+		05AB6BAF2E2CC76900C6D004 /* SubView */ = {
+			isa = PBXGroup;
+			children = (
+				05AB6BA92E2CB48F00C6D004 /* ConnectCheckImage.swift */,
+				05AB6BB02E2CC7D700C6D004 /* ConnectButtonView.swift */,
+				05AB6BB22E2CC88400C6D004 /* MPCimageView.swift */,
+			);
+			path = SubView;
 			sourceTree = "<group>";
 		};
 		A13BBF712E294E9100B91453 /* View */ = {
@@ -190,8 +204,8 @@
 		D536101F2E28030A001E15B2 /* iPadPairing */ = {
 			isa = PBXGroup;
 			children = (
+				05AB6BAF2E2CC76900C6D004 /* SubView */,
 				D53610212E280325001E15B2 /* iPadPairingView.swift */,
-				05AB6BA92E2CB48F00C6D004 /* ConnectCheckImage.swift */,
 				D53610272E280616001E15B2 /* ViewModel */,
 			);
 			path = iPadPairing;
@@ -368,6 +382,7 @@
 				A1D487FB2E29484100F70879 /* iPhonePairingBackgroundView.swift in Sources */,
 				D5360FFD2E27DA19001E15B2 /* AppCoordinator.swift in Sources */,
 				D53610252E2804AA001E15B2 /* iPadIntroViewModel.swift in Sources */,
+				05AB6BB32E2CC88400C6D004 /* MPCimageView.swift in Sources */,
 				A1D487FD2E2948AA00F70879 /* PairingBookView.swift in Sources */,
 				D53610122E27FCFB001E15B2 /* HomeLibraryView.swift in Sources */,
 				D53610292E28064A001E15B2 /* iPhoneIntroViewModel.swift in Sources */,
@@ -376,6 +391,7 @@
 				D53610142E27FE72001E15B2 /* iPhonePairingView.swift in Sources */,
 				D536102B2E280B92001E15B2 /* HomeLibraryViewModel.swift in Sources */,
 				A1D706262E28DB60008694A8 /* HomeBackgroundView.swift in Sources */,
+				05AB6BB12E2CC7D700C6D004 /* ConnectButtonView.swift in Sources */,
 				D53610092E27FA92001E15B2 /* DeviceInfo.swift in Sources */,
 				D536101E2E27FF4B001E15B2 /* iPhoneIntroView.swift in Sources */,
 				D564C43B2E27A50E00A50B49 /* LivingStory_iOSApp.swift in Sources */,
