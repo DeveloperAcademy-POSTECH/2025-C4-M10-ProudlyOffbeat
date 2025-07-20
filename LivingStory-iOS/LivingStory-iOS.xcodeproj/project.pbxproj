@@ -37,21 +37,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		D5360FF22E27D76D001E15B2 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D5360FEA2E27D76D001E15B2 /* MultiPeerModule.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = D5360FDF2E27D66E001E15B2;
-			remoteInfo = MultiPeerModule;
-		};
-		
-		D564C4AB2E27CBF200A50B49 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D564C4A32E27CBF200A50B49 /* HomeKitModule.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = D564C4622E27B90E00A50B49;
-			remoteInfo = HomeKitModule;
-		};
 		D564C4B42E27CC3900A50B49 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D564C4A32E27CBF200A50B49 /* HomeKitModule.xcodeproj */;
@@ -68,8 +53,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				D5360FF52E27D7C8001E15B2 /* MultiPeerModule.framework in Embed Frameworks */,
-				D5360FBC2E27D057001E15B2 /* HomeKitModule.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -113,8 +96,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D5360FF42E27D7C8001E15B2 /* MultiPeerModule.framework in Frameworks */,
-				D5360FBB2E27D057001E15B2 /* HomeKitModule.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -159,6 +140,7 @@
 			children = (
 				A1D706252E28DB57008694A8 /* HomeBackgroundView.swift */,
 				A1D706272E28DFAB008694A8 /* HomeDoorView.swift */,
+				A1D294722E2B8DA700695EE2 /* FrameView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -268,7 +250,6 @@
 			isa = PBXGroup;
 			children = (
 				D564C4392E27A50E00A50B49 /* LivingStory-iOS */,
-				D564C4902E27C0AF00A50B49 /* Frameworks */,
 				D564C4212E2639F300A50B49 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -328,7 +309,6 @@
 			path = iPad;
 			sourceTree = "<group>";
 		};
-
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -383,12 +363,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = D564C4A82E27CBF200A50B49 /* Products */;
+					ProductGroup = A1D294702E29E37700695EE2 /* Products */;
 					ProjectRef = D564C4A32E27CBF200A50B49 /* HomeKitModule.xcodeproj */;
-				},
-				{
-					ProductGroup = D5360FEF2E27D76D001E15B2 /* Products */;
-					ProjectRef = D5360FEA2E27D76D001E15B2 /* MultiPeerModule.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -397,23 +373,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		D5360FF32E27D76D001E15B2 /* MultiPeerModule.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = MultiPeerModule.framework;
-			remoteRef = D5360FF22E27D76D001E15B2 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		D564C4AC2E27CBF200A50B49 /* HomeKitModule.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = HomeKitModule.framework;
-			remoteRef = D564C4AB2E27CBF200A50B49 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		D564C41E2E2639F300A50B49 /* Resources */ = {
@@ -449,6 +408,7 @@
 				D536101E2E27FF4B001E15B2 /* iPhoneIntroView.swift in Sources */,
 				D564C43B2E27A50E00A50B49 /* LivingStory_iOSApp.swift in Sources */,
 				D5360FFB2E27DA0C001E15B2 /* AppRoute.swift in Sources */,
+				A1D294732E2B8DAA00695EE2 /* FrameView.swift in Sources */,
 				D5360FFF2E27DA23001E15B2 /* RootNavigationView.swift in Sources */,
 				A1F4C7632E29DCFB00044760 /* BookModel.swift in Sources */,
 				A1D706282E28DFAB008694A8 /* HomeDoorView.swift in Sources */,
@@ -465,7 +425,6 @@
 		D5360FF72E27D7DC001E15B2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = MultiPeerModule;
-			targetProxy = D5360FF62E27D7DC001E15B2 /* PBXContainerItemProxy */;
 		};
 		D564C4B52E27CC3900A50B49 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;

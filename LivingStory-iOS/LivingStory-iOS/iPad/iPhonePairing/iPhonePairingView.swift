@@ -10,6 +10,7 @@ import SwiftUI
 struct iPhonePairingView: View {
     @EnvironmentObject var coordinator: AppCoordinator
     @ObservedObject var viewModel: iPhonePairingViewModel
+    let book: BookType
     
     var body: some View {
         ZStack {
@@ -24,3 +25,5 @@ struct iPhonePairingView: View {
     iPhonePairingView(viewModel: iPhonePairingViewModel(), book: .pig)
         .environmentObject(AppCoordinator())
 }
+
+

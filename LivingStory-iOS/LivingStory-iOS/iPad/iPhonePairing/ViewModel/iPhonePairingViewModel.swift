@@ -10,4 +10,9 @@ import SwiftUI
 final class iPhonePairingViewModel: ObservableObject {
     init() { }
     
+    
+    func whatBook(book: BookType) -> Book {
+        return Book(title: "", bookCoverImage: "", bookType: .pig)
+    }
+    
 }

@@ -41,7 +41,7 @@ struct RootNavigationView: View {
                     factory.makeHomeLibraryView()
                     
                 case .iPhonePairing:
-                    factory.makeiPhonePairingView()
+                    factory.makeiPhonePairingView(book: .pig)
                     
                     // iPhone
                 case .iPadPairing:
