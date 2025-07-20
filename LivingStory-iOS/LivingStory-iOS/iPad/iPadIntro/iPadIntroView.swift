@@ -13,10 +13,13 @@ struct iPadIntroView: View {
     
     var body: some View {
         VStack {
-            Text("아이패드 인트로")
-            Button("다음") {
-                viewModel.pushToLibraryView(coordinator: coordinator)
-            }
+            Image("iPadIntro")
+                .resizable()
+                .scaledToFill()
+                .ignoresSafeArea()
+                .onTapGesture {
+                    viewModel.pushToLibraryView(coordinator: coordinator)
+                }
         }
     }
 }
