@@ -10,16 +10,27 @@ import SwiftUI
 struct PairingBookView: View {
     var body: some View {
         ZStack{
-            Image("PairingBook")
-            HStack{
-                Spacer()
-                ConnectListView()
-                Spacer()
-                Rectangle()
-                    .frame(width: 219, height: 295)
-                Spacer()
+            GeometryReader{ geometry in
+                Image("PairingBook")
+                    .resizable()
             }
-        }
+            HStack{
+                iPhoneNoticeView()
+                    .padding(.leading, 53)
+                Spacer()
+                VStack{
+                    Spacer()
+                    Text("아이폰과 연결")
+                    Spacer()
+                    ConnectListView()
+                    Spacer()
+                }.padding(.trailing, 78)
+            }
+        }.frame(width: 874, height: 644)
             
     }
+}
+
+#Preview {
+    PairingBookView()
 }

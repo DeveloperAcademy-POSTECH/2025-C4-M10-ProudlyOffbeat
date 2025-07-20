@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct HomeDoorView: View {
-    let books: [Book] = Book.dummyBooks
+    let books: [Book] = [Book.ozBook, Book.pigBook, Book.heungBook]
     let action: () -> Void
     
     var body: some View {
@@ -20,7 +20,12 @@ struct HomeDoorView: View {
                     Image(book.bookCoverImage)
                 }
             }
-        }.padding(.top, 70)
+        }.padding(.top, 110)
     }
 }
 
+#Preview {
+    HomeDoorView {
+        //
+    }
+}
