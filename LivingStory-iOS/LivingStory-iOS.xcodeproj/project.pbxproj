@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A15FAE832E2BDFBE00468F16 /* PeerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15FAE822E2BDFBB00468F16 /* PeerModel.swift */; };
+		A15FAE852E2BE01400468F16 /* ConnectCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15FAE842E2BE00800468F16 /* ConnectCellView.swift */; };
+		A15FAE892E2BF57800468F16 /* iPhoneNoticeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15FAE882E2BF57200468F16 /* iPhoneNoticeView.swift */; };
+		A15FAE942E2CD9D200468F16 /* iPadFairyTaleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15FAE932E2CD9D200468F16 /* iPadFairyTaleView.swift */; };
+		A15FAE982E2CDA1800468F16 /* iPadFairyTaleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15FAE972E2CDA1100468F16 /* iPadFairyTaleViewModel.swift */; };
+		A15FAE9A2E2CDC8200468F16 /* FairyTaleButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15FAE992E2CDC3F00468F16 /* FairyTaleButtonView.swift */; };
+		A15FAE9C2E2CE2EF00468F16 /* FairyTaleScriptView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15FAE9B2E2CE2EF00468F16 /* FairyTaleScriptView.swift */; };
+		A15FAE9E2E2CE49500468F16 /* FairyTaleBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15FAE9D2E2CE49500468F16 /* FairyTaleBackgroundView.swift */; };
+		A15FAEA32E2D021100468F16 /* FairyTaleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15FAEA22E2D020600468F16 /* FairyTaleModel.swift */; };
+		A1D294732E2B8DAA00695EE2 /* FrameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D294722E2B8DA700695EE2 /* FrameView.swift */; };
 		A1D487FB2E29484100F70879 /* iPhonePairingBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D487FA2E29484100F70879 /* iPhonePairingBackgroundView.swift */; };
 		A1D487FD2E2948AA00F70879 /* PairingBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D487FC2E2948A000F70879 /* PairingBookView.swift */; };
 		A1D487FF2E29493600F70879 /* ConnectListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D487FE2E29493400F70879 /* ConnectListView.swift */; };
@@ -73,6 +83,16 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		A15FAE822E2BDFBB00468F16 /* PeerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeerModel.swift; sourceTree = "<group>"; };
+		A15FAE842E2BE00800468F16 /* ConnectCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectCellView.swift; sourceTree = "<group>"; };
+		A15FAE882E2BF57200468F16 /* iPhoneNoticeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPhoneNoticeView.swift; sourceTree = "<group>"; };
+		A15FAE932E2CD9D200468F16 /* iPadFairyTaleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPadFairyTaleView.swift; sourceTree = "<group>"; };
+		A15FAE972E2CDA1100468F16 /* iPadFairyTaleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPadFairyTaleViewModel.swift; sourceTree = "<group>"; };
+		A15FAE992E2CDC3F00468F16 /* FairyTaleButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FairyTaleButtonView.swift; sourceTree = "<group>"; };
+		A15FAE9B2E2CE2EF00468F16 /* FairyTaleScriptView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FairyTaleScriptView.swift; sourceTree = "<group>"; };
+		A15FAE9D2E2CE49500468F16 /* FairyTaleBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FairyTaleBackgroundView.swift; sourceTree = "<group>"; };
+		A15FAEA22E2D020600468F16 /* FairyTaleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FairyTaleModel.swift; sourceTree = "<group>"; };
+		A1D294722E2B8DA700695EE2 /* FrameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameView.swift; sourceTree = "<group>"; };
 		A1D487FA2E29484100F70879 /* iPhonePairingBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPhonePairingBackgroundView.swift; sourceTree = "<group>"; };
 		A1D487FC2E2948A000F70879 /* PairingBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairingBookView.swift; sourceTree = "<group>"; };
 		A1D487FE2E29493400F70879 /* ConnectListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectListView.swift; sourceTree = "<group>"; };
@@ -121,6 +141,63 @@
 				A1D487FE2E29493400F70879 /* ConnectListView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		A15FAE8A2E2BF94A00468F16 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A1D7062B2E28E70D008694A8 /* iPhonePairingViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		A15FAE8B2E2BF95400468F16 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A15FAE822E2BDFBB00468F16 /* PeerModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A15FAE8F2E2CD93A00468F16 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A15FAE992E2CDC3F00468F16 /* FairyTaleButtonView.swift */,
+				A15FAE9B2E2CE2EF00468F16 /* FairyTaleScriptView.swift */,
+				A15FAE9D2E2CE49500468F16 /* FairyTaleBackgroundView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A15FAE912E2CD95000468F16 /* iPadFairyTale */ = {
+			isa = PBXGroup;
+			children = (
+				A15FAE932E2CD9D200468F16 /* iPadFairyTaleView.swift */,
+				A15FAE8F2E2CD93A00468F16 /* View */,
+				A15FAE922E2CD96200468F16 /* ViewModel */,
+			);
+			path = iPadFairyTale;
+			sourceTree = "<group>";
+		};
+		A15FAE922E2CD96200468F16 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A15FAE972E2CDA1100468F16 /* iPadFairyTaleViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		A15FAEA12E2D01F900468F16 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A15FAEA22E2D020600468F16 /* FairyTaleModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A1D294702E29E37700695EE2 /* Products */ = {
+			isa = PBXGroup;
+			name = Products;
 			sourceTree = "<group>";
 		};
 		A1D706242E28DA8D008694A8 /* View */ = {
@@ -292,6 +369,8 @@
 				D53610192E27FF17001E15B2 /* iPadIntro */,
 				D536100C2E27FC84001E15B2 /* Library */,
 				D536100D2E27FCA7001E15B2 /* iPhonePairing */,
+				A15FAE912E2CD95000468F16 /* iPadFairyTale */,
+				A15FAEA12E2D01F900468F16 /* Model */,
 			);
 			path = iPad;
 			sourceTree = "<group>";
@@ -399,21 +478,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A15FAE982E2CDA1800468F16 /* iPadFairyTaleViewModel.swift in Sources */,
+				A15FAEA32E2D021100468F16 /* FairyTaleModel.swift in Sources */,
 				A1D487FB2E29484100F70879 /* iPhonePairingBackgroundView.swift in Sources */,
 				D5360FFD2E27DA19001E15B2 /* AppCoordinator.swift in Sources */,
 				D53610252E2804AA001E15B2 /* iPadIntroViewModel.swift in Sources */,
+				A15FAE9A2E2CDC8200468F16 /* FairyTaleButtonView.swift in Sources */,
 				A1D487FD2E2948AA00F70879 /* PairingBookView.swift in Sources */,
 				D53610122E27FCFB001E15B2 /* HomeLibraryView.swift in Sources */,
 				D53610292E28064A001E15B2 /* iPhoneIntroViewModel.swift in Sources */,
+				A15FAE942E2CD9D200468F16 /* iPadFairyTaleView.swift in Sources */,
+				A15FAE892E2BF57800468F16 /* iPhoneNoticeView.swift in Sources */,
 				A1D7062C2E28E715008694A8 /* iPhonePairingViewModel.swift in Sources */,
 				D536102F2E280CF0001E15B2 /* iPadParingViewModel.swift in Sources */,
 				D53610142E27FE72001E15B2 /* iPhonePairingView.swift in Sources */,
+				A15FAE9C2E2CE2EF00468F16 /* FairyTaleScriptView.swift in Sources */,
 				D536102B2E280B92001E15B2 /* HomeLibraryViewModel.swift in Sources */,
 				A1D706262E28DB60008694A8 /* HomeBackgroundView.swift in Sources */,
 				D53610092E27FA92001E15B2 /* DeviceInfo.swift in Sources */,
 				D536101E2E27FF4B001E15B2 /* iPhoneIntroView.swift in Sources */,
 				D564C43B2E27A50E00A50B49 /* LivingStory_iOSApp.swift in Sources */,
 				D5360FFB2E27DA0C001E15B2 /* AppRoute.swift in Sources */,
+				A15FAE9E2E2CE49500468F16 /* FairyTaleBackgroundView.swift in Sources */,
+				A1D294732E2B8DAA00695EE2 /* FrameView.swift in Sources */,
 				D5360FFF2E27DA23001E15B2 /* RootNavigationView.swift in Sources */,
 				A1F4C7632E29DCFB00044760 /* BookModel.swift in Sources */,
 				A1D706282E28DFAB008694A8 /* HomeDoorView.swift in Sources */,
