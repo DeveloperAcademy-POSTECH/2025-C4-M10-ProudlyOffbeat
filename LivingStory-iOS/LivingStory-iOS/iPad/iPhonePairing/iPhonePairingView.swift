@@ -19,9 +19,8 @@ struct iPhonePairingView: View {
     }
 }
 
-#Preview{
-    NavigationStack{
-        iPhonePairingView(viewModel: iPhonePairingViewModel())
-            .environmentObject(AppCoordinator())
-    }
+
+#Preview {
+    iPhonePairingView(viewModel: iPhonePairingViewModel(), book: .pig)
+        .environmentObject(AppCoordinator())
 }
