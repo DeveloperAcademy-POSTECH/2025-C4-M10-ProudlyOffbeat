@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A15FAE832E2BDFBE00468F16 /* PeerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15FAE822E2BDFBB00468F16 /* PeerModel.swift */; };
+		A15FAE852E2BE01400468F16 /* ConnectCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15FAE842E2BE00800468F16 /* ConnectCellView.swift */; };
+		A15FAE892E2BF57800468F16 /* iPhoneNoticeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15FAE882E2BF57200468F16 /* iPhoneNoticeView.swift */; };
 		A1D294732E2B8DAA00695EE2 /* FrameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D294722E2B8DA700695EE2 /* FrameView.swift */; };
 		A1D487FB2E29484100F70879 /* iPhonePairingBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D487FA2E29484100F70879 /* iPhonePairingBackgroundView.swift */; };
 		A1D487FD2E2948AA00F70879 /* PairingBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D487FC2E2948A000F70879 /* PairingBookView.swift */; };
@@ -57,6 +60,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		A15FAE822E2BDFBB00468F16 /* PeerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeerModel.swift; sourceTree = "<group>"; };
+		A15FAE842E2BE00800468F16 /* ConnectCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectCellView.swift; sourceTree = "<group>"; };
+		A15FAE882E2BF57200468F16 /* iPhoneNoticeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPhoneNoticeView.swift; sourceTree = "<group>"; };
 		A1D294722E2B8DA700695EE2 /* FrameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameView.swift; sourceTree = "<group>"; };
 		A1D487FA2E29484100F70879 /* iPhonePairingBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPhonePairingBackgroundView.swift; sourceTree = "<group>"; };
 		A1D487FC2E2948A000F70879 /* PairingBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairingBookView.swift; sourceTree = "<group>"; };
@@ -99,11 +105,29 @@
 		A13BBF712E294E9100B91453 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				A1D487FA2E29484100F70879 /* iPhonePairingBackgroundView.swift */,
 				A1D487FC2E2948A000F70879 /* PairingBookView.swift */,
+				A1D487FA2E29484100F70879 /* iPhonePairingBackgroundView.swift */,
 				A1D487FE2E29493400F70879 /* ConnectListView.swift */,
+				A15FAE842E2BE00800468F16 /* ConnectCellView.swift */,
+				A15FAE882E2BF57200468F16 /* iPhoneNoticeView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		A15FAE8A2E2BF94A00468F16 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A1D7062B2E28E70D008694A8 /* iPhonePairingViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		A15FAE8B2E2BF95400468F16 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A15FAE822E2BDFBB00468F16 /* PeerModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		A1D294702E29E37700695EE2 /* Products */ = {
@@ -157,7 +181,8 @@
 			children = (
 				D53610132E27FE67001E15B2 /* iPhonePairingView.swift */,
 				A13BBF712E294E9100B91453 /* View */,
-				A1D7062B2E28E70D008694A8 /* iPhonePairingViewModel.swift */,
+				A15FAE8A2E2BF94A00468F16 /* ViewModel */,
+				A15FAE8B2E2BF95400468F16 /* Model */,
 			);
 			path = iPhonePairing;
 			sourceTree = "<group>";
@@ -366,12 +391,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				A1D487FB2E29484100F70879 /* iPhonePairingBackgroundView.swift in Sources */,
+				A15FAE852E2BE01400468F16 /* ConnectCellView.swift in Sources */,
 				D5360FFD2E27DA19001E15B2 /* AppCoordinator.swift in Sources */,
 				D53610252E2804AA001E15B2 /* iPadIntroViewModel.swift in Sources */,
 				A1D487FD2E2948AA00F70879 /* PairingBookView.swift in Sources */,
 				D53610122E27FCFB001E15B2 /* HomeLibraryView.swift in Sources */,
 				D53610292E28064A001E15B2 /* iPhoneIntroViewModel.swift in Sources */,
+				A15FAE892E2BF57800468F16 /* iPhoneNoticeView.swift in Sources */,
 				A1D7062C2E28E715008694A8 /* iPhonePairingViewModel.swift in Sources */,
+				A15FAE832E2BDFBE00468F16 /* PeerModel.swift in Sources */,
 				D536102F2E280CF0001E15B2 /* iPadParingViewModel.swift in Sources */,
 				D53610142E27FE72001E15B2 /* iPhonePairingView.swift in Sources */,
 				D536102B2E280B92001E15B2 /* HomeLibraryViewModel.swift in Sources */,
