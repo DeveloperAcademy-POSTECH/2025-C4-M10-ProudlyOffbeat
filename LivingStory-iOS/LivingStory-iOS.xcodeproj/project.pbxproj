@@ -177,6 +177,7 @@
 				A15FAE932E2CD9D200468F16 /* iPadFairyTaleView.swift */,
 				A15FAE8F2E2CD93A00468F16 /* View */,
 				A15FAE922E2CD96200468F16 /* ViewModel */,
+				A15FAEA12E2D01F900468F16 /* Model */,
 			);
 			path = iPadFairyTale;
 			sourceTree = "<group>";
@@ -429,7 +430,6 @@
 				D536100C2E27FC84001E15B2 /* Library */,
 				D536100D2E27FCA7001E15B2 /* iPhonePairing */,
 				A15FAE912E2CD95000468F16 /* iPadFairyTale */,
-				A15FAEA12E2D01F900468F16 /* Model */,
 			);
 			path = iPad;
 			sourceTree = "<group>";
