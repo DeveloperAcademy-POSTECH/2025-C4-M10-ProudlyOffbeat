@@ -16,6 +16,8 @@
 		A15FAE9C2E2CE2EF00468F16 /* FairyTaleScriptView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15FAE9B2E2CE2EF00468F16 /* FairyTaleScriptView.swift */; };
 		A15FAE9E2E2CE49500468F16 /* FairyTaleBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15FAE9D2E2CE49500468F16 /* FairyTaleBackgroundView.swift */; };
 		A15FAEA32E2D021100468F16 /* FairyTaleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15FAEA22E2D020600468F16 /* FairyTaleModel.swift */; };
+		A19ADCA22E2E17B3007BBF05 /* BinggraeSamanco-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A19ADCA12E2E17B3007BBF05 /* BinggraeSamanco-Bold.ttf */; };
+		A19ADCA42E2E17BB007BBF05 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19ADCA32E2E17B9007BBF05 /* Fonts.swift */; };
 		A1D294732E2B8DAA00695EE2 /* FrameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D294722E2B8DA700695EE2 /* FrameView.swift */; };
 		A1D487FB2E29484100F70879 /* iPhonePairingBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D487FA2E29484100F70879 /* iPhonePairingBackgroundView.swift */; };
 		A1D487FD2E2948AA00F70879 /* PairingBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D487FC2E2948A000F70879 /* PairingBookView.swift */; };
@@ -78,6 +80,9 @@
 		A15FAE9B2E2CE2EF00468F16 /* FairyTaleScriptView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FairyTaleScriptView.swift; sourceTree = "<group>"; };
 		A15FAE9D2E2CE49500468F16 /* FairyTaleBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FairyTaleBackgroundView.swift; sourceTree = "<group>"; };
 		A15FAEA22E2D020600468F16 /* FairyTaleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FairyTaleModel.swift; sourceTree = "<group>"; };
+		A19ADCA12E2E17B3007BBF05 /* BinggraeSamanco-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BinggraeSamanco-Bold.ttf"; sourceTree = "<group>"; };
+		A19ADCA32E2E17B9007BBF05 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		A19ADCA52E2E17FA007BBF05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		A1D294722E2B8DA700695EE2 /* FrameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameView.swift; sourceTree = "<group>"; };
 		A1D487FA2E29484100F70879 /* iPhonePairingBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPhonePairingBackgroundView.swift; sourceTree = "<group>"; };
 		A1D487FC2E2948A000F70879 /* PairingBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairingBookView.swift; sourceTree = "<group>"; };
@@ -184,6 +189,23 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		A19ADC9F2E2E171E007BBF05 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				A19ADCA32E2E17B9007BBF05 /* Fonts.swift */,
+				A19ADCA02E2E179C007BBF05 /* Resource */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		A19ADCA02E2E179C007BBF05 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				A19ADCA12E2E17B3007BBF05 /* BinggraeSamanco-Bold.ttf */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
 		A1D294702E29E37700695EE2 /* Products */ = {
 			isa = PBXGroup;
 			name = Products;
@@ -213,6 +235,7 @@
 				D564C4382E27A50E00A50B49 /* LivingStory_iOSApp.swift */,
 				D5360FFE2E27DA1C001E15B2 /* RootNavigationView.swift */,
 				D53610082E27FA8B001E15B2 /* DeviceInfo.swift */,
+				A19ADC9F2E2E171E007BBF05 /* Core */,
 				D564C43D2E27A7F700A50B49 /* Coordinator */,
 				D564C43E2E27A80700A50B49 /* Factory */,
 			);
@@ -345,6 +368,7 @@
 		D564C4392E27A50E00A50B49 /* LivingStory-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				A19ADCA52E2E17FA007BBF05 /* Info.plist */,
 				D5360FF92E27D9E4001E15B2 /* App */,
 				D552B4B32E29F6EB00519860 /* Core */,
 				D564C4432E27B7EE00A50B49 /* iPad */,
@@ -463,6 +487,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D564C43C2E27A50E00A50B49 /* Assets.xcassets in Resources */,
+				A19ADCA22E2E17B3007BBF05 /* BinggraeSamanco-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -495,6 +520,7 @@
 				A15FAE9C2E2CE2EF00468F16 /* FairyTaleScriptView.swift in Sources */,
 				D536102B2E280B92001E15B2 /* HomeLibraryViewModel.swift in Sources */,
 				A1D706262E28DB60008694A8 /* HomeBackgroundView.swift in Sources */,
+				A19ADCA42E2E17BB007BBF05 /* Fonts.swift in Sources */,
 				D53610092E27FA92001E15B2 /* DeviceInfo.swift in Sources */,
 				D536101E2E27FF4B001E15B2 /* iPhoneIntroView.swift in Sources */,
 				D564C43B2E27A50E00A50B49 /* LivingStory_iOSApp.swift in Sources */,
@@ -657,6 +683,7 @@
 				DEVELOPMENT_TEAM = 9S8SHSW95K;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "LivingStory-iOS/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -691,6 +718,7 @@
 				DEVELOPMENT_TEAM = 9S8SHSW95K;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "LivingStory-iOS/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
