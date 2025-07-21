@@ -9,13 +9,13 @@ import SwiftUI
 
 struct HomeDoorView: View {
     let books: [Book] = [Book.ozBook, Book.pigBook, Book.heungBook]
-    let action: () -> Void
+    let action: (BookType) -> Void
     
     var body: some View {
         HStack(spacing: 40){
             ForEach(books, id: \.title){book in
                 Button{
-                    action()
+                    action(book.bookType)
                 }label: {
                     Image(book.bookCoverImage)
                 }
@@ -24,8 +24,3 @@ struct HomeDoorView: View {
     }
 }
 
-#Preview {
-    HomeDoorView {
-        //
-    }
-}
