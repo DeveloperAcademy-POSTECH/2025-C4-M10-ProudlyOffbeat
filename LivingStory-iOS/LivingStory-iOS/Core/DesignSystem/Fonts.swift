@@ -27,4 +27,5 @@ enum LSFont{
     // 사용방식
     Text("Test 테스트용 프리뷰")
         .font(LSFont.fairyTaleFont)
+        .foregroundStyle(Color.lsPrimary)
 })
