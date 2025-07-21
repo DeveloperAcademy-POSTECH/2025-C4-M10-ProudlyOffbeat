@@ -16,6 +16,8 @@ struct iPhonePairingView: View {
         ZStack {
             iPhonePairingBackgroundView()
             PairingBookView(action: {}) // Peer 연결 로직 들어가는 곳
+            ControllNavigationButtonView(nextView: .intro)
+            //iPadFairyTaleView로 아직 factory 구현 안됐음
         }
     }
 }
