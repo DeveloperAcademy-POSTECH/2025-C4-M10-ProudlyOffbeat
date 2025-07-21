@@ -15,7 +15,7 @@ struct HomeLibraryView: View {
         ZStack {
             HomeBackgroundView()
             FrameView()
-            HomeDoorView(action: {viewModel.pushToiPhonePairingView(coordinator: coordinator, bookType: .pig)})
+            HomeDoorView(action: {bookType in viewModel.pushToiPhonePairingView(coordinator: coordinator, bookType: bookType)})
         }
     }
 }

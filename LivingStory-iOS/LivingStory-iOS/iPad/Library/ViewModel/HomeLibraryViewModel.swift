@@ -13,6 +13,7 @@ final class HomeLibraryViewModel: ObservableObject {
     @MainActor
     func pushToiPhonePairingView(coordinator: AppCoordinator, bookType: BookType) {
         print("go to iPhon Pairing")
+        print("send to \(bookType)")
         coordinator.push(.iPhonePairing(book: bookType))
     }
 }
