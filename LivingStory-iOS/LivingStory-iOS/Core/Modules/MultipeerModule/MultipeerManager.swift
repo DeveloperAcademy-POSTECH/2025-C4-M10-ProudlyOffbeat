@@ -32,12 +32,9 @@ final class MultipeerManager: NSObject, ObservableObject {
         session.delegate = self
     }
     
-    // MARK: - 🔥 핵심 API (딱 필요한 것만!)
-    
     /// iPad에서 광고 시작
     func startAdvertising() {
-        let discoveryInfo = ["deviceType": "iPad", "role": "library"]
-        advertiser = MCNearbyServiceAdvertiser(peer: session.myPeerID, discoveryInfo: discoveryInfo, serviceType: "living-story")
+        advertiser = MCNearbyServiceAdvertiser(peer: session.myPeerID, discoveryInfo: nil, serviceType: "living-story")
         advertiser?.delegate = self
         advertiser?.startAdvertisingPeer()
         connectionState = .advertising
