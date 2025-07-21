@@ -40,8 +40,11 @@
 		D53610292E28064A001E15B2 /* iPhoneIntroViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53610282E280646001E15B2 /* iPhoneIntroViewModel.swift */; };
 		D536102B2E280B92001E15B2 /* HomeLibraryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D536102A2E280B8A001E15B2 /* HomeLibraryViewModel.swift */; };
 		D536102F2E280CF0001E15B2 /* iPadParingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D536102E2E280CEB001E15B2 /* iPadParingViewModel.swift */; };
+		D552B4B72E29F75D00519860 /* MultipeerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D552B4B62E29F75800519860 /* MultipeerManager.swift */; };
 		D564C43B2E27A50E00A50B49 /* LivingStory_iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D564C4382E27A50E00A50B49 /* LivingStory_iOSApp.swift */; };
 		D564C43C2E27A50E00A50B49 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D564C4362E27A50E00A50B49 /* Assets.xcassets */; };
+		D5FFF9FC2E2D5D67004C6586 /* MultipeerModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FFF9FB2E2D5D5E004C6586 /* MultipeerModels.swift */; };
+		D5FFF9FE2E2D5D93004C6586 /* MultipeerManager+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FFF9FD2E2D5D7D004C6586 /* MultipeerManager+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,10 +105,13 @@
 		D53610282E280646001E15B2 /* iPhoneIntroViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPhoneIntroViewModel.swift; sourceTree = "<group>"; };
 		D536102A2E280B8A001E15B2 /* HomeLibraryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeLibraryViewModel.swift; sourceTree = "<group>"; };
 		D536102E2E280CEB001E15B2 /* iPadParingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPadParingViewModel.swift; sourceTree = "<group>"; };
+		D552B4B62E29F75800519860 /* MultipeerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipeerManager.swift; sourceTree = "<group>"; };
 		D564C4202E2639F300A50B49 /* LivingStory-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "LivingStory-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D564C4362E27A50E00A50B49 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D564C4382E27A50E00A50B49 /* LivingStory_iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LivingStory_iOSApp.swift; sourceTree = "<group>"; };
 		D564C4A32E27CBF200A50B49 /* HomeKitModule.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = HomeKitModule.xcodeproj; path = /Users/demianyoo/Documents/GitHub/HomeKit/HomeKitModule.xcodeproj; sourceTree = "<absolute>"; };
+		D5FFF9FB2E2D5D5E004C6586 /* MultipeerModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipeerModels.swift; sourceTree = "<group>"; };
+		D5FFF9FD2E2D5D7D004C6586 /* MultipeerManager+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MultipeerManager+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -317,6 +323,32 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		D552B4B32E29F6EB00519860 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				D552B4B52E29F75000519860 /* Modules */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		D552B4B42E29F6F300519860 /* MultipeerModule */ = {
+			isa = PBXGroup;
+			children = (
+				D5FFF9FB2E2D5D5E004C6586 /* MultipeerModels.swift */,
+				D552B4B62E29F75800519860 /* MultipeerManager.swift */,
+				D5FFF9FD2E2D5D7D004C6586 /* MultipeerManager+Extension.swift */,
+			);
+			path = MultipeerModule;
+			sourceTree = "<group>";
+		};
+		D552B4B52E29F75000519860 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				D552B4B42E29F6F300519860 /* MultipeerModule */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
 		D564C4172E2639F300A50B49 = {
 			isa = PBXGroup;
 			children = (
@@ -338,6 +370,7 @@
 			children = (
 				A19ADCA52E2E17FA007BBF05 /* Info.plist */,
 				D5360FF92E27D9E4001E15B2 /* App */,
+				D552B4B32E29F6EB00519860 /* Core */,
 				D564C4432E27B7EE00A50B49 /* iPad */,
 				D564C4422E27B7E700A50B49 /* iPhone */,
 				D564C4362E27A50E00A50B49 /* Assets.xcassets */,
@@ -471,12 +504,15 @@
 				A15FAE852E2BE01400468F16 /* ConnectCellView.swift in Sources */,
 				D5360FFD2E27DA19001E15B2 /* AppCoordinator.swift in Sources */,
 				D53610252E2804AA001E15B2 /* iPadIntroViewModel.swift in Sources */,
+				D552B4B72E29F75D00519860 /* MultipeerManager.swift in Sources */,
 				A15FAE9A2E2CDC8200468F16 /* FairyTaleButtonView.swift in Sources */,
 				A1D487FD2E2948AA00F70879 /* PairingBookView.swift in Sources */,
 				D53610122E27FCFB001E15B2 /* HomeLibraryView.swift in Sources */,
 				D53610292E28064A001E15B2 /* iPhoneIntroViewModel.swift in Sources */,
 				A15FAE942E2CD9D200468F16 /* iPadFairyTaleView.swift in Sources */,
+				D5FFF9FE2E2D5D93004C6586 /* MultipeerManager+Extension.swift in Sources */,
 				A15FAE892E2BF57800468F16 /* iPhoneNoticeView.swift in Sources */,
+				D5FFF9FC2E2D5D67004C6586 /* MultipeerModels.swift in Sources */,
 				A1D7062C2E28E715008694A8 /* iPhonePairingViewModel.swift in Sources */,
 				A15FAE832E2BDFBE00468F16 /* PeerModel.swift in Sources */,
 				D536102F2E280CF0001E15B2 /* iPadParingViewModel.swift in Sources */,

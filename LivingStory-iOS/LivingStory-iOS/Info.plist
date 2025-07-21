@@ -2,6 +2,13 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSBonjourServices</key>
+	<array>
+		<string>_living-story._tcp</string>
+		<string>_living-story._udp</string>
+	</array>
+	<key>NSLocalNetworkUsageDescription</key>
+	<string>다른 기기와 동화를 함께 읽기 위해 로컬 네트워크 접근이 필요합니다.</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>BinggraeSamanco-Bold.ttf</string>
