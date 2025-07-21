@@ -14,3 +14,7 @@ struct iPhonePairingBackgroundView:View{
             .scaledToFill()
     }
 }
+
+#Preview{
+    iPhonePairingBackgroundView()
+}
