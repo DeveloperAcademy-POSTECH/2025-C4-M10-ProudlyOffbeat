@@ -11,8 +11,13 @@ struct FairyTaleScriptView: View {
     let script: String
     
     var body: some View {
-        Text(script)
-            .font(.system(size: 48))
+        HStack{
+            Spacer()
+            Text(script)
+                .font(.system(size: 48))
+            Spacer()
+        }
+        
     }
 }
 

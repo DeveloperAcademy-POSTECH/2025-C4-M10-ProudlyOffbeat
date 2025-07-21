@@ -11,13 +11,12 @@ final class iPadFairyTaleViewModel: ObservableObject {
     @Published var currentPage: Int = 0
     @Published var selectedBook: StoryBook?
     
+    // 인터랙션 완료 여부
+    @Published var isInteractionCompleted: Bool = false
+    
     let allBooks: [StoryBook] = [
-            StoryBook(type: .oz, pages: [
-                StoryPage(backgroundImageName: "Oz1", script: "오즈의 첫 장면"),
-                StoryPage(backgroundImageName: "Oz2", script: "오즈의 두 번째 장면"),
-            ]),
             StoryBook(type: .pig, pages: [
-                StoryPage(backgroundImageName: "Pig1", script: "돼지 첫 장면")
+                StoryPage(backgroundImageName: "Pig1", script: "돼지 첫 장면", interaction: nil)
             ])
         ]
     
@@ -27,6 +26,18 @@ final class iPadFairyTaleViewModel: ObservableObject {
 
     var currentScript: String {
         selectedBook?.pages[currentPage].script ?? ""
+    }
+    
+    // 현재 페이지의 인터랙션 타입
+    var currentInteraction: InteractionType {
+        selectedBook?.pages[currentPage].interaction ?? .none
+    }
+    
+    func triggerInteraction() {
+        guard currentInteraction != .none else { return }
+        // 예: 등불 터치 시
+        //peerManager?.sendInteractionMessage(currentInteraction)
+        isInteractionCompleted = false // iPhone에서 신호 오면 true로
     }
     
     init() { }
