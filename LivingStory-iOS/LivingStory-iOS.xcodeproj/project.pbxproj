@@ -117,6 +117,7 @@
 		A1D294782E2B95C100695EE2 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				A1DEF35F2E2DDE1B0083577D /* Resource */,
 				A1D2947C2E2B986200695EE2 /* Fonts */,
 			);
 			path = Core;
@@ -126,7 +127,6 @@
 			isa = PBXGroup;
 			children = (
 				A1D294792E2B95CA00695EE2 /* Font.swift */,
-				A1D2947D2E2B987800695EE2 /* BinggraeSamanco-Bold.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -138,6 +138,14 @@
 				A1D706272E28DFAB008694A8 /* HomeDoorView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		A1DEF35F2E2DDE1B0083577D /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				A1D2947D2E2B987800695EE2 /* BinggraeSamanco-Bold.ttf */,
+			);
+			path = Resource;
 			sourceTree = "<group>";
 		};
 		A1F4C7612E29DCE900044760 /* Model */ = {
