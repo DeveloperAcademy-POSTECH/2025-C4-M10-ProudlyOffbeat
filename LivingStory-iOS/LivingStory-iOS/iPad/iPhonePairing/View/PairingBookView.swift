@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct PairingBookView: View {
+    let action: () -> Void
+    
     var body: some View {
         ZStack{
             GeometryReader{ geometry in
@@ -15,16 +17,10 @@ struct PairingBookView: View {
                     .resizable()
             }
             HStack{
-                iPhoneNoticeView()
-                    .padding(.leading, 53)
+                ConncetLeftPageView()
+                    .padding(.leading, 73)
                 Spacer()
-                VStack{
-                    Spacer()
-                    Text("아이폰과 연결")
-                    Spacer()
-                    ConnectListView()
-                    Spacer()
-                }.padding(.trailing, 78)
+                ConnectRightPageView(action: action)
             }
         }.frame(width: 874, height: 644)
             
@@ -32,5 +28,5 @@ struct PairingBookView: View {
 }
 
 #Preview {
-    PairingBookView()
+    PairingBookView(action: {})
 }

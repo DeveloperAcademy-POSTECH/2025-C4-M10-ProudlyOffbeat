@@ -15,7 +15,7 @@ struct iPhonePairingView: View {
     var body: some View {
         ZStack {
             iPhonePairingBackgroundView()
-            PairingBookView()
+            PairingBookView(action: {}) // Peer 연결 로직 들어가는 곳
         }
     }
 }
