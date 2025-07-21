@@ -7,12 +7,13 @@
 
 import SwiftUI
 
-struct FrameView: View {
+struct HomeInfoFrameView: View {
     var body: some View {
         VStack{
             ZStack{
                 Image("Frame")
                 Text("어느 방에 들어갈까요?")
+                    .font(LSFont.iPhoneConnectFont)
             }.padding(.top, 172)
             Spacer()
         }
@@ -21,5 +22,5 @@ struct FrameView: View {
 }
 
 #Preview {
-    FrameView()
+    HomeInfoFrameView()
 }

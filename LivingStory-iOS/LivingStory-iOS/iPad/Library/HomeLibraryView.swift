@@ -14,7 +14,7 @@ struct HomeLibraryView: View {
     var body: some View {
         ZStack {
             HomeBackgroundView()
-            FrameView()
+            HomeInfoFrameView()
             HomeDoorView(action: {bookType in viewModel.pushToiPhonePairingView(coordinator: coordinator, bookType: bookType)})
         }
     }
