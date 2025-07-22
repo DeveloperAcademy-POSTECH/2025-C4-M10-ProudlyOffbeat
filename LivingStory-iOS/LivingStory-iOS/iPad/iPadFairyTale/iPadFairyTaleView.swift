@@ -26,8 +26,3 @@ struct iPadFairyTaleView: View {
         }
     }
 }
-
-
-#Preview {
-    iPadFairyTaleView(viewModel: iPadFairyTaleViewModel(bookType: .pig), book: .pig)
-}

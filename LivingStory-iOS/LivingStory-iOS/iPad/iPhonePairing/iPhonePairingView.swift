@@ -10,7 +10,7 @@ import SwiftUI
 struct iPhonePairingView: View {
     @EnvironmentObject var coordinator: AppCoordinator
     @ObservedObject var viewModel: iPhonePairingViewModel
-    @ObservedObject var multipeerMananger = MultipeerManager.shared
+    
     let book: BookType
     
     var body: some View {

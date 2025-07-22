@@ -11,7 +11,10 @@ final class iPhonePairingViewModel: ObservableObject {
     
     private let bookType: BookType
     private let multipeerManager: MultipeerManager
-    @Published var selectedBook: Book
+    
+    var selectedBook: Book {
+        bookType.book
+    }
     
     var connectionState: ConnectionState {
         multipeerManager.connectionState
@@ -33,15 +36,6 @@ final class iPhonePairingViewModel: ObservableObject {
     init(bookType: BookType, multipeerManager: MultipeerManager) {
         self.bookType = bookType
         self.multipeerManager = multipeerManager
-        self.selectedBook = Self.getBook(for: bookType)
-    }
-    
-    private static func getBook(for type: BookType) -> Book {
-        switch type {
-        case .oz: return Book.ozBook
-        case .pig: return Book.pigBook
-        case .heung: return Book.heungBook
-        }
     }
     
     // MARK: - MultipeerConnectivity Actions
