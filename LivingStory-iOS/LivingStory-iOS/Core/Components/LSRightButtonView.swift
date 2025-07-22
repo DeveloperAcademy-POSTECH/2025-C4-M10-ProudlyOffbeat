@@ -9,14 +9,11 @@ import SwiftUI
 struct LSRightButtonView: View {
     let action: () -> Void
     var body: some View {
-        HStack{
-            Spacer()
-            Button{
-                action()
-            }label: {
-                Image("NextButton")
-                    .padding()
-            }
+        Button{
+            action()
+        }label: {
+            Image("NextButton")
+                .padding()
         }
     }
 }
