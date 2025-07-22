@@ -13,6 +13,8 @@
 		A12BB7F42E2F3D6300D58DBA /* LSLeftButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12BB7F32E2F3D5C00D58DBA /* LSLeftButtonView.swift */; };
 		A12BB7F62E2F3D7200D58DBA /* LSRightButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12BB7F52E2F3D6C00D58DBA /* LSRightButtonView.swift */; };
 		A12BB7F82E2F3F7A00D58DBA /* LSBottonButtonStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12BB7F72E2F3F3200D58DBA /* LSBottonButtonStackView.swift */; };
+		A12BB7FC2E2FA23200D58DBA /* LSReturnToHomeButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12BB7FB2E2FA22200D58DBA /* LSReturnToHomeButtonView.swift */; };
+		A12BB7FE2E2FADDF00D58DBA /* FairyTaleInteractionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12BB7FD2E2FADD600D58DBA /* FairyTaleInteractionView.swift */; };
 		A15FAE832E2BDFBE00468F16 /* PeerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15FAE822E2BDFBB00468F16 /* PeerModel.swift */; };
 		A15FAE852E2BE01400468F16 /* ConnectCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15FAE842E2BE00800468F16 /* ConnectCellView.swift */; };
 		A15FAE892E2BF57800468F16 /* iPhoneNoticeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15FAE882E2BF57200468F16 /* iPhoneNoticeView.swift */; };
@@ -79,6 +81,8 @@
 		A12BB7F32E2F3D5C00D58DBA /* LSLeftButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LSLeftButtonView.swift; sourceTree = "<group>"; };
 		A12BB7F52E2F3D6C00D58DBA /* LSRightButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LSRightButtonView.swift; sourceTree = "<group>"; };
 		A12BB7F72E2F3F3200D58DBA /* LSBottonButtonStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LSBottonButtonStackView.swift; sourceTree = "<group>"; };
+		A12BB7FB2E2FA22200D58DBA /* LSReturnToHomeButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LSReturnToHomeButtonView.swift; sourceTree = "<group>"; };
+		A12BB7FD2E2FADD600D58DBA /* FairyTaleInteractionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FairyTaleInteractionView.swift; sourceTree = "<group>"; };
 		A15FAE822E2BDFBB00468F16 /* PeerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeerModel.swift; sourceTree = "<group>"; };
 		A15FAE842E2BE00800468F16 /* ConnectCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectCellView.swift; sourceTree = "<group>"; };
 		A15FAE882E2BF57200468F16 /* iPhoneNoticeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPhoneNoticeView.swift; sourceTree = "<group>"; };
@@ -178,6 +182,7 @@
 		A15FAE8F2E2CD93A00468F16 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A12BB7FD2E2FADD600D58DBA /* FairyTaleInteractionView.swift */,
 				A15FAE992E2CDC3F00468F16 /* FairyTaleButtonView.swift */,
 				A15FAE9B2E2CE2EF00468F16 /* FairyTaleScriptView.swift */,
 				A15FAE9D2E2CE49500468F16 /* FairyTaleBackgroundView.swift */,
@@ -240,6 +245,7 @@
 		A19ADCBA2E2E842F007BBF05 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				A12BB7FB2E2FA22200D58DBA /* LSReturnToHomeButtonView.swift */,
 				A12BB7F32E2F3D5C00D58DBA /* LSLeftButtonView.swift */,
 				A12BB7F52E2F3D6C00D58DBA /* LSRightButtonView.swift */,
 				A12BB7F72E2F3F3200D58DBA /* LSBottonButtonStackView.swift */,
@@ -566,12 +572,14 @@
 				D5360FFD2E27DA19001E15B2 /* AppCoordinator.swift in Sources */,
 				D53610252E2804AA001E15B2 /* iPadIntroViewModel.swift in Sources */,
 				D552B4B72E29F75D00519860 /* MultipeerManager.swift in Sources */,
+				A12BB7FC2E2FA23200D58DBA /* LSReturnToHomeButtonView.swift in Sources */,
 				A15FAE9A2E2CDC8200468F16 /* FairyTaleButtonView.swift in Sources */,
 				A1D487FD2E2948AA00F70879 /* PairingBookView.swift in Sources */,
 				A12BB7F42E2F3D6300D58DBA /* LSLeftButtonView.swift in Sources */,
 				D53610122E27FCFB001E15B2 /* HomeLibraryView.swift in Sources */,
 				D53610292E28064A001E15B2 /* iPhoneIntroViewModel.swift in Sources */,
 				A15FAE942E2CD9D200468F16 /* iPadFairyTaleView.swift in Sources */,
+				A12BB7FE2E2FADDF00D58DBA /* FairyTaleInteractionView.swift in Sources */,
 				D5FFF9FE2E2D5D93004C6586 /* MultipeerManager+Extension.swift in Sources */,
 				A19ADCB12E2E7EAC007BBF05 /* PeerConnectButtonView.swift in Sources */,
 				A15FAE892E2BF57800468F16 /* iPhoneNoticeView.swift in Sources */,

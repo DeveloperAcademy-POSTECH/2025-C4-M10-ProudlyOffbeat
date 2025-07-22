@@ -14,11 +14,6 @@ final class iPadFairyTaleViewModel: ObservableObject {
     // 인터랙션 완료 여부
     @Published var isInteractionCompleted: Bool = false
     
-    let allBooks: [StoryBook] = [
-            StoryBook(type: .pig, pages: [
-                StoryPage(backgroundImageName: "Pig1", script: "돼지 첫 장면", interaction: nil)
-            ])
-        ]
     
     var currentBackground: String {
         selectedBook?.pages[currentPage].backgroundImageName ?? "DefaultBackground"
@@ -40,23 +35,29 @@ final class iPadFairyTaleViewModel: ObservableObject {
         isInteractionCompleted = false // iPhone에서 신호 오면 true로
     }
     
-    init() { }
+    init(bookType: BookType) {
+        selectBook(by: bookType)
+    }
     
     func increaseIndex(){
         //다음 버튼 로직
+        guard let selectedBook, currentPage + 1 < selectedBook.pages.count else { return }
+                currentPage += 1
     }
     
-    func decreaseIndex(){
-        //이전 버튼 로직
+    func decreaseIndex() {
+        guard let selectedBook, currentPage - 1 >= 0 else { return }
+           currentPage -= 1
     }
     
-    func returnToHome(){
-        //홈 버튼 로직
+    @MainActor
+    func returnToHome(coordinator:AppCoordinator){
+        coordinator.goToRoot()
     }
     
     func selectBook(by type: BookType) {
         // 예시: 미리 정의된 책 리스트에서 선택
-        if let book = allBooks.first(where: { $0.type == type }) {
+        if let book = StoryBook.allBooks.first(where: { $0.type == type }) {
             selectedBook = book
             currentPage = 0
         }

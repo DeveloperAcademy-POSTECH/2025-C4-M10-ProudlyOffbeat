@@ -8,40 +8,18 @@
 import SwiftUI
 
 struct FairyTaleButtonView: View {
-    let script:String
+    let homeButtonaction:()->Void
+    let leftaction:()->Void
+    let rightaction:()->Void
+    
     var body: some View {
         VStack{
             HStack{
-                Button{
-                    // 홈으로 가는 로직
-                }label: {
-                    Image("HomeButton")
-                        .padding()
-                }
+               LSReturnToHomeButtonView(action: {})
                 Spacer()
             }
             Spacer()
-            HStack{
-                Button{
-                    // 이전으로 가는 로직
-                }label: {
-                    Image("PreviousButton")
-                        .padding()
-                }
-                Spacer()
-                FairyTaleScriptView(script: script)
-                Spacer()
-                Button{
-                    // 다음으로 가는 로직
-                }label: {
-                    Image("NextButton")
-                        .padding()
-                }
-            }
+            LSBottonButtonStackView(leftaction: leftaction, rightaction: rightaction)
         }
     }
-}
-
-#Preview {
-    FairyTaleButtonView(script: "스크립트 들어갈 자리")
 }
