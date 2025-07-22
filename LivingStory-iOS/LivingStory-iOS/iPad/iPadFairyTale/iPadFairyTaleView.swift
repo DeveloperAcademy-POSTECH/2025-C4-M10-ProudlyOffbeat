@@ -14,15 +14,20 @@ struct iPadFairyTaleView: View {
     
     var body: some View {
         ZStack {
-            FairyTaleBackgroundView(scene: "pig1")
+            FairyTaleBackgroundView(scene: viewModel.currentBackground)
             //현재 인덱스에 따라 배경 바뀜.
-            FairyTaleButtonView(script: "북 타입에 맞는 스크립트")
+            FairyTaleButtonView(homeButtonaction: {viewModel.returnToHome(coordinator: coordinator)}, leftaction: viewModel.decreaseIndex, rightaction: viewModel.increaseIndex)
             //현재 인덱스에 따라 스크립트 바뀜
+            FairyTaleScriptView(script: viewModel.currentScript)
+            if viewModel.currentPage == 2{
+                FairyTaleInteractionView(action: viewModel.triggerInteraction)
+            }
+            
         }
     }
 }
 
 
 #Preview {
-    iPadFairyTaleView(viewModel: iPadFairyTaleViewModel(), book: .pig)
+    iPadFairyTaleView(viewModel: iPadFairyTaleViewModel(bookType: .pig), book: .pig)
 }
