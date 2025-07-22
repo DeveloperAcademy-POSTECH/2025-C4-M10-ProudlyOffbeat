@@ -10,6 +10,8 @@
 		052F269D2E2E5B1C00E86FA2 /* ConnectButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052F269C2E2E5B1C00E86FA2 /* ConnectButtonView.swift */; };
 		052F269F2E2E5BDC00E86FA2 /* ConnectImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052F269E2E2E5BDC00E86FA2 /* ConnectImageView.swift */; };
 		052F26A12E2E5C1900E86FA2 /* WifiConnectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052F26A02E2E5C1900E86FA2 /* WifiConnectView.swift */; };
+		052F26B02E2F092E00E86FA2 /* FairyTaleStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052F26AF2E2F092E00E86FA2 /* FairyTaleStatusView.swift */; };
+		052F26B22E2F36FA00E86FA2 /* iPhoneFairyTaleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052F26B12E2F36FA00E86FA2 /* iPhoneFairyTaleView.swift */; };
 		A15FAE832E2BDFBE00468F16 /* PeerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15FAE822E2BDFBB00468F16 /* PeerModel.swift */; };
 		A15FAE852E2BE01400468F16 /* ConnectCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15FAE842E2BE00800468F16 /* ConnectCellView.swift */; };
 		A15FAE892E2BF57800468F16 /* iPhoneNoticeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15FAE882E2BF57200468F16 /* iPhoneNoticeView.swift */; };
@@ -68,6 +70,8 @@
 		052F269C2E2E5B1C00E86FA2 /* ConnectButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectButtonView.swift; sourceTree = "<group>"; };
 		052F269E2E2E5BDC00E86FA2 /* ConnectImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectImageView.swift; sourceTree = "<group>"; };
 		052F26A02E2E5C1900E86FA2 /* WifiConnectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WifiConnectView.swift; sourceTree = "<group>"; };
+		052F26AF2E2F092E00E86FA2 /* FairyTaleStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FairyTaleStatusView.swift; sourceTree = "<group>"; };
+		052F26B12E2F36FA00E86FA2 /* iPhoneFairyTaleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPhoneFairyTaleView.swift; sourceTree = "<group>"; };
 		A15FAE822E2BDFBB00468F16 /* PeerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeerModel.swift; sourceTree = "<group>"; };
 		A15FAE842E2BE00800468F16 /* ConnectCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectCellView.swift; sourceTree = "<group>"; };
 		A15FAE882E2BF57200468F16 /* iPhoneNoticeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPhoneNoticeView.swift; sourceTree = "<group>"; };
@@ -131,6 +135,15 @@
 				052F269C2E2E5B1C00E86FA2 /* ConnectButtonView.swift */,
 			);
 			path = SubView;
+			sourceTree = "<group>";
+		};
+		052F26AE2E2F08B300E86FA2 /* iPhoneFairyTale */ = {
+			isa = PBXGroup;
+			children = (
+				052F26AF2E2F092E00E86FA2 /* FairyTaleStatusView.swift */,
+				052F26B12E2F36FA00E86FA2 /* iPhoneFairyTaleView.swift */,
+			);
+			path = iPhoneFairyTale;
 			sourceTree = "<group>";
 		};
 		A13BBF712E294E9100B91453 /* View */ = {
@@ -416,6 +429,7 @@
 		D564C4422E27B7E700A50B49 /* iPhone */ = {
 			isa = PBXGroup;
 			children = (
+				052F26AE2E2F08B300E86FA2 /* iPhoneFairyTale */,
 				D536101C2E27FF39001E15B2 /* iPhoneIntro */,
 				D536101F2E28030A001E15B2 /* iPadPairing */,
 			);
@@ -541,8 +555,10 @@
 				A19ADCA42E2E17BB007BBF05 /* Fonts.swift in Sources */,
 				D53610092E27FA92001E15B2 /* DeviceInfo.swift in Sources */,
 				D536101E2E27FF4B001E15B2 /* iPhoneIntroView.swift in Sources */,
+				052F26B22E2F36FA00E86FA2 /* iPhoneFairyTaleView.swift in Sources */,
 				D564C43B2E27A50E00A50B49 /* LivingStory_iOSApp.swift in Sources */,
 				D5360FFB2E27DA0C001E15B2 /* AppRoute.swift in Sources */,
+				052F26B02E2F092E00E86FA2 /* FairyTaleStatusView.swift in Sources */,
 				A15FAE9E2E2CE49500468F16 /* FairyTaleBackgroundView.swift in Sources */,
 				A1D294732E2B8DAA00695EE2 /* HomeInfoFrameView.swift in Sources */,
 				052F269D2E2E5B1C00E86FA2 /* ConnectButtonView.swift in Sources */,

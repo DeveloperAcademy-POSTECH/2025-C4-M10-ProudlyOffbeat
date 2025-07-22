@@ -16,10 +16,10 @@ struct ConnectButtonView: View {
         Button(action:action)
         {
             Text("연결하기") //MCP 연결 여부에 따라 텍스트 변환
-                .font(.headline) //디자인 폰트로 변경하기
+                .font(LSFont.bookTitleFont) //디자인 폰트로 변경 완료
                 .foregroundStyle(.white)
                 .frame(width: 216, height: 43)
-                .background(Color.green) //키컬러로 변경하기
+                .background(Color.lsPrimary) //키컬러로 변경 완료
                 .cornerRadius(40)
         }
     }
