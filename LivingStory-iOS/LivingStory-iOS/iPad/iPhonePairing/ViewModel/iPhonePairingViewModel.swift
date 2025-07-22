@@ -8,11 +8,61 @@
 import SwiftUI
 
 final class iPhonePairingViewModel: ObservableObject {
-    init() { }
+    
+    private let bookType: BookType
+    private let multipeerManager: MultipeerManager
+    @Published var selectedBook: Book
+    
+    var connectionState: ConnectionState {
+        multipeerManager.connectionState
+    }
+    
+    var discoveredDevices: [PeerDevice] {
+        multipeerManager.discoveredDevices
+    }
+    
+    var connectedDevice: PeerDevice? {
+        multipeerManager.connectedDevice
+    }
+    
+    var isConnected: Bool {
+        multipeerManager.isConnected
+    }
     
     
-    func whatBook(book: BookType) -> Book {
-        return Book(title: "", bookCoverImage: "", bookType: .pig)
+    init(bookType: BookType, multipeerManager: MultipeerManager) {
+        self.bookType = bookType
+        self.multipeerManager = multipeerManager
+        self.selectedBook = Self.getBook(for: bookType)
+    }
+    
+    private static func getBook(for type: BookType) -> Book {
+        switch type {
+        case .oz: return Book.ozBook
+        case .pig: return Book.pigBook
+        case .heung: return Book.heungBook
+        }
+    }
+    
+    // MARK: - MultipeerConnectivity Actions
+    func startAdvertising() {
+        print("iPad에서 광고 시작 - \(selectedBook.title)")
+        multipeerManager.startAdvertising()
+    }
+    
+    @MainActor
+    func startFairyTale(coordinator: AppCoordinator) {
+        if isConnected {
+            print("\(selectedBook.title) 동화 시작")
+            coordinator.push(.iPadFairyTale(book: bookType))
+        } else {
+            print(" 연결되지 않아서 동화를 시작할 수 없습니다.")
+        }
+    }
+    
+    @MainActor
+    func goBackToLibrary(coordinator: AppCoordinator) {
+        coordinator.pop()
     }
     
 }

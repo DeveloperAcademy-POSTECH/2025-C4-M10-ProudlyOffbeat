@@ -22,6 +22,9 @@ protocol FactoryProtocol {
 final class ModuleFactory: FactoryProtocol {
 
     static let shared = ModuleFactory()
+    
+    private let multipeerManager = MultipeerManager.shared
+    
     private init() {}
     
     //MARK: 아이패드 함수 구현부
@@ -36,7 +39,9 @@ final class ModuleFactory: FactoryProtocol {
     }
     
     func makeiPhonePairingView(book: BookType) -> iPhonePairingView {
-        let viewModel = iPhonePairingViewModel()
+        let viewModel = iPhonePairingViewModel(
+            bookType: book,
+            multipeerManager: multipeerManager)
         return iPhonePairingView(viewModel: viewModel, book: book)
     }
     
