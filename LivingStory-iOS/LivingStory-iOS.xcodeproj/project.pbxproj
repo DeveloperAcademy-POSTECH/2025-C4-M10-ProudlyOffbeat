@@ -63,6 +63,7 @@
 		D5EBC2822E2FDB9C006A8782 /* BookType+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5EBC2812E2FDB90006A8782 /* BookType+Extension.swift */; };
 		D5EBC2892E2FEE1D006A8782 /* ConnectedAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5EBC2882E2FEE0F006A8782 /* ConnectedAlert.swift */; };
 		D5EBC28B2E2FEE3A006A8782 /* DisconnectedAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5EBC28A2E2FEE33006A8782 /* DisconnectedAlert.swift */; };
+		D5EBC28F2E2FF93D006A8782 /* NonconnectionAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5EBC28E2E2FF930006A8782 /* NonconnectionAlert.swift */; };
 		D5FFF9FC2E2D5D67004C6586 /* MultipeerModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FFF9FB2E2D5D5E004C6586 /* MultipeerModels.swift */; };
 		D5FFF9FE2E2D5D93004C6586 /* MultipeerManager+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FFF9FD2E2D5D7D004C6586 /* MultipeerManager+Extension.swift */; };
 /* End PBXBuildFile section */
@@ -140,6 +141,7 @@
 		D5EBC2812E2FDB90006A8782 /* BookType+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BookType+Extension.swift"; sourceTree = "<group>"; };
 		D5EBC2882E2FEE0F006A8782 /* ConnectedAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectedAlert.swift; sourceTree = "<group>"; };
 		D5EBC28A2E2FEE33006A8782 /* DisconnectedAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisconnectedAlert.swift; sourceTree = "<group>"; };
+		D5EBC28E2E2FF930006A8782 /* NonconnectionAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NonconnectionAlert.swift; sourceTree = "<group>"; };
 		D5FFF9FB2E2D5D5E004C6586 /* MultipeerModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipeerModels.swift; sourceTree = "<group>"; };
 		D5FFF9FD2E2D5D7D004C6586 /* MultipeerManager+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MultipeerManager+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -508,6 +510,7 @@
 		D5EBC2842E2FEDAA006A8782 /* Alerts */ = {
 			isa = PBXGroup;
 			children = (
+				D5EBC28E2E2FF930006A8782 /* NonconnectionAlert.swift */,
 				D5EBC28A2E2FEE33006A8782 /* DisconnectedAlert.swift */,
 				D5EBC2882E2FEE0F006A8782 /* ConnectedAlert.swift */,
 			);
@@ -641,6 +644,7 @@
 				052F26B02E2F092E00E86FA2 /* FairyTaleStatusView.swift in Sources */,
 				A15FAE9E2E2CE49500468F16 /* FairyTaleBackgroundView.swift in Sources */,
 				A1D294732E2B8DAA00695EE2 /* HomeInfoFrameView.swift in Sources */,
+				D5EBC28F2E2FF93D006A8782 /* NonconnectionAlert.swift in Sources */,
 				052F269D2E2E5B1C00E86FA2 /* ConnectButtonView.swift in Sources */,
 				D5360FFF2E27DA23001E15B2 /* RootNavigationView.swift in Sources */,
 				A1F4C7632E29DCFB00044760 /* BookModel.swift in Sources */,
