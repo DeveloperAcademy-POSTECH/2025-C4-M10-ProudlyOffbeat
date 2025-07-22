@@ -14,6 +14,10 @@ final class iPadFairyTaleViewModel: ObservableObject {
     // 인터랙션 완료 여부
     @Published var isInteractionCompleted: Bool = false
     
+    init(bookType: BookType) {
+        selectBook(by: bookType)
+    }
+    
     
     var currentBackground: String {
         selectedBook?.pages[currentPage].backgroundImageName ?? "DefaultBackground"
@@ -33,10 +37,6 @@ final class iPadFairyTaleViewModel: ObservableObject {
         // 예: 등불 터치 시
         //peerManager?.sendInteractionMessage(currentInteraction)
         isInteractionCompleted = false // iPhone에서 신호 오면 true로
-    }
-    
-    init(bookType: BookType) {
-        selectBook(by: bookType)
     }
     
     func increaseIndex(){

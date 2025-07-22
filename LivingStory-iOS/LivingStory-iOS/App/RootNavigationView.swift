@@ -40,8 +40,11 @@ struct RootNavigationView: View {
                 case .iPadLibrary:
                     factory.makeHomeLibraryView()
                     
-                case .iPhonePairing:
-                    factory.makeiPhonePairingView(book: .pig)
+                case .iPhonePairing(let book):
+                    factory.makeiPhonePairingView(book: book)
+                
+                case .iPadFairyTale(let book):
+                    factory.makeiPadFairyTaleView(book: book)
                     
                     // iPhone
                 case .iPadPairing:
