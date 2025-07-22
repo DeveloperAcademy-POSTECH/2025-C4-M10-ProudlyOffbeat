@@ -39,15 +39,13 @@ final class ModuleFactory: FactoryProtocol {
     }
     
     func makeiPhonePairingView(book: BookType) -> iPhonePairingView {
-        let viewModel = iPhonePairingViewModel(
-            bookType: book,
-            multipeerManager: multipeerManager)
-        return iPhonePairingView(viewModel: viewModel, book: book)
+        let viewModel = iPhonePairingViewModel(bookType: book, multipeerManager: multipeerManager)
+        return iPhonePairingView(viewModel: viewModel)
     }
     
     func makeiPadFairyTaleView(book: BookType) -> iPadFairyTaleView {
         let viewModel = iPadFairyTaleViewModel(bookType: book)
-        return iPadFairyTaleView(viewModel: viewModel, book: book)
+        return iPadFairyTaleView(viewModel: viewModel)
     }
     
     //MARK: 아이폰 함수 구현부

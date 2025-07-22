@@ -11,8 +11,6 @@ struct iPhonePairingView: View {
     @EnvironmentObject var coordinator: AppCoordinator
     @ObservedObject var viewModel: iPhonePairingViewModel
     
-    let book: BookType
-    
     var body: some View {
         ZStack {
             iPhonePairingBackgroundView()

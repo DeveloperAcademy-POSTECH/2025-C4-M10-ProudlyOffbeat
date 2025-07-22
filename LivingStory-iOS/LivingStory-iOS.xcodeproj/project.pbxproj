@@ -61,6 +61,8 @@
 		D564C43C2E27A50E00A50B49 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D564C4362E27A50E00A50B49 /* Assets.xcassets */; };
 		D5EBC27E2E2FC2E6006A8782 /* ShowBookTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5EBC27D2E2FC2CD006A8782 /* ShowBookTitleView.swift */; };
 		D5EBC2822E2FDB9C006A8782 /* BookType+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5EBC2812E2FDB90006A8782 /* BookType+Extension.swift */; };
+		D5EBC2892E2FEE1D006A8782 /* ConnectedAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5EBC2882E2FEE0F006A8782 /* ConnectedAlert.swift */; };
+		D5EBC28B2E2FEE3A006A8782 /* DisconnectedAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5EBC28A2E2FEE33006A8782 /* DisconnectedAlert.swift */; };
 		D5FFF9FC2E2D5D67004C6586 /* MultipeerModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FFF9FB2E2D5D5E004C6586 /* MultipeerModels.swift */; };
 		D5FFF9FE2E2D5D93004C6586 /* MultipeerManager+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FFF9FD2E2D5D7D004C6586 /* MultipeerManager+Extension.swift */; };
 /* End PBXBuildFile section */
@@ -136,6 +138,8 @@
 		D564C4A32E27CBF200A50B49 /* HomeKitModule.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = HomeKitModule.xcodeproj; path = /Users/demianyoo/Documents/GitHub/HomeKit/HomeKitModule.xcodeproj; sourceTree = "<absolute>"; };
 		D5EBC27D2E2FC2CD006A8782 /* ShowBookTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowBookTitleView.swift; sourceTree = "<group>"; };
 		D5EBC2812E2FDB90006A8782 /* BookType+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BookType+Extension.swift"; sourceTree = "<group>"; };
+		D5EBC2882E2FEE0F006A8782 /* ConnectedAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectedAlert.swift; sourceTree = "<group>"; };
+		D5EBC28A2E2FEE33006A8782 /* DisconnectedAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisconnectedAlert.swift; sourceTree = "<group>"; };
 		D5FFF9FB2E2D5D5E004C6586 /* MultipeerModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipeerModels.swift; sourceTree = "<group>"; };
 		D5FFF9FD2E2D5D7D004C6586 /* MultipeerManager+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MultipeerManager+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -263,6 +267,7 @@
 		A19ADCBA2E2E842F007BBF05 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				D5EBC2842E2FEDAA006A8782 /* Alerts */,
 				A12BB7FB2E2FA22200D58DBA /* LSReturnToHomeButtonView.swift */,
 				A12BB7F32E2F3D5C00D58DBA /* LSLeftButtonView.swift */,
 				A12BB7F52E2F3D6C00D58DBA /* LSRightButtonView.swift */,
@@ -500,6 +505,15 @@
 			path = iPad;
 			sourceTree = "<group>";
 		};
+		D5EBC2842E2FEDAA006A8782 /* Alerts */ = {
+			isa = PBXGroup;
+			children = (
+				D5EBC28A2E2FEE33006A8782 /* DisconnectedAlert.swift */,
+				D5EBC2882E2FEE0F006A8782 /* ConnectedAlert.swift */,
+			);
+			path = Alerts;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -600,6 +614,7 @@
 				D53610292E28064A001E15B2 /* iPhoneIntroViewModel.swift in Sources */,
 				A15FAE942E2CD9D200468F16 /* iPadFairyTaleView.swift in Sources */,
 				A12BB7FE2E2FADDF00D58DBA /* FairyTaleInteractionView.swift in Sources */,
+				D5EBC2892E2FEE1D006A8782 /* ConnectedAlert.swift in Sources */,
 				D5FFF9FE2E2D5D93004C6586 /* MultipeerManager+Extension.swift in Sources */,
 				A19ADCB12E2E7EAC007BBF05 /* PeerConnectButtonView.swift in Sources */,
 				A15FAE892E2BF57800468F16 /* iPhoneNoticeView.swift in Sources */,
@@ -616,6 +631,7 @@
 				A1D706262E28DB60008694A8 /* HomeBackgroundView.swift in Sources */,
 				A12BB7F62E2F3D7200D58DBA /* LSRightButtonView.swift in Sources */,
 				A19ADCA42E2E17BB007BBF05 /* Fonts.swift in Sources */,
+				D5EBC28B2E2FEE3A006A8782 /* DisconnectedAlert.swift in Sources */,
 				D53610092E27FA92001E15B2 /* DeviceInfo.swift in Sources */,
 				D5EBC27E2E2FC2E6006A8782 /* ShowBookTitleView.swift in Sources */,
 				D536101E2E27FF4B001E15B2 /* iPhoneIntroView.swift in Sources */,

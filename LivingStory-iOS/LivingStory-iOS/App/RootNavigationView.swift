@@ -10,6 +10,7 @@ import SwiftUI
 struct RootNavigationView: View {
     @EnvironmentObject private var coordinator: AppCoordinator
     @EnvironmentObject private var deviceInfo: DeviceInfo
+    
     private let factory: FactoryProtocol
     
     

@@ -10,7 +10,6 @@ import SwiftUI
 struct iPadFairyTaleView: View {
     @EnvironmentObject var coordinator: AppCoordinator
     @ObservedObject var viewModel: iPadFairyTaleViewModel
-    let book: BookType
     
     var body: some View {
         ZStack {
