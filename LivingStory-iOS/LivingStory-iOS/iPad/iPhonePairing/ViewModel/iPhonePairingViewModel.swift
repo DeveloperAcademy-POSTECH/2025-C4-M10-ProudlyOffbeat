@@ -6,11 +6,16 @@
 //
 
 import SwiftUI
+import MultipeerConnectivity
+
 
 final class iPhonePairingViewModel: ObservableObject {
     
     private let bookType: BookType
     private let multipeerManager: MultipeerManager
+    
+    @Published var showConnectedAlert = false
+    @Published var showNonconnectionAlert = false
     
     var selectedBook: Book {
         bookType.book
@@ -44,13 +49,33 @@ final class iPhonePairingViewModel: ObservableObject {
         multipeerManager.startAdvertising()
     }
     
-    @MainActor
-    func startFairyTale(coordinator: AppCoordinator) {
+    func sendConnectionToiPhone(to peerID: MCPeerID) {
+        multipeerManager.connectTo(peerID)
+    }
+    
+    // MARK: - 알러트 액션
+    func dismissConnectedAlert() {
+        showConnectedAlert = false
+    }
+    
+    func checkConnectedAlert() {
         if isConnected {
-            print("\(selectedBook.title) 동화 시작")
+            showConnectedAlert = true
+        } else {
+            showNonconnectionAlert = true
+        }
+    }
+    
+    func dismissNonconnectionAlert() {
+        showNonconnectionAlert = false
+    }
+    
+    @MainActor
+    func onNextButtonTapped(coordinator: AppCoordinator) {
+        if isConnected {
             coordinator.push(.iPadFairyTale(book: bookType))
         } else {
-            print(" 연결되지 않아서 동화를 시작할 수 없습니다.")
+            showNonconnectionAlert = true
         }
     }
     
