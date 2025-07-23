@@ -26,6 +26,7 @@
 		A15FAE9C2E2CE2EF00468F16 /* FairyTaleScriptView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15FAE9B2E2CE2EF00468F16 /* FairyTaleScriptView.swift */; };
 		A15FAE9E2E2CE49500468F16 /* FairyTaleBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15FAE9D2E2CE49500468F16 /* FairyTaleBackgroundView.swift */; };
 		A15FAEA32E2D021100468F16 /* FairyTaleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15FAEA22E2D020600468F16 /* FairyTaleModel.swift */; };
+		A17BF69F2E3128BB006783D1 /* FairyTaleLastPageButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17BF69E2E3128AE006783D1 /* FairyTaleLastPageButtonView.swift */; };
 		A19ADCA22E2E17B3007BBF05 /* BinggraeSamanco-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A19ADCA12E2E17B3007BBF05 /* BinggraeSamanco-Bold.ttf */; };
 		A19ADCA42E2E17BB007BBF05 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19ADCA32E2E17B9007BBF05 /* Fonts.swift */; };
 		A19ADCAE2E2E7D9A007BBF05 /* iPhoneNoticeTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19ADCAD2E2E7D8D007BBF05 /* iPhoneNoticeTextView.swift */; };
@@ -96,6 +97,7 @@
 		A15FAE9B2E2CE2EF00468F16 /* FairyTaleScriptView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FairyTaleScriptView.swift; sourceTree = "<group>"; };
 		A15FAE9D2E2CE49500468F16 /* FairyTaleBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FairyTaleBackgroundView.swift; sourceTree = "<group>"; };
 		A15FAEA22E2D020600468F16 /* FairyTaleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FairyTaleModel.swift; sourceTree = "<group>"; };
+		A17BF69E2E3128AE006783D1 /* FairyTaleLastPageButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FairyTaleLastPageButtonView.swift; sourceTree = "<group>"; };
 		A19ADCA12E2E17B3007BBF05 /* BinggraeSamanco-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BinggraeSamanco-Bold.ttf"; sourceTree = "<group>"; };
 		A19ADCA32E2E17B9007BBF05 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		A19ADCA52E2E17FA007BBF05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -195,9 +197,10 @@
 		A15FAE8F2E2CD93A00468F16 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				A12BB7FD2E2FADD600D58DBA /* FairyTaleInteractionView.swift */,
+				A17BF69E2E3128AE006783D1 /* FairyTaleLastPageButtonView.swift */,
 				A15FAE992E2CDC3F00468F16 /* FairyTaleButtonView.swift */,
 				A15FAE9B2E2CE2EF00468F16 /* FairyTaleScriptView.swift */,
+				A12BB7FD2E2FADD600D58DBA /* FairyTaleInteractionView.swift */,
 				A15FAE9D2E2CE49500468F16 /* FairyTaleBackgroundView.swift */,
 			);
 			path = View;
@@ -606,6 +609,7 @@
 				A12BB7F82E2F3F7A00D58DBA /* LSBottonButtonStackView.swift in Sources */,
 				A15FAE9C2E2CE2EF00468F16 /* FairyTaleScriptView.swift in Sources */,
 				D536102B2E280B92001E15B2 /* HomeLibraryViewModel.swift in Sources */,
+				A17BF69F2E3128BB006783D1 /* FairyTaleLastPageButtonView.swift in Sources */,
 				A1D706262E28DB60008694A8 /* HomeBackgroundView.swift in Sources */,
 				A12BB7F62E2F3D7200D58DBA /* LSRightButtonView.swift in Sources */,
 				A19ADCA42E2E17BB007BBF05 /* Fonts.swift in Sources */,
