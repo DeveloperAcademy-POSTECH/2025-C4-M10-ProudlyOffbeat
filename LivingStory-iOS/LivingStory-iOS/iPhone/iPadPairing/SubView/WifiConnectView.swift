@@ -16,7 +16,8 @@ struct WifiConnectView: View {
             Image("MPCimage")
                 .padding(.top, 204)
                 .padding(.bottom,162)
-            ConnectButtonView(action: {})//클로저로 버트
+            ConnectButtonView(action: {})
+                .padding(.bottom, 160) //패딩 수정
         }
         .frame(width: 331, height: 668)
     }

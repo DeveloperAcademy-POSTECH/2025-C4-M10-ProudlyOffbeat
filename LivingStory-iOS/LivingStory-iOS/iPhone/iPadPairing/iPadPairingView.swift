@@ -13,6 +13,9 @@ struct iPadPairingView: View {
     
     var body: some View {
         ZStack{
+            Image("Room(cut)")
+                .resizable()
+                .ignoresSafeArea(edges:.all)
             Image("iPhoneBackground")
             WifiConnectView()
         }
