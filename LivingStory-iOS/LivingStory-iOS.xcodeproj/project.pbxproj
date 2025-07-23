@@ -14,9 +14,9 @@
 		052F26B22E2F36FA00E86FA2 /* iPhoneFairyTaleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052F26B12E2F36FA00E86FA2 /* iPhoneFairyTaleView.swift */; };
 		05CDDF1D2E2FEB0C00455F62 /* iPhoneInteractionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05CDDF1C2E2FEB0C00455F62 /* iPhoneInteractionView.swift */; };
 		05CDDF1F2E2FEB2E00455F62 /* FireAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05CDDF1E2E2FEB2E00455F62 /* FireAnimationView.swift */; };
-		05CDDF212E2FEB7500455F62 /* Fire.json in Resources */ = {isa = PBXBuildFile; fileRef = 05CDDF202E2FEB7500455F62 /* Fire.json */; };
 		05CDDF232E2FEBA100455F62 /* AudioInputModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05CDDF222E2FEBA100455F62 /* AudioInputModel.swift */; };
 		05CDDF252E2FEC0E00455F62 /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05CDDF242E2FEC0E00455F62 /* LottieView.swift */; };
+		05CDDF312E31323D00455F62 /* Fire2.json in Resources */ = {isa = PBXBuildFile; fileRef = 05CDDF302E31323D00455F62 /* Fire2.json */; };
 		A12BB7F42E2F3D6300D58DBA /* LSLeftButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12BB7F32E2F3D5C00D58DBA /* LSLeftButtonView.swift */; };
 		A12BB7F62E2F3D7200D58DBA /* LSRightButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12BB7F52E2F3D6C00D58DBA /* LSRightButtonView.swift */; };
 		A12BB7F82E2F3F7A00D58DBA /* LSBottonButtonStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12BB7F72E2F3F3200D58DBA /* LSBottonButtonStackView.swift */; };
@@ -89,9 +89,9 @@
 		052F26B12E2F36FA00E86FA2 /* iPhoneFairyTaleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPhoneFairyTaleView.swift; sourceTree = "<group>"; };
 		05CDDF1C2E2FEB0C00455F62 /* iPhoneInteractionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPhoneInteractionView.swift; sourceTree = "<group>"; };
 		05CDDF1E2E2FEB2E00455F62 /* FireAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireAnimationView.swift; sourceTree = "<group>"; };
-		05CDDF202E2FEB7500455F62 /* Fire.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Fire.json; sourceTree = "<group>"; };
 		05CDDF222E2FEBA100455F62 /* AudioInputModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioInputModel.swift; sourceTree = "<group>"; };
 		05CDDF242E2FEC0E00455F62 /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
+		05CDDF302E31323D00455F62 /* Fire2.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Fire2.json; sourceTree = "<group>"; };
 		A12BB7F32E2F3D5C00D58DBA /* LSLeftButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LSLeftButtonView.swift; sourceTree = "<group>"; };
 		A12BB7F52E2F3D6C00D58DBA /* LSRightButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LSRightButtonView.swift; sourceTree = "<group>"; };
 		A12BB7F72E2F3F3200D58DBA /* LSBottonButtonStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LSBottonButtonStackView.swift; sourceTree = "<group>"; };
@@ -170,6 +170,7 @@
 		052F26AE2E2F08B300E86FA2 /* iPhoneFairyTale */ = {
 			isa = PBXGroup;
 			children = (
+				05CDDF302E31323D00455F62 /* Fire2.json */,
 				052F26B12E2F36FA00E86FA2 /* iPhoneFairyTaleView.swift */,
 				052F26AF2E2F092E00E86FA2 /* FairyTaleStatusView.swift */,
 				05CDDF272E2FEC5D00455F62 /* AVFoundation */,
@@ -182,7 +183,6 @@
 		05CDDF262E2FEC3900455F62 /* Lottie */ = {
 			isa = PBXGroup;
 			children = (
-				05CDDF202E2FEB7500455F62 /* Fire.json */,
 				05CDDF242E2FEC0E00455F62 /* LottieView.swift */,
 				05CDDF1E2E2FEB2E00455F62 /* FireAnimationView.swift */,
 			);
@@ -595,8 +595,8 @@
 			files = (
 				D54E1C9D2E2E6BB200661D28 /* Colors.xcassets in Resources */,
 				D564C43C2E27A50E00A50B49 /* Assets.xcassets in Resources */,
+				05CDDF312E31323D00455F62 /* Fire2.json in Resources */,
 				A19ADCA22E2E17B3007BBF05 /* BinggraeSamanco-Bold.ttf in Resources */,
-				05CDDF212E2FEB7500455F62 /* Fire.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
