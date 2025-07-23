@@ -9,7 +9,7 @@ import SwiftUI
 
 struct FireAnimationView: View {
     @StateObject private var monitor = AudioInputModel()
-    @State private var isDone = false
+    @State private var isDone = false //바람이 불어짐 유무 판단 변수
     
     var body: some View {
         VStack {
@@ -28,8 +28,8 @@ struct FireAnimationView: View {
                     .transition(.opacity)
             }
         }
-        //일단은 효과를 보여주기 위해 onTapGesture로 구현.
-        //AVFoundation에서 데시벨 기반으로 바람 불었음 유무 판단해야할 것 같음.
+        //AVFoundation에서 데시벨 기반으로 바람 불었음 유무 판단.
+        //startMonitoring 선언 -> 데시벨 변화 관측
         .onAppear {
                     monitor.startMonitoring()
                 }
