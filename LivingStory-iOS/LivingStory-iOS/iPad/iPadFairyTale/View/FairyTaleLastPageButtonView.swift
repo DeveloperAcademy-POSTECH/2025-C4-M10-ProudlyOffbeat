@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct FairyTaleLastPageButtonVIew: View {
+struct FairyTaleLastPageButtonView: View {
     let leftaction:()->Void
     
     var body: some View {
@@ -19,4 +19,12 @@ struct FairyTaleLastPageButtonVIew: View {
             }
         }
     }
+}
+
+#Preview {
+    ZStack{
+        FairyTaleLastPageButtonView(leftaction: {})
+        FairyTaleEnddingView()
+    }
+    
 }

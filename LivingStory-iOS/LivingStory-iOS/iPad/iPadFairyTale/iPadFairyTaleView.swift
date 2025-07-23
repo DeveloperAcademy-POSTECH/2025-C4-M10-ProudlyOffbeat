@@ -24,11 +24,14 @@ struct iPadFairyTaleView: View {
                     }
                 } , rightaction: viewModel.increaseIndex)
             }else{
-                FairyTaleLastPageButtonVIew(leftaction: viewModel.decreaseIndex)
+                FairyTaleLastPageButtonView(leftaction: viewModel.decreaseIndex)
             }
             FairyTaleScriptView(script: viewModel.currentScript)
             if viewModel.currentPage == 2{
                 FairyTaleInteractionView(action: viewModel.triggerInteraction)
+            }
+            if viewModel.currentPage == (viewModel.selectedBook?.pages.count)! - 1{
+                FairyTaleEnddingView()
             }
             
         }
