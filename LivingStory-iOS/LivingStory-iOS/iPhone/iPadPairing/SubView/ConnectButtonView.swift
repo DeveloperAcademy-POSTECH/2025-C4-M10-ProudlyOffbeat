@@ -10,16 +10,38 @@ import SwiftUI
 
 //"연결하기" 버튼 SubView
 struct ConnectButtonView: View {
-    var action: () -> Void
+    @ObservedObject var viewModel: iPadPairingViewModel
+    
+    private var iPadConnectionButtonText: String {
+        if viewModel.isConnected {
+            return "연결취소"
+        } else if viewModel.isBrowsing {
+            return "연결중"
+        } else {
+            return "연결하기"
+        }
+    }
+    
+    private var iPadConnectionButtonColor: Color {
+        if viewModel.isConnected {
+            return .red
+        } else if viewModel.isBrowsing {
+            return .gray
+        } else {
+            return .lsPrimary
+        }
+    }
     
     var body: some View {
-        Button(action:action)
+        Button(action: {
+            viewModel.handleConnectionButtonAction()
+        })
         {
-            Text("연결하기") //MCP 연결 여부에 따라 텍스트 변환
+            Text(iPadConnectionButtonText) //MCP 연결 여부에 따라 텍스트 변환
                 .font(LSFont.bookTitleFont) //디자인 폰트로 변경 완료
                 .foregroundStyle(.white)
                 .frame(width: 216, height: 43)
-                .background(Color.lsPrimary) //키컬러로 변경 완료
+                .background(iPadConnectionButtonColor) //키컬러로 변경 완료
                 .cornerRadius(40)
         }
     }

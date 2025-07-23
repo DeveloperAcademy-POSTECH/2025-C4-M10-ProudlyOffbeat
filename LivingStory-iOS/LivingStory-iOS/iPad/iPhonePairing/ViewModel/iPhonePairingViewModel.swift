@@ -44,9 +44,9 @@ final class iPhonePairingViewModel: ObservableObject {
     }
     
     // MARK: - MultipeerConnectivity Actions
-    func startAdvertising() {
-        print("iPad에서 광고 시작 - \(selectedBook.title)")
-        multipeerManager.startAdvertising()
+    func startBrowsing() {
+        print("iPad에서 iPhone 검색 시작 - \(selectedBook.title)")
+        multipeerManager.startBrowsing()
     }
     
     func sendConnectionToiPhone(to peerID: MCPeerID) {

@@ -56,7 +56,7 @@ final class ModuleFactory: FactoryProtocol {
     }
     
     func makeiPadPairingView() -> iPadPairingView {
-        let viewModel = iPadPairingViewModel()
+        let viewModel = iPadPairingViewModel(multipeerManager: multipeerManager)
         return iPadPairingView(viewModel: viewModel)
     }
     

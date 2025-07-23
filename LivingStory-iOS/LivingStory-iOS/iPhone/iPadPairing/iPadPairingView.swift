@@ -14,7 +14,7 @@ struct iPadPairingView: View {
     var body: some View {
         ZStack{
             Image("iPhoneBackground")
-            WifiConnectView()
+            WifiConnectView(viewModel: viewModel)
         }
         
         // MPC가 연결되면 ConnectCheck(체크 표시 SubView) 뜨는 부분 : 로직 구현 필요
@@ -28,6 +28,3 @@ struct iPadPairingView: View {
     }
 }
 
-#Preview{
-    iPadPairingView(viewModel: iPadPairingViewModel())
-}

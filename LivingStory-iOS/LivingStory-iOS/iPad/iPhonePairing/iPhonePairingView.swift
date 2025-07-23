@@ -34,7 +34,7 @@ struct iPhonePairingView: View {
         }
         .onAppear {
             print("iPhonePairingView 생성")
-            viewModel.startAdvertising()
+            viewModel.startBrowsing()
         }
     }
 }

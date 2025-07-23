@@ -14,7 +14,7 @@ struct ConnectListScrollView: View {
         ScrollView{
             if viewModel.discoveredDevices.isEmpty {
                 VStack {
-                    Text("iPhone을 찾고 있습니다...")
+                    Text("iPhone의 연결을 기다리고 있습니다...")
                         .foregroundColor(.gray)
                         .font(.system(size: 12))
                     
