@@ -14,7 +14,7 @@ struct iPhonePairingView: View {
     var body: some View {
         ZStack {
             iPhonePairingBackgroundView()
-            PairingBookView(viewModel: viewModel) // Peer 연결 로직 들어가는 곳
+            PairingBookView(viewModel: viewModel)
             LSBottonButtonStackView(
                 leftaction: {
                     print("페어링 뷰에서 홈으로 이동")
@@ -36,7 +36,6 @@ struct iPhonePairingView: View {
             }
         }
         .onAppear {
-            print("iPhonePairingView 생성")
             viewModel.startSearchingiPhone()
         }
     }

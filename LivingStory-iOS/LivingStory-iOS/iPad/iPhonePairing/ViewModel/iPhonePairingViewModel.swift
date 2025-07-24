@@ -14,42 +14,54 @@ final class iPhonePairingViewModel: ObservableObject {
     
     private let bookType: BookType
     private let multipeerManager: MultipeerManager
-    private var cancellabes = Set<AnyCancellable>()
+    private var iPhoneCancellabes = Set<AnyCancellable>()
     
     @Published var showConnectedAlert = false
     @Published var showNonconnectionAlert = false
     
-    //MARK: 실시간 상태를 위한 프로퍼티 래퍼
-    @Published var currentDiscoveredDevices: [PeerDevice] = []
-    @Published var currentConnectedDevices: [PeerDevice] = []
-    @Published var currentConnectionState: ConnectionState = .disconnected
-    @Published var currentIsConnected: Bool = false
+    @Published var discoveredDevices: [PeerDevice] = []
+    @Published var connectedDevices: [PeerDevice] = []
+    @Published var connectionState: ConnectionState = .disconnected
+    @Published var isConnected: Bool = false
     
     var selectedBook: Book {
         bookType.book
     }
     
-    var connectionState: ConnectionState {
-        multipeerManager.connectionState
-    }
-    
-    var discoveredDevices: [PeerDevice] {
-        multipeerManager.discoveredDevices
-    }
-    
-    var connectedDevice: [PeerDevice] {
-        multipeerManager.connectedDevices
-    }
-    
-    var isConnected: Bool {
-        multipeerManager.isConnected
-    }
-    
-    
+
     init(bookType: BookType, multipeerManager: MultipeerManager) {
         self.bookType = bookType
         self.multipeerManager = multipeerManager
+        setupiPhoneConnectionObserver()
     }
+    
+    private func setupiPhoneConnectionObserver() {
+        multipeerManager.$discoveredDevices
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] devices in
+                self?.discoveredDevices = devices  // ✅ 직접 할당
+            }
+            .store(in: &iPhoneCancellabes)
+        
+        multipeerManager.$connectedDevices
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] devices in
+                self?.connectedDevices = devices  // ✅ 직접 할당
+                self?.isConnected = !devices.isEmpty
+            }
+            .store(in: &iPhoneCancellabes)
+        
+        multipeerManager.$connectionState
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] state in
+                self?.connectionState = state  // ✅ 직접 할당
+                if state == .connected {
+                    self?.showConnectedAlert = true
+                }
+            }
+            .store(in: &iPhoneCancellabes)
+    }
+    
     
     // MARK: - MultipeerConnectivity Actions
     func startSearchingiPhone() {

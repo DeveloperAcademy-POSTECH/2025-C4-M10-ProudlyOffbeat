@@ -18,7 +18,7 @@ struct DisconnectedAlert: View {
                 .fontWeight(.bold)
                 .foregroundColor(.red)
             
-            Text(" 동화 연결이 끊어졌습니다.\n재연결하시겠습니까?")
+            Text("동화 연결이 끊어졌습니다.\n재연결하시겠습니까?")
                 .multilineTextAlignment(.center)
             
             HStack(spacing: 20) {

@@ -13,18 +13,20 @@ extension MultipeerManager: MCSessionDelegate {
         DispatchQueue.main.async {
             switch state {
             case .connected:
+                print("✅ [Session] 연결 성공: \(peerID.displayName)")
                 self.addConnectedDevice(peerID)
-                print("✅ 연결 성공: \(peerID.displayName)")
                 
             case .notConnected:
+                print("❌ [Session] 연결 끊어짐: \(peerID.displayName)")
                 self.removeConnectedDevice(peerID)
                 self.updateOverallConnectionState()
-                print("❌ 연결 끊어짐: \(peerID.displayName)")
                 
             case .connecting:
+                print("🔄 [Session] 연결 중: \(peerID.displayName)")
                 self.connectionState = .connecting
                 
             @unknown default:
+                print("🤔 [Session] 알 수 없는 상태: \(state)")
                 break
             }
         }
@@ -45,7 +47,14 @@ extension MultipeerManager: MCSessionDelegate {
 extension MultipeerManager: MCNearbyServiceAdvertiserDelegate {
     func advertiser(_ advertiser: MCNearbyServiceAdvertiser, didReceiveInvitationFromPeer peerID: MCPeerID, withContext context: Data?, invitationHandler: @escaping (Bool, MCSession?) -> Void) {
         print("📡 연결 요청 받음: \(peerID.displayName)")
-        invitationHandler(true, self.session as MCSession)
+        // ✅ 이미 연결된 기기인지 확인
+        if session.connectedPeers.contains(peerID) {
+            print("⚠️ [iPhone] 이미 연결된 기기입니다: \(peerID.displayName)")
+            invitationHandler(false, nil)  // 거부
+            return
+        }
+        
+        invitationHandler(true, self.session)
     }
     
     func advertiser(_ advertiser: MCNearbyServiceAdvertiser, didNotStartAdvertisingPeer error: Error) {
