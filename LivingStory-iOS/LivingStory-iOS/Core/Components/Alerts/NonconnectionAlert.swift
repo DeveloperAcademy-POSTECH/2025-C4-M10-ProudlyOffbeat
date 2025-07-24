@@ -9,7 +9,6 @@ import SwiftUI
 
 struct NonconnectionAlert: View {
     let onConfirm: () -> Void
-    let onCancel: () -> Void
     
     var body: some View {
         VStack(spacing: 20) {
@@ -21,13 +20,9 @@ struct NonconnectionAlert: View {
             Text("하나의 기기와 연결을 완료해주세요.")
                 .multilineTextAlignment(.center)
             
-            HStack(spacing: 20) {
-                Button("취소") { onCancel() }
-                    .buttonStyle(.bordered)
-                
-                Button("확인") { onConfirm() }
-                    .buttonStyle(.borderedProminent)
-            }
+            
+            Button("확인") { onConfirm() }
+                .buttonStyle(.borderedProminent)
         }
         .padding(24)
         .frame(maxWidth:300)
@@ -38,5 +33,5 @@ struct NonconnectionAlert: View {
 }
 
 #Preview {
-    NonconnectionAlert( onConfirm: {}, onCancel: {} )
+    NonconnectionAlert( onConfirm: {} )
 }

@@ -25,11 +25,19 @@ enum ConnectionState {
     }
 }
 
+enum PeerConnectionStatus {
+    case discoverd
+    case connecting
+    case connected
+    case disconnected
+}
+
 // MARK: - Peer Device
 struct PeerDevice: Identifiable, Hashable {
     let id = UUID()
     let mcPeerID: MCPeerID
     let discoveredAt: Date
+    var eachDeviceConnectionState: PeerConnectionStatus = .discoverd
         
     static func == (lhs: PeerDevice, rhs: PeerDevice) -> Bool {
         lhs.mcPeerID == rhs.mcPeerID

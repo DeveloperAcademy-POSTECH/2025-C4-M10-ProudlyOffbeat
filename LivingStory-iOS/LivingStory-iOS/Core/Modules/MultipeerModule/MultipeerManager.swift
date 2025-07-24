@@ -15,15 +15,18 @@ final class MultipeerManager: NSObject, ObservableObject {
     // MARK: - Published States (뷰에서 실시간 감지)
     @Published internal var connectionState: ConnectionState = .disconnected
     @Published internal var discoveredDevices: [PeerDevice] = []
-    @Published internal var connectedDevice: PeerDevice?
+    @Published internal var connectedDevices: [PeerDevice] = []
+    
     
     // MARK: - Core Components
     private(set) var session: MCSession
     private var advertiser: MCNearbyServiceAdvertiser?
     private var browser: MCNearbyServiceBrowser?
-    private var reconnectionTimer: Timer?
-    internal var reconnectionAttempts = 0
-    internal let maxReconnectionAttempts = 3
+    
+    // 총 연결된 디바이스 수
+    var connectedDeviceCount: Int {
+        return connectedDevices.count
+    }
     
     private override init() {
         let peerID = MCPeerID(displayName: UIDevice.current.name)
@@ -32,16 +35,49 @@ final class MultipeerManager: NSObject, ObservableObject {
         session.delegate = self
     }
     
-    /// iPad에서 광고 시작
-    func startAdvertising() {
-        advertiser = MCNearbyServiceAdvertiser(peer: session.myPeerID, discoveryInfo: nil, serviceType: "living-story")
-        advertiser?.delegate = self
-        advertiser?.startAdvertisingPeer()
-        connectionState = .advertising
-        print("📡 iPad 광고 시작")
+    //MARK: 개별 연결 관리
+    
+    /// 특정 기기가 연결되어 있는지 확인
+    func isDeviceConnected(_ peerID: MCPeerID) -> Bool {
+        return connectedDevices.contains { $0.mcPeerID == peerID }
     }
     
-    /// iPhone에서 검색 시작
+    /// 특정 기기를 연결된 목록에 추가
+    public func addConnectedDevice(_ peerID: MCPeerID) {
+        let device = PeerDevice(mcPeerID: peerID, discoveredAt: Date(), eachDeviceConnectionState: .connected)
+        
+        DispatchQueue.main.async {
+            if !self.connectedDevices.contains(where: { $0.mcPeerID == peerID }) {
+                self.connectedDevices.append(device)
+                print("연결된 기기 추가: \(peerID.displayName) (총 \(self.connectedDevices.count)개")
+            }
+            self.updateOverallConnectionState()
+        }
+    }
+    
+    /// 특정 기기를 연결된 목록에서 제거
+    public func removeConnectedDevice(_ peerID: MCPeerID) {
+        DispatchQueue.main.async {
+            if let index = self.connectedDevices.firstIndex(where: { $0.mcPeerID == peerID }) {
+                let removeDevice = self.connectedDevices.remove(at: index)
+                print("❌ 연결된 기기 제거: \(peerID.displayName) (남은 \(self.connectedDevices.count) 개")
+            }
+            
+        }
+    }
+    
+    /// 전체 연결 상태 업데이트
+    public func updateOverallConnectionState() {
+        if connectedDevices.isEmpty {
+            connectionState = discoveredDevices.isEmpty ? .disconnected : .deviceFound
+        } else {
+            connectionState = .connected
+        }
+    }
+    
+    // MARK: iPad
+    
+    /// iPad에서 iPhone 검색
     func startBrowsing() {
         browser = MCNearbyServiceBrowser(peer: session.myPeerID, serviceType: "living-story")
         browser?.delegate = self
@@ -50,47 +86,48 @@ final class MultipeerManager: NSObject, ObservableObject {
         print("🔍 기기 검색 시작")
     }
     
-    /// 기기에 연결 시도
+    /// iPad에서 iPhone으로 연결 시도
     func connectTo(_ peerID: MCPeerID) {
         connectionState = .connecting
         browser?.invitePeer(peerID, to: session, withContext: nil, timeout: 10)
         print("🔄 연결 시도: \(peerID.displayName)")
     }
     
-    /// 재연결 시도
-    func attemptReconnection() {
-        guard let lastPeer = connectedDevice,
-              reconnectionAttempts < maxReconnectionAttempts else {
-            connectionState = .disconnected
-            return
-        }
-        
-        reconnectionAttempts += 1
-        connectionState = .reconnecting
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) { [weak self] in
-            self?.startBrowsing()
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-                self?.connectTo(lastPeer.mcPeerID)
-            }
-        }
-        print("🔄 재연결 시도 \(reconnectionAttempts)/\(maxReconnectionAttempts)")
+    /// iPad: 특정 iPhone과 연결 해제
+    func iPadDisconnectiPhone(_ peerID: MCPeerID) {
+        session.cancelConnectPeer(peerID)
+        removeConnectedDevice(peerID)
+        print("🔌 개별 기기 연결 해제: \(peerID.displayName)")
     }
     
-    /// 모든 연결 종료
-    func disconnect() {
+    // MARK: iPhone
+    
+    /// iPhone에서 광고 시작
+    func startAdvertising() {
+        advertiser = MCNearbyServiceAdvertiser(peer: session.myPeerID, discoveryInfo: nil, serviceType: "living-story")
+        advertiser?.delegate = self
+        advertiser?.startAdvertisingPeer()
+        connectionState = .advertising
+        print("📡 iPad 광고 시작")
+    }
+    
+    /// iPhone 자기자신만 연결 해제
+    func iPhoneDisconnectSelf() {
+        let deviceName = session.myPeerID.displayName
+        print("\(deviceName)가 연결 해제 요청 - 광고 중단")
+        
         advertiser?.stopAdvertisingPeer()
-        browser?.stopBrowsingForPeers()
-        session.disconnect()
+        advertiser = nil
         
-        connectionState = .disconnected
-        connectedDevice = nil
-        discoveredDevices.removeAll()
-        reconnectionAttempts = 0
-        print("🔌 연결 종료")
+        DispatchQueue.main.async {
+            self.connectionState = .disconnected
+        }
+        
     }
     
-    /// 간단한 메시지 전송
+    //MARK: 메세지 전송
+    
+    /// 특정 기기에게만 메세지 전송
     func sendMessage(_ message: String) {
         guard !session.connectedPeers.isEmpty else { return }
         

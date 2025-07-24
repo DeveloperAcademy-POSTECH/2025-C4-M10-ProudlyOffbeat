@@ -13,17 +13,20 @@ final class iPadPairingViewModel: ObservableObject {
     private let multipeerManager: MultipeerManager
     private var cancellables = Set<AnyCancellable>()
     
-    @Published var isBrowsing = false
+    @Published var isAdvertising = false
     @Published var isConnected = false
+    @Published var showConnectedAlert = false
     
     init(multipeerManager: MultipeerManager) {
         self.multipeerManager = multipeerManager
-        setupConnectionObserver()
+        self.setupConnectionObserver()
     }
     
+    // iPad를 의미
     var connectedDevice: PeerDevice? {
-        multipeerManager.connectedDevice
+        multipeerManager.connectedDevices.first
     }
+    
     
     var connectedDeviceName: String {
         if let device = connectedDevice {
@@ -40,15 +43,17 @@ final class iPadPairingViewModel: ObservableObject {
                 switch state {
                 case .connected:
                     self?.isConnected = true
-                    self?.isBrowsing = false
+                    self?.isAdvertising = false
                     // 로그출력
                     self?.logConnectedDevice()
-                case .browsing:
-                    self?.isBrowsing = true
+                    self?.showConnectedAlert = true
+                case .advertising:
+                    self?.isAdvertising = true
+                    self?.isConnected = false
                 case .disconnected:
                     self?.isConnected = false
-                    self?.isBrowsing = false
-                    print("연결이 끊어졌습니다.")
+                    self?.isAdvertising = false
+                    print("[iPhone \(UIDevice.current.name)] iPad와의 연결이 끊어졌습니다.")
                 default:
                     break
                 }
@@ -58,7 +63,7 @@ final class iPadPairingViewModel: ObservableObject {
     
     private func logConnectedDevice() {
         if let device = connectedDevice {
-            print("🎉 연결 완료!")
+            print("🎉 iPad와 연결 완료!")
             print("📱 연결된 디바이스: \(device.mcPeerID.displayName)")
             print("🔗 연결 상태: \(multipeerManager.connectionState.message)")
         }
@@ -66,37 +71,33 @@ final class iPadPairingViewModel: ObservableObject {
     
     func handleConnectionButtonAction() {
         if isConnected {
+            // 연결 취소 자신만 연결 해제
             disconnect()
-        } else {
-            toggleBrowsing()
-        }
-    }
-    
-    func toggleBrowsing() {
-        if isBrowsing {
-            stopBrowsing()
+        } else if isAdvertising {
+            // 연결중 advertising
+            stopAdvertising()
         } else {
             startAdvertising()
         }
     }
     
     private func startAdvertising() {
-        print("iPhone에서 iPad 검색 시작")
+        print("iPhone에서 iPad 광고 시작")
         multipeerManager.startAdvertising()
-        isBrowsing = true
     }
     
-    private func stopBrowsing() {
-        print("iPhone에서 iPad 검색 중단")
-        multipeerManager.disconnect()
-        isBrowsing = false
+    private func stopAdvertising() {
+        print("iPhone에서 iPad 광고 중단")
+        multipeerManager.iPhoneDisconnectSelf()
     }
     
     private func disconnect() {
-        print("연결 해제")
-        multipeerManager.disconnect()
-        isConnected = false
-        isBrowsing = false
+        print("iPhone 연결 해제")
+        multipeerManager.iPhoneDisconnectSelf()
+    }
+    
+    func dismissConnectAlert() {
+        showConnectedAlert = false
     }
     
 }

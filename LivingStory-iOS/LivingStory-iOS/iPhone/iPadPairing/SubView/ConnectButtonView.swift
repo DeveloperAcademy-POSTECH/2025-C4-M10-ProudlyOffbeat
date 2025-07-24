@@ -15,7 +15,7 @@ struct ConnectButtonView: View {
     private var iPadConnectionButtonText: String {
         if viewModel.isConnected {
             return "연결취소"
-        } else if viewModel.isBrowsing {
+        } else if viewModel.isAdvertising {
             return "연결중"
         } else {
             return "연결하기"
@@ -25,7 +25,7 @@ struct ConnectButtonView: View {
     private var iPadConnectionButtonColor: Color {
         if viewModel.isConnected {
             return .red
-        } else if viewModel.isBrowsing {
+        } else if viewModel.isAdvertising {
             return .gray
         } else {
             return .lsPrimary

@@ -21,20 +21,23 @@ struct iPhonePairingView: View {
                     viewModel.goBackToLibrary(coordinator: coordinator)
                 },
                 rightaction: {
-                    if viewModel.isConnected {
-                        viewModel.onNextButtonTapped(coordinator: coordinator)
-                    } else {
-                        NonconnectionAlert(
-                            onConfirm: {},
-                            onCancel: {} )
-                    }
+                    viewModel.onNextButtonTapped(coordinator: coordinator)
                 }
             )
-            //iPadFairyTaleView로 아직 factory 구현 안됐음
+            if viewModel.showNonconnectionAlert {
+                Color.black.opacity(0.5)
+                    .ignoresSafeArea()
+                
+                NonconnectionAlert(
+                    onConfirm: {
+                        viewModel.dismissNonconnectionAlert()
+                    }
+                )
+            }
         }
         .onAppear {
             print("iPhonePairingView 생성")
-            viewModel.startBrowsing()
+            viewModel.startSearchingiPhone()
         }
     }
 }

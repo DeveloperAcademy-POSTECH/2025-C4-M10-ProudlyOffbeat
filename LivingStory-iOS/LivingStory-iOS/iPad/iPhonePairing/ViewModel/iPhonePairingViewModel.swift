@@ -7,15 +7,23 @@
 
 import SwiftUI
 import MultipeerConnectivity
+import Combine
 
 
 final class iPhonePairingViewModel: ObservableObject {
     
     private let bookType: BookType
     private let multipeerManager: MultipeerManager
+    private var cancellabes = Set<AnyCancellable>()
     
     @Published var showConnectedAlert = false
     @Published var showNonconnectionAlert = false
+    
+    //MARK: 실시간 상태를 위한 프로퍼티 래퍼
+    @Published var currentDiscoveredDevices: [PeerDevice] = []
+    @Published var currentConnectedDevices: [PeerDevice] = []
+    @Published var currentConnectionState: ConnectionState = .disconnected
+    @Published var currentIsConnected: Bool = false
     
     var selectedBook: Book {
         bookType.book
@@ -29,8 +37,8 @@ final class iPhonePairingViewModel: ObservableObject {
         multipeerManager.discoveredDevices
     }
     
-    var connectedDevice: PeerDevice? {
-        multipeerManager.connectedDevice
+    var connectedDevice: [PeerDevice] {
+        multipeerManager.connectedDevices
     }
     
     var isConnected: Bool {
@@ -44,10 +52,11 @@ final class iPhonePairingViewModel: ObservableObject {
     }
     
     // MARK: - MultipeerConnectivity Actions
-    func startBrowsing() {
+    func startSearchingiPhone() {
         print("iPad에서 iPhone 검색 시작 - \(selectedBook.title)")
         multipeerManager.startBrowsing()
     }
+    
     
     func sendConnectionToiPhone(to peerID: MCPeerID) {
         multipeerManager.connectTo(peerID)

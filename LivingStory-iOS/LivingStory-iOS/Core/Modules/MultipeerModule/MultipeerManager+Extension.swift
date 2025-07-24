@@ -10,26 +10,20 @@ import MultipeerConnectivity
 // MARK: - MCSession Delegate
 extension MultipeerManager: MCSessionDelegate {
     func session(_ session: MCSession, peer peerID: MCPeerID, didChange state: MCSessionState) {
-        let peerDevice = PeerDevice(mcPeerID: peerID, discoveredAt: Date())
-        
         DispatchQueue.main.async {
             switch state {
             case .connected:
-                self.connectedDevice = peerDevice
-                self.connectionState = .connected
-                self.reconnectionAttempts = 0
+                self.addConnectedDevice(peerID)
                 print("✅ 연결 성공: \(peerID.displayName)")
+                
             case .notConnected:
-                self.connectedDevice = nil
-                self.connectionState = .disconnected
+                self.removeConnectedDevice(peerID)
+                self.updateOverallConnectionState()
                 print("❌ 연결 끊어짐: \(peerID.displayName)")
                 
-                // 자동 재연결 시작
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-                    self.attemptReconnection()
-                }
             case .connecting:
                 self.connectionState = .connecting
+                
             @unknown default:
                 break
             }

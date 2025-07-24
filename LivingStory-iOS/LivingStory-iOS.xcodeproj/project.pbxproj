@@ -60,6 +60,7 @@
 		D552B4B72E29F75D00519860 /* MultipeerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D552B4B62E29F75800519860 /* MultipeerManager.swift */; };
 		D564C43B2E27A50E00A50B49 /* LivingStory_iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D564C4382E27A50E00A50B49 /* LivingStory_iOSApp.swift */; };
 		D564C43C2E27A50E00A50B49 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D564C4362E27A50E00A50B49 /* Assets.xcassets */; };
+		D5CA2DB22E31D8EA0022C4BB /* FromiPadConnectedAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5CA2DB12E31D8D60022C4BB /* FromiPadConnectedAlert.swift */; };
 		D5EBC2822E2FDB9C006A8782 /* BookType+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5EBC2812E2FDB90006A8782 /* BookType+Extension.swift */; };
 		D5EBC2892E2FEE1D006A8782 /* ConnectedAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5EBC2882E2FEE0F006A8782 /* ConnectedAlert.swift */; };
 		D5EBC28B2E2FEE3A006A8782 /* DisconnectedAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5EBC28A2E2FEE33006A8782 /* DisconnectedAlert.swift */; };
@@ -138,6 +139,7 @@
 		D564C4362E27A50E00A50B49 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D564C4382E27A50E00A50B49 /* LivingStory_iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LivingStory_iOSApp.swift; sourceTree = "<group>"; };
 		D564C4A32E27CBF200A50B49 /* HomeKitModule.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = HomeKitModule.xcodeproj; path = /Users/demianyoo/Documents/GitHub/HomeKit/HomeKitModule.xcodeproj; sourceTree = "<absolute>"; };
+		D5CA2DB12E31D8D60022C4BB /* FromiPadConnectedAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FromiPadConnectedAlert.swift; sourceTree = "<group>"; };
 		D5EBC2812E2FDB90006A8782 /* BookType+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BookType+Extension.swift"; sourceTree = "<group>"; };
 		D5EBC2882E2FEE0F006A8782 /* ConnectedAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectedAlert.swift; sourceTree = "<group>"; };
 		D5EBC28A2E2FEE33006A8782 /* DisconnectedAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisconnectedAlert.swift; sourceTree = "<group>"; };
@@ -510,6 +512,7 @@
 		D5EBC2842E2FEDAA006A8782 /* Alerts */ = {
 			isa = PBXGroup;
 			children = (
+				D5CA2DB12E31D8D60022C4BB /* FromiPadConnectedAlert.swift */,
 				D5EBC28E2E2FF930006A8782 /* NonconnectionAlert.swift */,
 				D5EBC28A2E2FEE33006A8782 /* DisconnectedAlert.swift */,
 				D5EBC2882E2FEE0F006A8782 /* ConnectedAlert.swift */,
@@ -601,6 +604,7 @@
 				052F269F2E2E5BDC00E86FA2 /* ConnectImageView.swift in Sources */,
 				A15FAE982E2CDA1800468F16 /* iPadFairyTaleViewModel.swift in Sources */,
 				A19ADCAE2E2E7D9A007BBF05 /* iPhoneNoticeTextView.swift in Sources */,
+				D5CA2DB22E31D8EA0022C4BB /* FromiPadConnectedAlert.swift in Sources */,
 				A15FAEA32E2D021100468F16 /* FairyTaleModel.swift in Sources */,
 				A1D487FB2E29484100F70879 /* iPhonePairingBackgroundView.swift in Sources */,
 				A19ADCB72E2E8205007BBF05 /* ConncetLeftPageView.swift in Sources */,
