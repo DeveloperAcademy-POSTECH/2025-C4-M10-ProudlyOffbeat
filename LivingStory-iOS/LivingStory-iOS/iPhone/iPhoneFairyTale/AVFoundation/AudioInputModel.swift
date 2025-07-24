@@ -10,7 +10,7 @@ import AVFoundation
 class AudioInputModel: ObservableObject {
     private var audioRecorder: AVAudioRecorder?
     private var timer: Timer?
-    private let threshold: Float = -16.0 // 바람 인식 기준
+    private let threshold: Float = -10.0 // 바람 인식 기준
 
     @Published var isBlowingDetected = false
 
