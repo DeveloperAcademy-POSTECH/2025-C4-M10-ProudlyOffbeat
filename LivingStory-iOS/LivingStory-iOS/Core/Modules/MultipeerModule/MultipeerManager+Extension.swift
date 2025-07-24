@@ -10,27 +10,24 @@ import MultipeerConnectivity
 // MARK: - MCSession Delegate
 extension MultipeerManager: MCSessionDelegate {
     func session(_ session: MCSession, peer peerID: MCPeerID, didChange state: MCSessionState) {
-        let peerDevice = PeerDevice(mcPeerID: peerID, discoveredAt: Date())
-        
         DispatchQueue.main.async {
             switch state {
             case .connected:
-                self.connectedDevice = peerDevice
+                print("✅ [Session] 연결 성공: \(peerID.displayName)")
+                self.addConnectedDevice(peerID)
                 self.connectionState = .connected
-                self.reconnectionAttempts = 0
-                print("✅ 연결 성공: \(peerID.displayName)")
-            case .notConnected:
-                self.connectedDevice = nil
-                self.connectionState = .disconnected
-                print("❌ 연결 끊어짐: \(peerID.displayName)")
                 
-                // 자동 재연결 시작
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-                    self.attemptReconnection()
-                }
+            case .notConnected:
+                print("❌ [Session] 연결 끊어짐: \(peerID.displayName)")
+                self.removeConnectedDevice(peerID)
+                self.updateOverallConnectionState()
+                
             case .connecting:
+                print("🔄 [Session] 연결 중: \(peerID.displayName)")
                 self.connectionState = .connecting
+                
             @unknown default:
+                print("🤔 [Session] 알 수 없는 상태: \(state)")
                 break
             }
         }
@@ -39,6 +36,13 @@ extension MultipeerManager: MCSessionDelegate {
     func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID) {
         if let message = String(data: data, encoding: .utf8) {
             print("📨 메시지 수신: \(message) from \(peerID.displayName)")
+            // ✅ iPad로부터 연결 해제 요청을 받으면 자체 연결 해제
+            if message == "DISCONNECT_REQUEST" {
+                print("🔌 [iPhone] iPad로부터 연결 해제 요청 수신 - 자체 연결 해제 실행")
+                DispatchQueue.main.async {
+                    self.iPhoneDisconnectSelf()
+                }
+            }
         }
     }
     
@@ -51,7 +55,14 @@ extension MultipeerManager: MCSessionDelegate {
 extension MultipeerManager: MCNearbyServiceAdvertiserDelegate {
     func advertiser(_ advertiser: MCNearbyServiceAdvertiser, didReceiveInvitationFromPeer peerID: MCPeerID, withContext context: Data?, invitationHandler: @escaping (Bool, MCSession?) -> Void) {
         print("📡 연결 요청 받음: \(peerID.displayName)")
-        invitationHandler(true, self.session as MCSession)
+        // ✅ 이미 연결된 기기인지 확인
+        if session.connectedPeers.contains(peerID) {
+            print("⚠️ [iPhone] 이미 연결된 기기입니다: \(peerID.displayName)")
+            invitationHandler(false, nil)  // 거부
+            return
+        }
+        
+        invitationHandler(true, self.session)
     }
     
     func advertiser(_ advertiser: MCNearbyServiceAdvertiser, didNotStartAdvertisingPeer error: Error) {

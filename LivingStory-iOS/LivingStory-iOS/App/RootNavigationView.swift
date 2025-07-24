@@ -10,6 +10,7 @@ import SwiftUI
 struct RootNavigationView: View {
     @EnvironmentObject private var coordinator: AppCoordinator
     @EnvironmentObject private var deviceInfo: DeviceInfo
+    
     private let factory: FactoryProtocol
     
     
@@ -40,8 +41,11 @@ struct RootNavigationView: View {
                 case .iPadLibrary:
                     factory.makeHomeLibraryView()
                     
-                case .iPhonePairing:
-                    factory.makeiPhonePairingView(book: .pig)
+                case .iPhonePairing(let book):
+                    factory.makeiPhonePairingView(book: book)
+                
+                case .iPadFairyTale(let book):
+                    factory.makeiPadFairyTaleView(book: book)
                     
                     // iPhone
                 case .iPadPairing:

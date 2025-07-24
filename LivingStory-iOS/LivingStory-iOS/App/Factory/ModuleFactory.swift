@@ -12,6 +12,7 @@ protocol FactoryProtocol {
     func makeIntroViewForiPad() -> iPadIntroView
     func makeHomeLibraryView() -> HomeLibraryView
     func makeiPhonePairingView(book: BookType) -> iPhonePairingView
+    func makeiPadFairyTaleView(book: BookType) -> iPadFairyTaleView
     
     //MARK: 아이폰
     func makeIntroViewForiPhone() -> iPhoneIntroView
@@ -19,7 +20,11 @@ protocol FactoryProtocol {
 }
 
 final class ModuleFactory: FactoryProtocol {
+
     static let shared = ModuleFactory()
+    
+    private let multipeerManager = MultipeerManager.shared
+    
     private init() {}
     
     //MARK: 아이패드 함수 구현부
@@ -34,8 +39,13 @@ final class ModuleFactory: FactoryProtocol {
     }
     
     func makeiPhonePairingView(book: BookType) -> iPhonePairingView {
-        let viewModel = iPhonePairingViewModel()
-        return iPhonePairingView(viewModel: viewModel, book: book)
+        let viewModel = iPhonePairingViewModel(bookType: book, multipeerManager: multipeerManager)
+        return iPhonePairingView(viewModel: viewModel)
+    }
+    
+    func makeiPadFairyTaleView(book: BookType) -> iPadFairyTaleView {
+        let viewModel = iPadFairyTaleViewModel(bookType: book)
+        return iPadFairyTaleView(viewModel: viewModel)
     }
     
     //MARK: 아이폰 함수 구현부
@@ -46,7 +56,7 @@ final class ModuleFactory: FactoryProtocol {
     }
     
     func makeiPadPairingView() -> iPadPairingView {
-        let viewModel = iPadPairingViewModel()
+        let viewModel = iPadPairingViewModel(multipeerManager: multipeerManager)
         return iPadPairingView(viewModel: viewModel)
     }
     
