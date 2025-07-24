@@ -30,6 +30,7 @@
 		A17BF6A12E312B26006783D1 /* FairyTaleEnddingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17BF6A02E312B1B006783D1 /* FairyTaleEnddingView.swift */; };
 		A17BF6ED2E31C3B2006783D1 /* HomeKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17BF6EC2E31C3AB006783D1 /* HomeKitManager.swift */; };
 		A17BF6F12E31C3D2006783D1 /* HomeKitMultipeer+Extexnsion.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17BF6F02E31C3CD006783D1 /* HomeKitMultipeer+Extexnsion.swift */; };
+		A17BF6F32E3231A4006783D1 /* HomeKitModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17BF6F22E32319D006783D1 /* HomeKitModels.swift */; };
 		A19ADCA22E2E17B3007BBF05 /* BinggraeSamanco-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A19ADCA12E2E17B3007BBF05 /* BinggraeSamanco-Bold.ttf */; };
 		A19ADCA42E2E17BB007BBF05 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19ADCA32E2E17B9007BBF05 /* Fonts.swift */; };
 		A19ADCAE2E2E7D9A007BBF05 /* iPhoneNoticeTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19ADCAD2E2E7D8D007BBF05 /* iPhoneNoticeTextView.swift */; };
@@ -104,6 +105,7 @@
 		A17BF6A02E312B1B006783D1 /* FairyTaleEnddingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FairyTaleEnddingView.swift; sourceTree = "<group>"; };
 		A17BF6EC2E31C3AB006783D1 /* HomeKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeKitManager.swift; sourceTree = "<group>"; };
 		A17BF6F02E31C3CD006783D1 /* HomeKitMultipeer+Extexnsion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeKitMultipeer+Extexnsion.swift"; sourceTree = "<group>"; };
+		A17BF6F22E32319D006783D1 /* HomeKitModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeKitModels.swift; sourceTree = "<group>"; };
 		A19ADCA12E2E17B3007BBF05 /* BinggraeSamanco-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BinggraeSamanco-Bold.ttf"; sourceTree = "<group>"; };
 		A19ADCA32E2E17B9007BBF05 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		A19ADCA52E2E17FA007BBF05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -243,6 +245,7 @@
 		A17BF6E92E31C314006783D1 /* HomeKitModule */ = {
 			isa = PBXGroup;
 			children = (
+				A17BF6F22E32319D006783D1 /* HomeKitModels.swift */,
 				A17BF6F02E31C3CD006783D1 /* HomeKitMultipeer+Extexnsion.swift */,
 				A17BF6EC2E31C3AB006783D1 /* HomeKitManager.swift */,
 			);
@@ -630,6 +633,7 @@
 				D536102B2E280B92001E15B2 /* HomeLibraryViewModel.swift in Sources */,
 				A17BF69F2E3128BB006783D1 /* FairyTaleLastPageButtonView.swift in Sources */,
 				A1D706262E28DB60008694A8 /* HomeBackgroundView.swift in Sources */,
+				A17BF6F32E3231A4006783D1 /* HomeKitModels.swift in Sources */,
 				A12BB7F62E2F3D7200D58DBA /* LSRightButtonView.swift in Sources */,
 				A17BF6A12E312B26006783D1 /* FairyTaleEnddingView.swift in Sources */,
 				A19ADCA42E2E17BB007BBF05 /* Fonts.swift in Sources */,
@@ -784,7 +788,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 9S8SHSW95K;
+				DEVELOPMENT_TEAM = 8FKM9FB4PH;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "LivingStory-iOS/Info.plist";
@@ -819,7 +823,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 9S8SHSW95K;
+				DEVELOPMENT_TEAM = 8FKM9FB4PH;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "LivingStory-iOS/Info.plist";
