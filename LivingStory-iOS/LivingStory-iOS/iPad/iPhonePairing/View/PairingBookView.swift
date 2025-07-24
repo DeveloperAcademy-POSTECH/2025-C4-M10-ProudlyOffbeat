@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct PairingBookView: View {
-    let action: () -> Void
+    @ObservedObject var viewModel: iPhonePairingViewModel
     
     var body: some View {
         ZStack{
@@ -20,7 +20,7 @@ struct PairingBookView: View {
                 ConncetLeftPageView()
                     .padding(.leading, 73)
                 Spacer()
-                ConnectRightPageView(action: action)
+                ConnectRightPageView(viewModel: viewModel)
             }
         }.frame(width: 874, height: 644)
             
@@ -28,5 +28,5 @@ struct PairingBookView: View {
 }
 
 #Preview {
-    PairingBookView(action: {})
+    PairingBookView(viewModel: iPhonePairingViewModel(bookType: .pig, multipeerManager: MultipeerManager.shared))
 }

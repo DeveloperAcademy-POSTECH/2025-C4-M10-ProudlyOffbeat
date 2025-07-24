@@ -9,15 +9,11 @@ import SwiftUI
 
 struct iPhoneFairtailView: View {
     @EnvironmentObject var coordinator: AppCoordinator
-    //@ObservedObject var viewModel: iPadPairingViewModel 
+    @ObservedObject var viewModel: iPadPairingViewModel
     
     var body: some View {
         VStack{
-            FairyTaleStatusView()
+            FairyTaleStatusView(viewModel: viewModel)
         }
     }
-}
-
-#Preview {
-    iPhoneFairtailView()
 }

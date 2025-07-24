@@ -8,10 +8,7 @@
 import SwiftUI
 
 struct ConnectListView: View {
-    let peerList:[Peer] = [Peer(deviceId: "Echo's iPhone"),Peer(deviceId: "Ito's iPhone")]
-    // 광고중인 아이폰 List
-    
-    let action:() -> Void
+    @ObservedObject var viewModel: iPhonePairingViewModel
     
     var body: some View {
         ZStack{
@@ -19,12 +16,7 @@ struct ConnectListView: View {
             GeometryReader{ geometry in
                 VStack{
                     FindYouriPhoneTextView()
-                    ScrollView{
-                        ForEach(peerList, id: \.deviceId){ peer in
-                            ConnectCellView(deviceId: peer.deviceId, action: action)
-                                .padding(.horizontal, 20)
-                        }
-                    }.padding(.top)
+                    ConnectListScrollView(viewModel: viewModel)
                 }
             }
             
@@ -33,5 +25,5 @@ struct ConnectListView: View {
 }
 
 #Preview {
-    ConnectListView(action: {})
+    ConnectListView(viewModel: iPhonePairingViewModel(bookType: .pig, multipeerManager: MultipeerManager.shared))
 }

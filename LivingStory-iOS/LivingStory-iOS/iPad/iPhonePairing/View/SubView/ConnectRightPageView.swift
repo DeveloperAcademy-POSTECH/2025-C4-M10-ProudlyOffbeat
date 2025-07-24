@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct ConnectRightPageView: View {
-    let action: () -> Void
+    @ObservedObject var viewModel: iPhonePairingViewModel
+    
     var body: some View {
         VStack{
             Spacer()
@@ -16,8 +17,12 @@ struct ConnectRightPageView: View {
                 .font(LSFont.iPhoneConnectFont)
                 .padding(.top, 40)
             Spacer()
-            ConnectListView(action: action)
+            ConnectListView(viewModel: viewModel)
             Spacer()
         }.padding(.trailing, 78)
     }
+}
+
+#Preview {
+    ConnectRightPageView(viewModel: iPhonePairingViewModel(bookType: .pig, multipeerManager: MultipeerManager.shared))
 }

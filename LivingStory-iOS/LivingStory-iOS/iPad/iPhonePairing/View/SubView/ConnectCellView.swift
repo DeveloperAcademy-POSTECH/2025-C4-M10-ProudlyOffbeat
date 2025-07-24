@@ -7,20 +7,32 @@
 import SwiftUI
 
 struct ConnectCellView: View {
-    let deviceId: String
-    let action:() -> Void
+    let device: PeerDevice
+    @ObservedObject var viewModel: iPhonePairingViewModel
+    
+    private var isConnected: Bool {
+        viewModel.connectedDevices.contains { $0.mcPeerID == device.mcPeerID }
+    }
+    
+    private var onConnect: () -> Void {
+        { viewModel.sendConnectionToiPhone(to: device.mcPeerID) }
+    }
+    
+    private var onDisconnect: () -> Void {
+        { viewModel.disconnectiPhone(device.mcPeerID) }
+    }
     
     var body: some View {
         HStack{
-            Text(deviceId)
+            Text(device.mcPeerID.displayName)
                 .font(.system(size: 11))
                 .padding(10)
             Spacer()
-            PeerConnectButtonView(action: action)
+            PeerConnectButtonView(
+                isConnected: isConnected,
+                action: isConnected ? onDisconnect : onConnect
+            )
         }.background(Color.white.cornerRadius(5))
     }
 }
 
-#Preview{
-    ConnectCellView(deviceId: "Echo's iPhone", action: {})
-}
