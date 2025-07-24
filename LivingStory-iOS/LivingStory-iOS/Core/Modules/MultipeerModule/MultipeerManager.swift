@@ -64,7 +64,7 @@ final class MultipeerManager: NSObject, ObservableObject {
                 let removeDevice = self.connectedDevices.remove(at: index)
                 print("❌ 연결된 기기 제거: \(peerID.displayName) (남은 \(self.connectedDevices.count) 개")
             }
-            
+            self.updateOverallConnectionState()
         }
     }
     
@@ -97,9 +97,21 @@ final class MultipeerManager: NSObject, ObservableObject {
     
     /// iPad: 특정 iPhone과 연결 해제
     func iPadDisconnectiPhone(_ peerID: MCPeerID) {
-        session.cancelConnectPeer(peerID)
+        let disconnectMessage = "DISCONNECT_REQUEST"
+        if let data = disconnectMessage.data(using: .utf8) {
+            do {
+                try session.send(data, toPeers: [peerID], with: .reliable)
+                print("📤 [iPad] \(peerID.displayName)에게 연결 해제 요청 전송")
+            } catch {
+                print("❌ [iPad] 연결 해제 메시지 전송 실패: \(error)")
+            }
+        }
+        
+        // ✅ 2. 로컬에서 즉시 제거 (UI 반응성을 위해)
         removeConnectedDevice(peerID)
-        print("🔌 개별 기기 연결 해제: \(peerID.displayName)")
+        updateOverallConnectionState()
+        
+        print("🔌 개별 기기 연결 해제 요청: \(peerID.displayName)")
     }
     
     // MARK: iPhone
@@ -191,6 +203,7 @@ final class MultipeerManager: NSObject, ObservableObject {
         case "iPad13,1", "iPad13,2": return "iPad Air 5"
         case "iPad14,1", "iPad14,2": return "iPad Pro 11"
         case "iPad14,3", "iPad14,4": return "iPad Pro 12.9"
+        case "iPad16,3": return "iPad Pro 11"
             
             // 시뮬레이터나 알 수 없는 기기
         case let identifier where identifier.contains("86") || identifier.contains("arm64"):

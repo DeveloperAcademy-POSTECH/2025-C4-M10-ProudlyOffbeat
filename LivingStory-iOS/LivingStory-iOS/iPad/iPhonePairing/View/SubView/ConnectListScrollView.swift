@@ -26,10 +26,8 @@ struct ConnectListScrollView: View {
             } else {
                 ForEach(viewModel.discoveredDevices, id: \.id) { device in
                     ConnectCellView(
-                        deviceId: device.mcPeerID.displayName,
-                        action: {
-                            viewModel.sendConnectionToiPhone(to: device.mcPeerID)
-                        }
+                        device: device,
+                        viewModel: viewModel
                     )
                     .padding(.horizontal, 20)
                     .transition(.opacity.combined(with: .scale))

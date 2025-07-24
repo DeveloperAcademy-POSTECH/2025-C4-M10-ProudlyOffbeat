@@ -56,23 +56,28 @@ final class iPadPairingViewModel: ObservableObject {
                     print("❌ [\(self.multipeerManager.session.myPeerID.displayName)] 연결 해제됨")
                 }
                 
+                // 연결되면 광고 중단
+                if isCurrentlyConnected {
+                    self.isAdvertising = false
+                }
+                
                 // 상태 업데이트
                 self.isConnected = isCurrentlyConnected
                 self.wasConnectedBefore = isCurrentlyConnected
             }
             .store(in: &iPadCancellables)
         
-        // ✅ connectionState 관찰에서는 advertising만 처리
+        // connectionState 관찰에서는 advertising만 처리
         multipeerManager.$connectionState
             .receive(on: DispatchQueue.main)
             .sink { [weak self] state in
                 switch state {
                 case .advertising:
                     self?.isAdvertising = true
-                    self?.isConnected = false
                 case .disconnected:
                     self?.isAdvertising = false
-                    // isConnected는 connectedDevices에서 처리
+                case .connected:
+                    self?.isAdvertising = false
                 default:
                     break
                 }

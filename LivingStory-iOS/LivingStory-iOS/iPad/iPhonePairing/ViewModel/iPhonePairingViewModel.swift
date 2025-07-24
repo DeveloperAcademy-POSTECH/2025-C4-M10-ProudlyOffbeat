@@ -91,6 +91,10 @@ final class iPhonePairingViewModel: ObservableObject {
         showNonconnectionAlert = false
     }
     
+    func disconnectiPhone(_ peerID: MCPeerID) {
+        multipeerManager.iPadDisconnectiPhone(peerID)
+    }
+    
     @MainActor
     func onNextButtonTapped(coordinator: AppCoordinator) {
         if isConnected {

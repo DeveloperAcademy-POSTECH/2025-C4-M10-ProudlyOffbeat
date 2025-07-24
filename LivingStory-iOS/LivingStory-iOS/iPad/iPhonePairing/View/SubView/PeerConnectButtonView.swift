@@ -8,7 +8,16 @@
 import SwiftUI
 
 struct PeerConnectButtonView: View {
+    let isConnected: Bool
     let action: () -> Void
+    
+    private var buttonText: String {
+        isConnected ? "연결끊기" : "연결하기"
+    }
+    
+    private var buttonColor: Color {
+        isConnected ? .gray : Color(red: 0.17, green: 0.4, blue: 0.96)
+    }
     
     var body: some View {
         Button{
@@ -17,10 +26,10 @@ struct PeerConnectButtonView: View {
             ZStack{
                 Rectangle()
                     .foregroundColor(.clear)
-                    .frame(width: 52, height: 19)
-                    .background(Color(red: 0.17, green: 0.4, blue: 0.96))
+                    .frame(width: 65, height: 30)
+                    .background(buttonColor)
                     .cornerRadius(5)
-                Text("Connect")
+                Text(buttonText)
                     .font(.system(size: 11))
                     .multilineTextAlignment(.center)
                     .foregroundColor(.white)

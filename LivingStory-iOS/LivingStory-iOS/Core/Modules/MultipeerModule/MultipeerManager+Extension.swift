@@ -15,6 +15,7 @@ extension MultipeerManager: MCSessionDelegate {
             case .connected:
                 print("✅ [Session] 연결 성공: \(peerID.displayName)")
                 self.addConnectedDevice(peerID)
+                self.connectionState = .connected
                 
             case .notConnected:
                 print("❌ [Session] 연결 끊어짐: \(peerID.displayName)")
@@ -35,6 +36,13 @@ extension MultipeerManager: MCSessionDelegate {
     func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID) {
         if let message = String(data: data, encoding: .utf8) {
             print("📨 메시지 수신: \(message) from \(peerID.displayName)")
+            // ✅ iPad로부터 연결 해제 요청을 받으면 자체 연결 해제
+            if message == "DISCONNECT_REQUEST" {
+                print("🔌 [iPhone] iPad로부터 연결 해제 요청 수신 - 자체 연결 해제 실행")
+                DispatchQueue.main.async {
+                    self.iPhoneDisconnectSelf()
+                }
+            }
         }
     }
     
