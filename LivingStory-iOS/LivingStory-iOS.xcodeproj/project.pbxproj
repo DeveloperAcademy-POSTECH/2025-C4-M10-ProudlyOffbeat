@@ -12,6 +12,11 @@
 		052F26A12E2E5C1900E86FA2 /* WifiConnectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052F26A02E2E5C1900E86FA2 /* WifiConnectView.swift */; };
 		052F26B02E2F092E00E86FA2 /* FairyTaleStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052F26AF2E2F092E00E86FA2 /* FairyTaleStatusView.swift */; };
 		052F26B22E2F36FA00E86FA2 /* iPhoneFairyTaleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052F26B12E2F36FA00E86FA2 /* iPhoneFairyTaleView.swift */; };
+		05CDDF1D2E2FEB0C00455F62 /* iPhoneInteractionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05CDDF1C2E2FEB0C00455F62 /* iPhoneInteractionView.swift */; };
+		05CDDF1F2E2FEB2E00455F62 /* FireAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05CDDF1E2E2FEB2E00455F62 /* FireAnimationView.swift */; };
+		05CDDF232E2FEBA100455F62 /* AudioInputModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05CDDF222E2FEBA100455F62 /* AudioInputModel.swift */; };
+		05CDDF252E2FEC0E00455F62 /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05CDDF242E2FEC0E00455F62 /* LottieView.swift */; };
+		05CDDF312E31323D00455F62 /* Fire2.json in Resources */ = {isa = PBXBuildFile; fileRef = 05CDDF302E31323D00455F62 /* Fire2.json */; };
 		A12BB7F42E2F3D6300D58DBA /* LSLeftButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12BB7F32E2F3D5C00D58DBA /* LSLeftButtonView.swift */; };
 		A12BB7F62E2F3D7200D58DBA /* LSRightButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12BB7F52E2F3D6C00D58DBA /* LSRightButtonView.swift */; };
 		A12BB7F82E2F3F7A00D58DBA /* LSBottonButtonStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12BB7F72E2F3F3200D58DBA /* LSBottonButtonStackView.swift */; };
@@ -88,6 +93,11 @@
 		052F26A02E2E5C1900E86FA2 /* WifiConnectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WifiConnectView.swift; sourceTree = "<group>"; };
 		052F26AF2E2F092E00E86FA2 /* FairyTaleStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FairyTaleStatusView.swift; sourceTree = "<group>"; };
 		052F26B12E2F36FA00E86FA2 /* iPhoneFairyTaleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPhoneFairyTaleView.swift; sourceTree = "<group>"; };
+		05CDDF1C2E2FEB0C00455F62 /* iPhoneInteractionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPhoneInteractionView.swift; sourceTree = "<group>"; };
+		05CDDF1E2E2FEB2E00455F62 /* FireAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireAnimationView.swift; sourceTree = "<group>"; };
+		05CDDF222E2FEBA100455F62 /* AudioInputModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioInputModel.swift; sourceTree = "<group>"; };
+		05CDDF242E2FEC0E00455F62 /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
+		05CDDF302E31323D00455F62 /* Fire2.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Fire2.json; sourceTree = "<group>"; };
 		A12BB7F32E2F3D5C00D58DBA /* LSLeftButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LSLeftButtonView.swift; sourceTree = "<group>"; };
 		A12BB7F52E2F3D6C00D58DBA /* LSRightButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LSRightButtonView.swift; sourceTree = "<group>"; };
 		A12BB7F72E2F3F3200D58DBA /* LSBottonButtonStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LSBottonButtonStackView.swift; sourceTree = "<group>"; };
@@ -172,10 +182,31 @@
 		052F26AE2E2F08B300E86FA2 /* iPhoneFairyTale */ = {
 			isa = PBXGroup;
 			children = (
-				052F26AF2E2F092E00E86FA2 /* FairyTaleStatusView.swift */,
+				05CDDF302E31323D00455F62 /* Fire2.json */,
 				052F26B12E2F36FA00E86FA2 /* iPhoneFairyTaleView.swift */,
+				052F26AF2E2F092E00E86FA2 /* FairyTaleStatusView.swift */,
+				05CDDF272E2FEC5D00455F62 /* AVFoundation */,
+				05CDDF262E2FEC3900455F62 /* Lottie */,
+				05CDDF1C2E2FEB0C00455F62 /* iPhoneInteractionView.swift */,
 			);
 			path = iPhoneFairyTale;
+			sourceTree = "<group>";
+		};
+		05CDDF262E2FEC3900455F62 /* Lottie */ = {
+			isa = PBXGroup;
+			children = (
+				05CDDF242E2FEC0E00455F62 /* LottieView.swift */,
+				05CDDF1E2E2FEB2E00455F62 /* FireAnimationView.swift */,
+			);
+			path = Lottie;
+			sourceTree = "<group>";
+		};
+		05CDDF272E2FEC5D00455F62 /* AVFoundation */ = {
+			isa = PBXGroup;
+			children = (
+				05CDDF222E2FEBA100455F62 /* AudioInputModel.swift */,
+			);
+			path = AVFoundation;
 			sourceTree = "<group>";
 		};
 		A13BBF712E294E9100B91453 /* View */ = {
@@ -590,6 +621,7 @@
 			files = (
 				D54E1C9D2E2E6BB200661D28 /* Colors.xcassets in Resources */,
 				D564C43C2E27A50E00A50B49 /* Assets.xcassets in Resources */,
+				05CDDF312E31323D00455F62 /* Fire2.json in Resources */,
 				A19ADCA22E2E17B3007BBF05 /* BinggraeSamanco-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -619,6 +651,7 @@
 				A12BB7F42E2F3D6300D58DBA /* LSLeftButtonView.swift in Sources */,
 				D53610122E27FCFB001E15B2 /* HomeLibraryView.swift in Sources */,
 				D53610292E28064A001E15B2 /* iPhoneIntroViewModel.swift in Sources */,
+				05CDDF232E2FEBA100455F62 /* AudioInputModel.swift in Sources */,
 				A15FAE942E2CD9D200468F16 /* iPadFairyTaleView.swift in Sources */,
 				A12BB7FE2E2FADDF00D58DBA /* FairyTaleInteractionView.swift in Sources */,
 				D5EBC2892E2FEE1D006A8782 /* ConnectedAlert.swift in Sources */,
@@ -632,10 +665,12 @@
 				A19ADCB32E2E8099007BBF05 /* FindYouriPhoneTextView.swift in Sources */,
 				D536102F2E280CF0001E15B2 /* iPadParingViewModel.swift in Sources */,
 				D53610142E27FE72001E15B2 /* iPhonePairingView.swift in Sources */,
+				05CDDF1D2E2FEB0C00455F62 /* iPhoneInteractionView.swift in Sources */,
 				A12BB7F82E2F3F7A00D58DBA /* LSBottonButtonStackView.swift in Sources */,
 				D5EBC2822E2FDB9C006A8782 /* BookType+Extension.swift in Sources */,
 				A15FAE9C2E2CE2EF00468F16 /* FairyTaleScriptView.swift in Sources */,
 				D536102B2E280B92001E15B2 /* HomeLibraryViewModel.swift in Sources */,
+				05CDDF1F2E2FEB2E00455F62 /* FireAnimationView.swift in Sources */,
 				A1D706262E28DB60008694A8 /* HomeBackgroundView.swift in Sources */,
 				A12BB7F62E2F3D7200D58DBA /* LSRightButtonView.swift in Sources */,
 				A19ADCA42E2E17BB007BBF05 /* Fonts.swift in Sources */,
@@ -645,6 +680,7 @@
 				052F26B22E2F36FA00E86FA2 /* iPhoneFairyTaleView.swift in Sources */,
 				D564C43B2E27A50E00A50B49 /* LivingStory_iOSApp.swift in Sources */,
 				D5360FFB2E27DA0C001E15B2 /* AppRoute.swift in Sources */,
+				05CDDF252E2FEC0E00455F62 /* LottieView.swift in Sources */,
 				052F26B02E2F092E00E86FA2 /* FairyTaleStatusView.swift in Sources */,
 				A15FAE9E2E2CE49500468F16 /* FairyTaleBackgroundView.swift in Sources */,
 				A1D294732E2B8DAA00695EE2 /* HomeInfoFrameView.swift in Sources */,
