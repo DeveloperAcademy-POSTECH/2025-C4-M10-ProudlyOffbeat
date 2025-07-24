@@ -10,6 +10,7 @@ import SwiftUI
 
 //"연결하기" 버튼 SubView
 struct ConnectButtonView: View {
+
     @ObservedObject var viewModel: iPadPairingViewModel
     
     private var iPadConnectionButtonText: String {
