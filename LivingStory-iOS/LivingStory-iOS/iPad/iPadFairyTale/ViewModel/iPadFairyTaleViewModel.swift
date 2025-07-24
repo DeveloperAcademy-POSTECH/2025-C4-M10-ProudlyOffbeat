@@ -11,7 +11,7 @@ final class iPadFairyTaleViewModel: ObservableObject {
     @Published var currentPage: Int = 0
     @Published var selectedBook: StoryBook?
     
-    // 인터랙션 완료 여부
+    // 인터랙션 완료 여부, 아직 사용 안 함
     @Published var isInteractionCompleted: Bool = false
     
     init(bookType: BookType) {
@@ -53,6 +53,11 @@ final class iPadFairyTaleViewModel: ObservableObject {
     @MainActor
     func returnToHome(coordinator:AppCoordinator){
         coordinator.goToRoot()
+    }
+    
+    @MainActor
+    func goToPreviousView(coordinator:AppCoordinator){
+        coordinator.pop()
     }
     
     func selectBook(by type: BookType) {
