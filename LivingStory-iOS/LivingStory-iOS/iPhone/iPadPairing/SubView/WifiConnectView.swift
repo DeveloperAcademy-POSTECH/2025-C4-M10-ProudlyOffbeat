@@ -15,15 +15,11 @@ struct WifiConnectView: View {
     
     var body: some View {
         VStack(alignment: .center){
-            Image("MPCimage")
-                .padding(.top, 204)
-                .padding(.bottom,162)
-            ConnectButtonView(viewModel: viewModel)//클로저로 버트
+            LottieView(filename: "Wifi", loopModel: .loop)
+                .frame(width: 200)
+            ConnectButtonView(viewModel: viewModel)
+                .padding(.bottom, 78)
         }
         .frame(width: 331, height: 668)
     }
 }
-
-//#Preview {
-//    WifiConnectView()
-//}
