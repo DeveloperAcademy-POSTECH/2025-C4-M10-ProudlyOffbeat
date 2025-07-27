@@ -29,4 +29,9 @@ final class AppCoordinator: ObservableObject {
         path.append(AppRoute.iPadLibrary)
         
     }
+    
+    func goToIPhoneRoot() {
+        path.removeLast(path.count)
+        path.append(AppRoute.iPadPairing)
+    }
 }

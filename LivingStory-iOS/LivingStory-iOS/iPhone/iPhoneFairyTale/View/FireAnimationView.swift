@@ -28,7 +28,7 @@ struct FireAnimationView: View {
                 .animation(.easeInOut, value: audioManager.isBlowingDetected)
         }
         .onAppear {
-            audioManager.startMonitoring() {
+            audioManager.startMonitoring {
                 viewModel.sendLanternInteractionCompleted()  // ✅ 바람 불기 완료 시 iPad로 메시지 전송
             }
         }

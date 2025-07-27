@@ -26,4 +26,8 @@ extension Notification.Name {
     
     static let bookSelected = Notification.Name("BookSelected")
     
+    
+    static let goToIPhoneRoot = Notification.Name("GoToIPhoneRoot")
+
+    
 }

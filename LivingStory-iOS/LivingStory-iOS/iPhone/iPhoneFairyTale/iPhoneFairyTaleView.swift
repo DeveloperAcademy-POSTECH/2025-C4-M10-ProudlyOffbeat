@@ -13,5 +13,8 @@ struct iPhoneFairytailView: View {
     
     var body: some View {
         iPhoneInteractionView(viewModel: viewModel)
+            .onReceive(NotificationCenter.default.publisher(for: .goToIPhoneRoot)) { _ in
+                coordinator.goToIPhoneRoot()  // ✅ 홈으로 이동
+            }
     }
 }
