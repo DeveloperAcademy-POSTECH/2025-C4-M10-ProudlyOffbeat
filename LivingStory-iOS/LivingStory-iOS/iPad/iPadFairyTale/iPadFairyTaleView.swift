@@ -48,6 +48,15 @@ struct iPadFairyTaleView: View {
             if let book = viewModel.selectedBook, viewModel.currentPage == book.pages.count - 1 {
                 FairyTaleEnddingView()
             }
+            // ✅ 인터랙션 완료 알림
+            if viewModel.showInteractionCompleteAlert {
+                Color.black.opacity(0.3)
+                    .ignoresSafeArea()
+                
+                InteractionComplete {
+                    viewModel.dismissInteractionCompleteAlert()
+                }
+            }
         }
     }
 }

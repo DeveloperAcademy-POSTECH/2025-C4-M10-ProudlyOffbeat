@@ -15,8 +15,8 @@ final class iPadFairyTaleViewModel: ObservableObject {
     
     // 인터랙션 완료 여부
     @Published var isInteractionCompleted: Bool = false
-    
     @Published var isInteractionTriggered: Bool = false
+    @Published var showInteractionCompleteAlert: Bool = false
     
     init(bookType: BookType, multipeerManager: MultipeerManager) {
         self.multipeerManager = multipeerManager
@@ -97,8 +97,24 @@ final class iPadFairyTaleViewModel: ObservableObject {
             self.isInteractionCompleted = true
             self.isInteractionTriggered = false
             print("✅ iPad: 인터렉션 완료!")
+            
+            self.afterInteractionGoToNextPage()
         }
     }
+    
+    private func afterInteractionGoToNextPage() {
+          guard let selectedBook = selectedBook else { return }
+          
+          // 현재 페이지가 마지막 페이지가 아니면 다음 페이지로
+          if currentPage + 1 < selectedBook.pages.count {
+              currentPage += 1
+              isInteractionCompleted = false
+              isInteractionTriggered = false
+              print("📖 자동으로 다음 페이지로 이동: \(currentPage + 1)페이지")
+          } else {
+              print("📖 마지막 페이지입니다")
+          }
+      }
     
     func increaseIndex(){
         //다음 버튼 로직
@@ -107,6 +123,7 @@ final class iPadFairyTaleViewModel: ObservableObject {
         // 3번째 페이지에서는 인터렉션 완료 체크
         if currentPage == 2 && !isInteractionCompleted {
             print("인터렉션 완료해야 다음 페이지로 넘어갈 수 있습니다 !")
+            showInteractionCompleteAlert = true
             return
         }
         
@@ -126,6 +143,10 @@ final class iPadFairyTaleViewModel: ObservableObject {
         if currentPage != 2 {
             isInteractionTriggered = false
         }
+    }
+    
+    func dismissInteractionCompleteAlert() {
+        showInteractionCompleteAlert = false
     }
     
     @MainActor

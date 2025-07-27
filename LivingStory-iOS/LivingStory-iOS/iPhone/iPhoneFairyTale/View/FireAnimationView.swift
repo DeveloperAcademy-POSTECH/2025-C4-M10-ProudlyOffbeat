@@ -20,7 +20,7 @@ struct FireAnimationView: View {
                     .font(LSFont.fairyTaleFont)
             }
             .padding(.bottom, 315)
-
+            
             LottieView(filename: "Fire", loopModel: .loop)
                 .frame(width: 100, height: 120)
                 .padding(.bottom, 244)
@@ -28,7 +28,9 @@ struct FireAnimationView: View {
                 .animation(.easeInOut, value: audioManager.isBlowingDetected)
         }
         .onAppear {
-            audioManager.startMonitoring()
+            audioManager.startMonitoring() {
+                viewModel.sendLanternInteractionCompleted()  // ✅ 바람 불기 완료 시 iPad로 메시지 전송
+            }
         }
     }
 }
