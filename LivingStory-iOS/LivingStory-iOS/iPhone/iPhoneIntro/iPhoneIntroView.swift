@@ -28,7 +28,3 @@ struct iPhoneIntroView: View {
         }
     }
 }
-
-#Preview {
-    iPhoneIntroView(viewModel: iPhoneIntroViewModel())
-}

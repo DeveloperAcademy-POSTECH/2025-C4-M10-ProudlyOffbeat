@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct FireAnimationView: View {
-    @StateObject private var monitor = AudioInputModel()
-    @State private var isDone = false  //바람이 불어짐 유무 판단 변수
+    @ObservedObject var viewModel:iPhoneFairyTaleViewModel
 
     var body: some View {
         VStack {
@@ -24,23 +23,16 @@ struct FireAnimationView: View {
             LottieView(filename: "Fire", loopModel: .loop)
                 .frame(width: 100, height: 120)
                 .padding(.bottom, 244)
-                .opacity(isDone ? 0 : 1)
+                .opacity(viewModel.isDone ? 0 : 1)
         }
         //AVFoundation에서 데시벨 기반으로 바람 불었음 유무 판단.
         //startMonitoring 선언 -> 데시벨 변화 관측
         .onAppear {
-            monitor.startMonitoring()
-        }
-        .onChange(of: monitor.isBlowingDetected) { newValue in
-            if newValue {
-                withAnimation {
-                    isDone = true
-                }
-            }
+            viewModel.audioManager.startMonitoring()
         }
     }
 }
 
 #Preview {
-    FireAnimationView()
+    FireAnimationView(viewModel: iPhoneFairyTaleViewModel(audioManager: AudioInputModel()))
 }
