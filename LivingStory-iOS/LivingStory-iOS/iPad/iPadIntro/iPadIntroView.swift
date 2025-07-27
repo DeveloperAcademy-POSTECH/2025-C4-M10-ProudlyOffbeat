@@ -12,14 +12,23 @@ struct iPadIntroView: View {
     @ObservedObject var viewModel: iPadIntroViewModel
     
     var body: some View {
-        VStack {
+        ZStack(alignment: .bottom) {
             Image("iPadIntro")
                 .resizable()
                 .scaledToFill()
-                .ignoresSafeArea()
-                .onTapGesture {
-                    viewModel.pushToLibraryView(coordinator: coordinator)
-                }
+                .ignoresSafeArea(edges: .all)
+            Text("시작하려면 아무곳이나 눌러주세요")
+                .font(.title)
+                .fontWeight(.bold)
+                .foregroundStyle(.blue)
+                .padding(.bottom, 100)
+        }
+        .onTapGesture {
+            viewModel.pushToLibraryView(coordinator: coordinator)
         }
     }
+}
+
+#Preview {
+    iPadIntroView(viewModel: iPadIntroViewModel())
 }

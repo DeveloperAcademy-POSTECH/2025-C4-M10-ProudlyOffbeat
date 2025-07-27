@@ -26,6 +26,8 @@ final class AppCoordinator: ObservableObject {
     /// path 리스트에 쌓인 모든 화면을 지우고, 루트 (홈)으로 돌아가게하는 메서드
     func goToRoot() {
         path.removeLast(path.count)
+        path.append(AppRoute.iPadLibrary)
+
     }
     
 }

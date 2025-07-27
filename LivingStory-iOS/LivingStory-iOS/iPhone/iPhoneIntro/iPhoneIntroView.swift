@@ -12,16 +12,19 @@ struct iPhoneIntroView: View {
     @ObservedObject var viewModel: iPhoneIntroViewModel
     
     var body: some View {
-        ZStack {
+        ZStack(alignment: .bottom) {
             Image("iPhoneIntro")
                 .resizable()
+                .scaledToFill()
                 .ignoresSafeArea(edges: .all)
-            
-            Button(action:{}){
-                Text("넘어가는 멘트 들어갈 자리") //버튼 처리 or 그냥 Lottie로만 처리?
-                    .font(.headline)
-            }
-            .padding(.top, 600)
+            Text("시작하려면 아무곳이나 눌러주세요")
+                .font(.headline)
+                .fontWeight(.bold)
+                .foregroundStyle(.blue)
+                .padding(.bottom, 180)
+        }
+        .onTapGesture {
+            viewModel.pushToiPadParingView(coordinator: coordinator)
         }
     }
 }
