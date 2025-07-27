@@ -15,7 +15,7 @@ struct FairyTaleButtonView: View {
     var body: some View {
         VStack{
             HStack{
-               LSReturnToHomeButtonView(action: {})
+               LSReturnToHomeButtonView(action: homeButtonaction)
                 Spacer()
             }
             Spacer()

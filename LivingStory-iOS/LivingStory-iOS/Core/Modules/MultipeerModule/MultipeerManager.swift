@@ -114,6 +114,46 @@ final class MultipeerManager: NSObject, ObservableObject {
         print("🔌 개별 기기 연결 해제 요청: \(peerID.displayName)")
     }
     
+    func disconnectAll() {
+        print("🔌 모든 연결 해제 시작")
+        
+        // 1. 브라우저 중단 (iPad)
+        browser?.stopBrowsingForPeers()
+        browser?.delegate = nil
+        browser = nil
+        
+        // 2. 연결된 기기가 있으면 메시지 전송
+        if !session.connectedPeers.isEmpty {
+            let disconnectMessage = "DISCONNECT_REQUEST"
+            if let data = disconnectMessage.data(using: .utf8) {
+                do {
+                    try session.send(data, toPeers: session.connectedPeers, with: .reliable)
+                    print("📤 모든 연결된 기기에게 해제 요청 전송")
+                } catch {
+                    print("❌ 해제 메시지 전송 실패: \(error)")
+                }
+            }
+            
+            // ✅ 0.3초 후 완전 정리
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                self.session.disconnect()
+                self.connectedDevices.removeAll()
+                self.discoveredDevices.removeAll()
+                self.connectionState = .disconnected
+                print("🔌 [iPad] 세션 연결 완전 해제")
+            }
+        } else {
+            // ✅ 연결된 기기가 없어도 즉시 상태 정리
+            self.connectedDevices.removeAll()
+            self.discoveredDevices.removeAll()
+            self.connectionState = .disconnected
+            print("🔌 [iPad] 상태만 초기화")
+        }
+        
+        print("✅ 모든 연결 해제 완료")
+    }
+    
+    
     // MARK: iPhone
     
     /// iPhone에서 광고 시작
@@ -134,9 +174,13 @@ final class MultipeerManager: NSObject, ObservableObject {
         advertiser?.delegate = nil
         advertiser = nil
         
+        if !session.connectedPeers.isEmpty {
+            session.disconnect()
+            print("📱 [iPhone] 세션 연결 완전 해제")
+        }
+        
         // 2. ✅ 안전한 세션 해제
         DispatchQueue.main.async {
-            self.session.disconnect()
             self.connectionState = .disconnected
             self.connectedDevices.removeAll()
         }

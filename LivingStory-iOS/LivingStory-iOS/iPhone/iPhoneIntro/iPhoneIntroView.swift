@@ -12,11 +12,19 @@ struct iPhoneIntroView: View {
     @ObservedObject var viewModel: iPhoneIntroViewModel
     
     var body: some View {
-        VStack {
-            Text("아이폰 페어링 뷰")
-            Button("다음") {
-                viewModel.pushToiPadParingView(coordinator: coordinator)
-            }
+        ZStack(alignment: .bottom) {
+            Image("iPhoneIntro")
+                .resizable()
+                .scaledToFill()
+                .ignoresSafeArea(edges: .all)
+            Text("시작하려면 아무곳이나 눌러주세요")
+                .font(.headline)
+                .fontWeight(.bold)
+                .foregroundStyle(.blue)
+                .padding(.bottom, 180)
+        }
+        .onTapGesture {
+            viewModel.pushToiPadParingView(coordinator: coordinator)
         }
     }
 }

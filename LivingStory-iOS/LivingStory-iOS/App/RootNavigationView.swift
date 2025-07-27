@@ -28,28 +28,37 @@ struct RootNavigationView: View {
                     factory.makeIntroViewForiPhone()
                 }
             }
+            .toolbar(.hidden, for: .navigationBar)
             .navigationDestination(for: AppRoute.self) { route in
                 switch route {
                     // iPad iPhone분기
                 case .intro:
                     if deviceInfo.deviceType == .iPad {
                         factory.makeIntroViewForiPad()
+                            .toolbar(.hidden, for: .navigationBar)
+                        
                     } else {
                         factory.makeIntroViewForiPhone()
+                            .toolbar(.hidden, for: .navigationBar)
                     }
+                    
                     // iPad
                 case .iPadLibrary:
                     factory.makeHomeLibraryView()
+                        .toolbar(.hidden, for: .navigationBar)
                     
                 case .iPhonePairing(let book):
                     factory.makeiPhonePairingView(book: book)
-                
+                        .toolbar(.hidden, for: .navigationBar)
+                    
                 case .iPadFairyTale(let book):
                     factory.makeiPadFairyTaleView(book: book)
+                        .toolbar(.hidden, for: .navigationBar)
                     
                     // iPhone
                 case .iPadPairing:
                     factory.makeiPadPairingView()
+                        .toolbar(.hidden, for: .navigationBar)
                 }
                 
             }
