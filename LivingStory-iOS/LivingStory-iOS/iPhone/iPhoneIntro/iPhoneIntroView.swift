@@ -12,11 +12,20 @@ struct iPhoneIntroView: View {
     @ObservedObject var viewModel: iPhoneIntroViewModel
     
     var body: some View {
-        VStack {
-            Text("아이폰 페어링 뷰")
-            Button("다음") {
-                viewModel.pushToiPadParingView(coordinator: coordinator)
+        ZStack {
+            Image("iPhoneIntro")
+                .resizable()
+                .ignoresSafeArea(edges: .all)
+            
+            Button(action:{}){
+                Text("넘어가는 멘트 들어갈 자리") //버튼 처리 or 그냥 Lottie로만 처리?
+                    .font(.headline)
             }
+            .padding(.top, 600)
         }
     }
+}
+
+#Preview {
+    iPhoneIntroView()
 }
