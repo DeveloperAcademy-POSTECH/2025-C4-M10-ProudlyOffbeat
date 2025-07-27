@@ -17,6 +17,7 @@ final class iPadPairingViewModel: ObservableObject {
     @Published var isAdvertising = false
     @Published var isConnected = false
     @Published var showConnectedAlert = false
+    @Published var book: BookType?
     
     init(multipeerManager: MultipeerManager) {
         self.multipeerManager = multipeerManager
@@ -28,6 +29,13 @@ final class iPadPairingViewModel: ObservableObject {
         multipeerManager.connectedDevices.first
     }
     
+    func bookCoverImageString(book:BookType) -> String {
+        switch book {
+        case .pig: return "PigCover"
+        case .oz: return "OzCover"
+        case .heung: return "HeungCover"
+        }
+    }
     
     var connectedDeviceName: String {
         if let device = connectedDevice {

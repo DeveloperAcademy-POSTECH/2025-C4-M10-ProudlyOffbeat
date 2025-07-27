@@ -20,6 +20,7 @@ struct iPadPairingView: View {
             WifiConnectView(viewModel: viewModel)
             
             
+            
             if viewModel.showConnectedAlert {
                 Color.black.opacity(0.3)
                     .ignoresSafeArea()

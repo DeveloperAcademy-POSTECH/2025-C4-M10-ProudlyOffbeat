@@ -19,6 +19,7 @@
 		05CDDF312E31323D00455F62 /* Fire.json in Resources */ = {isa = PBXBuildFile; fileRef = 05CDDF302E31323D00455F62 /* Fire.json */; };
 		A129B29C2E34D610004D8698 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = A129B29B2E34D610004D8698 /* Lottie */; };
 		A129B2A22E34DCD4004D8698 /* Wifi.json in Resources */ = {isa = PBXBuildFile; fileRef = A129B2A12E34DCD4004D8698 /* Wifi.json */; };
+		A129B2A42E3533B0004D8698 /* ConnectedBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A129B2A32E35338D004D8698 /* ConnectedBookView.swift */; };
 		A12BB7F42E2F3D6300D58DBA /* LSLeftButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12BB7F32E2F3D5C00D58DBA /* LSLeftButtonView.swift */; };
 		A12BB7F62E2F3D7200D58DBA /* LSRightButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12BB7F52E2F3D6C00D58DBA /* LSRightButtonView.swift */; };
 		A12BB7F82E2F3F7A00D58DBA /* LSBottonButtonStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12BB7F72E2F3F3200D58DBA /* LSBottonButtonStackView.swift */; };
@@ -106,6 +107,7 @@
 		05CDDF242E2FEC0E00455F62 /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
 		05CDDF302E31323D00455F62 /* Fire.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Fire.json; sourceTree = "<group>"; };
 		A129B2A12E34DCD4004D8698 /* Wifi.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Wifi.json; sourceTree = "<group>"; };
+		A129B2A32E35338D004D8698 /* ConnectedBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectedBookView.swift; sourceTree = "<group>"; };
 		A12BB7F32E2F3D5C00D58DBA /* LSLeftButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LSLeftButtonView.swift; sourceTree = "<group>"; };
 		A12BB7F52E2F3D6C00D58DBA /* LSRightButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LSRightButtonView.swift; sourceTree = "<group>"; };
 		A12BB7F72E2F3F3200D58DBA /* LSBottonButtonStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LSBottonButtonStackView.swift; sourceTree = "<group>"; };
@@ -188,6 +190,7 @@
 			children = (
 				052F269E2E2E5BDC00E86FA2 /* ConnectImageView.swift */,
 				052F26A02E2E5C1900E86FA2 /* WifiConnectView.swift */,
+				A129B2A32E35338D004D8698 /* ConnectedBookView.swift */,
 				052F269C2E2E5B1C00E86FA2 /* ConnectButtonView.swift */,
 			);
 			path = SubView;
@@ -550,9 +553,9 @@
 		D564C4422E27B7E700A50B49 /* iPhone */ = {
 			isa = PBXGroup;
 			children = (
-				052F26AE2E2F08B300E86FA2 /* iPhoneFairyTale */,
 				D536101C2E27FF39001E15B2 /* iPhoneIntro */,
 				D536101F2E28030A001E15B2 /* iPadPairing */,
+				052F26AE2E2F08B300E86FA2 /* iPhoneFairyTale */,
 			);
 			path = iPhone;
 			sourceTree = "<group>";
@@ -669,6 +672,7 @@
 				052F269F2E2E5BDC00E86FA2 /* ConnectImageView.swift in Sources */,
 				A15FAE982E2CDA1800468F16 /* iPadFairyTaleViewModel.swift in Sources */,
 				A19ADCAE2E2E7D9A007BBF05 /* iPhoneNoticeTextView.swift in Sources */,
+				A129B2A42E3533B0004D8698 /* ConnectedBookView.swift in Sources */,
 				D5CA2DB22E31D8EA0022C4BB /* FromiPadConnectedAlert.swift in Sources */,
 				A15FAEA32E2D021100468F16 /* FairyTaleModel.swift in Sources */,
 				A1D487FB2E29484100F70879 /* iPhonePairingBackgroundView.swift in Sources */,
