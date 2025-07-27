@@ -19,6 +19,7 @@ final class iPadPairingViewModel: ObservableObject {
     @Published var showConnectedAlert = false
     @Published var book: BookType?
     @Published var selectedBookType: FairyTaleID?
+    @Published var isFairyTaleViewShown = false  // ✅ 추가
     
     init(multipeerManager: MultipeerManager) {
         self.multipeerManager = multipeerManager
@@ -151,6 +152,23 @@ final class iPadPairingViewModel: ObservableObject {
     
     func dismissConnectAlert() {
         showConnectedAlert = false
+    }
+    
+    @MainActor
+    func goToFairyTaleView(coordinator: AppCoordinator, bookType: FairyTaleID) {
+        // ViewModel 상태만 체크 (더 간단하고 안전)
+        // 즉시 상태 체크 및 업데이트
+        if isFairyTaleViewShown {
+            print("📱 이미 동화 인터랙션 화면이 표시 중입니다")
+            return
+        }
+        
+        // 상태를 먼저 업데이트 (동시 호출 방지)
+        isFairyTaleViewShown = true
+        print("📱 상태 업데이트: isFairyTaleViewShown = true")
+        
+        coordinator.push(.iPhoneFairyTale(bookType: bookType))
+        print("📱 동화 인터랙션 화면으로 이동: \(bookType.rawValue)")
     }
     
 }

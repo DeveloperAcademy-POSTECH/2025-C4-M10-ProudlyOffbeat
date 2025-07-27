@@ -59,8 +59,11 @@ struct RootNavigationView: View {
                 case .iPadPairing:
                     factory.makeiPadPairingView()
                         .toolbar(.hidden, for: .navigationBar)
+                    
+                case .iPhoneFairyTale(let bookType):
+                    factory.makeiPhonePigInteractionView(bookType: bookType)
+                        .toolbar(.hidden, for: .navigationBar)
                 }
-                
             }
         }
     }

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct iPhoneFairtailView: View {
+struct iPhoneFairytailView: View {
     @EnvironmentObject var coordinator: AppCoordinator
     @ObservedObject var viewModel: iPhoneFairyTaleViewModel
     

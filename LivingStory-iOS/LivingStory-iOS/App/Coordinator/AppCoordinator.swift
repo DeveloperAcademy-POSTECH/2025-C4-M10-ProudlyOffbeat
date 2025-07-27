@@ -27,7 +27,26 @@ final class AppCoordinator: ObservableObject {
     func goToRoot() {
         path.removeLast(path.count)
         path.append(AppRoute.iPadLibrary)
-
+        
+    }
+    
+    /// iPhoneFairyTale 화면이 이미 존재하는지 체크
+    func containsiPhoneFairyTale() -> Bool {
+        return path.contains(where: {
+            if case .iPhoneFairyTale = $0 { return true }
+            return false
+        })
+    }
+    
+    /// iPhoneFairyTale 화면을 안전하게 추가
+    func safePushiPhoneFairyTale(bookType: FairyTaleID) {
+        if containsiPhoneFairyTale() {
+            print("⚠️ 이미 iPhoneFairyTale 화면이 존재합니다")
+            return
+        }
+        
+        push(.iPhoneFairyTale(bookType: bookType))
+        print("✅ iPhoneFairyTale 화면 추가됨: \(bookType)")
     }
     
 }

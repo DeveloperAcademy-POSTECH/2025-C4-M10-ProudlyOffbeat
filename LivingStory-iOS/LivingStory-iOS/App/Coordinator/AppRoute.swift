@@ -20,6 +20,6 @@ enum AppRoute: Hashable {
     
     // iPhone 경로
     case iPadPairing
-//    case iPhoneInteractionBase
+    case iPhoneFairyTale(bookType: FairyTaleID)
     
 }

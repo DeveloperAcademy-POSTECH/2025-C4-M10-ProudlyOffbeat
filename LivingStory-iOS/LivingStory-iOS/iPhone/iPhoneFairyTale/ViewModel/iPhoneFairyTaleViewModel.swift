@@ -10,4 +10,12 @@ import Foundation
 
 final class iPhoneFairyTaleViewModel: ObservableObject{
     
+    private let multipeerManager: MultipeerManager
+    private let bookType: FairyTaleID
+    
+    init(multipeerManager: MultipeerManager, bookType: FairyTaleID) {
+        self.multipeerManager = multipeerManager
+        self.bookType = bookType
+    }
+    
 }
