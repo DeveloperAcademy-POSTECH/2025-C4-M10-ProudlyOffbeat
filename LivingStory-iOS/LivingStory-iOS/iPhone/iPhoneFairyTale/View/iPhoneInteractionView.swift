@@ -8,16 +8,14 @@
 import SwiftUI
 
 struct iPhoneInteractionView: View {
+    @ObservedObject var viewModel: iPhoneFairyTaleViewModel
+    
     var body: some View {
         ZStack {
             Image("Lamp")
                 .resizable()
                 .edgesIgnoringSafeArea(.all)
-            FireAnimationView()
+            FireAnimationView(viewModel: iPhoneFairyTaleViewModel(audioManager: AudioInputModel()))
         }
     }
-}
-
-#Preview {
-    iPhoneInteractionView()
 }

@@ -25,7 +25,3 @@ struct iPhoneIntroView: View {
         }
     }
 }
-
-#Preview {
-    iPhoneIntroView()
-}
