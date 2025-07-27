@@ -15,7 +15,7 @@ struct iPhoneInteractionView: View {
             Image("Lamp")
                 .resizable()
                 .edgesIgnoringSafeArea(.all)
-            FireAnimationView(viewModel: iPhoneFairyTaleViewModel(audioManager: AudioInputModel()))
+            FireAnimationView(viewModel: viewModel, audioManager: AudioInputModel())
         }
     }
 }
