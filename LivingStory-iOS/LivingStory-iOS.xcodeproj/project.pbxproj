@@ -58,6 +58,7 @@
 		D500612D2E365DA200B6E1BA /* FairyTaleInteraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = D500612C2E365D9100B6E1BA /* FairyTaleInteraction.swift */; };
 		D50061312E36601400B6E1BA /* NotificationCenter+.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50061302E36601000B6E1BA /* NotificationCenter+.swift */; };
 		D50061332E36692000B6E1BA /* BookSelectionSignal.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50061322E36691400B6E1BA /* BookSelectionSignal.swift */; };
+		D50061352E368F3400B6E1BA /* InteractionComplete.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50061342E368F2200B6E1BA /* InteractionComplete.swift */; };
 		D51A0AA22E31121300E4D19B /* ConnectListScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51A0AA12E31120D00E4D19B /* ConnectListScrollView.swift */; };
 		D5360FFB2E27DA0C001E15B2 /* AppRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5360FFA2E27DA08001E15B2 /* AppRoute.swift */; };
 		D5360FFD2E27DA19001E15B2 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5360FFC2E27DA13001E15B2 /* AppCoordinator.swift */; };
@@ -151,6 +152,7 @@
 		D500612C2E365D9100B6E1BA /* FairyTaleInteraction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FairyTaleInteraction.swift; sourceTree = "<group>"; };
 		D50061302E36601000B6E1BA /* NotificationCenter+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotificationCenter+.swift"; sourceTree = "<group>"; };
 		D50061322E36691400B6E1BA /* BookSelectionSignal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookSelectionSignal.swift; sourceTree = "<group>"; };
+		D50061342E368F2200B6E1BA /* InteractionComplete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractionComplete.swift; sourceTree = "<group>"; };
 		D51A0AA12E31120D00E4D19B /* ConnectListScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectListScrollView.swift; sourceTree = "<group>"; };
 		D5360FFA2E27DA08001E15B2 /* AppRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRoute.swift; sourceTree = "<group>"; };
 		D5360FFC2E27DA13001E15B2 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
@@ -634,6 +636,7 @@
 		D5EBC2842E2FEDAA006A8782 /* Alerts */ = {
 			isa = PBXGroup;
 			children = (
+				D50061342E368F2200B6E1BA /* InteractionComplete.swift */,
 				D5CA2DB12E31D8D60022C4BB /* FromiPadConnectedAlert.swift */,
 				D5EBC28E2E2FF930006A8782 /* NonconnectionAlert.swift */,
 				D5EBC28A2E2FEE33006A8782 /* DisconnectedAlert.swift */,
@@ -758,6 +761,7 @@
 				A19ADCB12E2E7EAC007BBF05 /* PeerConnectButtonView.swift in Sources */,
 				D51A0AA22E31121300E4D19B /* ConnectListScrollView.swift in Sources */,
 				A15FAE892E2BF57800468F16 /* iPhoneNoticeView.swift in Sources */,
+				D50061352E368F3400B6E1BA /* InteractionComplete.swift in Sources */,
 				A129B2BD2E361303004D8698 /* iPhoneFairyTaleViewModel.swift in Sources */,
 				D5FFF9FC2E2D5D67004C6586 /* MultipeerModels.swift in Sources */,
 				A1D7062C2E28E715008694A8 /* iPhonePairingViewModel.swift in Sources */,

@@ -13,8 +13,10 @@ final class iPadFairyTaleViewModel: ObservableObject {
     @Published var currentPage: Int = 0
     @Published var selectedBook: StoryBook?
     
-    // 인터랙션 완료 여부, 아직 사용 안 함
+    // 인터랙션 완료 여부
     @Published var isInteractionCompleted: Bool = false
+    
+    @Published var isInteractionTriggered: Bool = false
     
     init(bookType: BookType, multipeerManager: MultipeerManager) {
         self.multipeerManager = multipeerManager
@@ -44,6 +46,11 @@ final class iPadFairyTaleViewModel: ObservableObject {
     func iPadSendInteraction() {
         guard currentInteraction != .none else { return }
         
+        guard !isInteractionTriggered else {
+            print("⚠️ 인터랙션이 이미 트리거되었습니다")
+            return
+        }
+        
         guard let bookType = selectedBook?.type else { return }
         
         let fairyID: FairyTaleID
@@ -55,6 +62,8 @@ final class iPadFairyTaleViewModel: ObservableObject {
         
         multipeerManager.sendInteractionMessage(fairyID: fairyID, signal: .triggered)
         print("📤 iPad에서 iPhone으로 인터랙션 메시지 전송: \(fairyID)::TRIGGERED")
+        
+        isInteractionTriggered = true
         isInteractionCompleted = false
     }
     
@@ -86,6 +95,7 @@ final class iPadFairyTaleViewModel: ObservableObject {
     func completeInteraction() {
         DispatchQueue.main.async {
             self.isInteractionCompleted = true
+            self.isInteractionTriggered = false
             print("✅ iPad: 인터렉션 완료!")
         }
     }
@@ -105,12 +115,17 @@ final class iPadFairyTaleViewModel: ObservableObject {
             currentPage += 1
             
             isInteractionCompleted = false
+            isInteractionTriggered = false
         }
     }
     
     func decreaseIndex() {
         guard let selectedBook, currentPage - 1 >= 0 else { return }
         currentPage -= 1
+        
+        if currentPage != 2 {
+            isInteractionTriggered = false
+        }
     }
     
     @MainActor
