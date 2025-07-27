@@ -19,6 +19,8 @@ struct iPadPairingView: View {
             Image("iPhoneBackground")
             WifiConnectView(viewModel: viewModel)
             
+            
+            
             if viewModel.showConnectedAlert {
                 Color.black.opacity(0.3)
                     .ignoresSafeArea()
@@ -33,3 +35,7 @@ struct iPadPairingView: View {
     }
 }
 
+#Preview {
+    iPadPairingView(viewModel: iPadPairingViewModel(multipeerManager: MultipeerManager.shared))
+        .environmentObject(AppCoordinator())
+}
