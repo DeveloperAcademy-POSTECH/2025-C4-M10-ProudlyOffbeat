@@ -44,7 +44,7 @@ final class ModuleFactory: FactoryProtocol {
     }
     
     func makeiPadFairyTaleView(book: BookType) -> iPadFairyTaleView {
-        let viewModel = iPadFairyTaleViewModel(bookType: book)
+        let viewModel = iPadFairyTaleViewModel(bookType: book, multipeerManager: multipeerManager)
         return iPadFairyTaleView(viewModel: viewModel)
     }
     

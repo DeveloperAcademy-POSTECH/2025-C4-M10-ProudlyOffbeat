@@ -28,7 +28,7 @@ final class iPhonePairingViewModel: ObservableObject {
         bookType.book
     }
     
-
+    
     init(bookType: BookType, multipeerManager: MultipeerManager) {
         self.bookType = bookType
         self.multipeerManager = multipeerManager
@@ -39,14 +39,14 @@ final class iPhonePairingViewModel: ObservableObject {
         multipeerManager.$discoveredDevices
             .receive(on: DispatchQueue.main)
             .sink { [weak self] devices in
-                self?.discoveredDevices = devices  // ✅ 직접 할당
+                self?.discoveredDevices = devices  // 직접 할당
             }
             .store(in: &iPhoneCancellabes)
         
         multipeerManager.$connectedDevices
             .receive(on: DispatchQueue.main)
             .sink { [weak self] devices in
-                self?.connectedDevices = devices  // ✅ 직접 할당
+                self?.connectedDevices = devices  // 직접 할당
                 self?.isConnected = !devices.isEmpty
             }
             .store(in: &iPhoneCancellabes)
@@ -54,9 +54,12 @@ final class iPhonePairingViewModel: ObservableObject {
         multipeerManager.$connectionState
             .receive(on: DispatchQueue.main)
             .sink { [weak self] state in
-                self?.connectionState = state  // ✅ 직접 할당
+                self?.connectionState = state  // 직접 할당
                 if state == .connected {
                     self?.showConnectedAlert = true
+                    
+                    //bookType 보내기
+                    self?.sendSelectedBookToiPhone(self?.bookType)
                 }
             }
             .store(in: &iPhoneCancellabes)
@@ -93,6 +96,22 @@ final class iPhonePairingViewModel: ObservableObject {
     
     func disconnectiPhone(_ peerID: MCPeerID) {
         multipeerManager.iPadDisconnectiPhone(peerID)
+    }
+    
+    func sendSelectedBookToiPhone(_ bookType: BookType?) {
+        guard let bookType = bookType else { return }
+        
+        let fairyID: FairyTaleID
+        switch bookType {
+        case .pig: fairyID = .pig
+        case .heung: fairyID = .heung
+        case .oz: fairyID = .oz
+        }
+        
+        let message = "\(fairyID.rawValue)::\(BookSelectionSignal.selected.rawValue)"
+        guard let data = message.data(using: .utf8) else { return }
+        try? multipeerManager.session.send(data, toPeers: multipeerManager.session.connectedPeers, with: .reliable)
+        print(" [iPad] 선택한 책 전송 완료: \(message)")
     }
     
     @MainActor

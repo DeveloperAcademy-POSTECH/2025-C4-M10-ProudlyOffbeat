@@ -14,25 +14,40 @@ struct iPadFairyTaleView: View {
     var body: some View {
         ZStack {
             FairyTaleBackgroundView(scene: viewModel.currentBackground)
-            if viewModel.currentPage != (viewModel.selectedBook?.pages.count)! - 1{
-                FairyTaleButtonView(homeButtonaction: {viewModel.returnToHome(coordinator: coordinator)}, leftaction:{
-                    if viewModel.currentPage == 0{
-                      viewModel.goToPreviousView(coordinator: coordinator)
-                    }else{
-                        viewModel.decreaseIndex()
+            
+            if let book = viewModel.selectedBook, viewModel.currentPage != book.pages.count - 1 {
+                FairyTaleButtonView(
+                    homeButtonaction: {
+                        viewModel.returnToHome(coordinator: coordinator)
+                    },
+                    leftaction: {
+                        if viewModel.currentPage == 0 {
+                            viewModel.goToPreviousView(coordinator: coordinator)
+                        } else {
+                            viewModel.decreaseIndex()
+                        }
+                    },
+                    rightaction: {
+                        viewModel.increaseIndex()
                     }
-                } , rightaction: viewModel.increaseIndex)
-            }else{
-                FairyTaleLastPageButtonView(leftaction: viewModel.decreaseIndex)
-            }
-            FairyTaleScriptView(script: viewModel.currentScript)
-            if viewModel.currentPage == 2{
-                FairyTaleInteractionView(action: viewModel.triggerInteraction)
-            }
-            if viewModel.currentPage == (viewModel.selectedBook?.pages.count)! - 1{
-                FairyTaleEnddingView()
+                )
+            } else if let book = viewModel.selectedBook, viewModel.currentPage == book.pages.count - 1 {
+                FairyTaleLastPageButtonView(leftaction: {
+                    viewModel.decreaseIndex()
+                })
             }
             
+            FairyTaleScriptView(script: viewModel.currentScript)
+            
+            if viewModel.currentPage == 2 {
+                FairyTaleInteractionView(action: {
+                    viewModel.iPadSendInteraction()
+                })
+            }
+            
+            if let book = viewModel.selectedBook, viewModel.currentPage == book.pages.count - 1 {
+                FairyTaleEnddingView()
+            }
         }
     }
 }

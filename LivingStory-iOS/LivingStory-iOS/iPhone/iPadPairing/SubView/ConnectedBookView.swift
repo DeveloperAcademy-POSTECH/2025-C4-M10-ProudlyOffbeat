@@ -11,6 +11,15 @@ struct ConnectedBookView: View {
     let connectedDeviceName: String
     let bookCoverImageString: String
     
+    var bookTypeMessage: String {
+        switch bookCoverImageString {
+        case "PigCover": return "돼지 삼형제"
+        case "OzCover": return "오즈의 마법사"
+        case "HeungCover": return "흥부와 놀부"
+        default: return ""
+        }
+    }
+    
     var body: some View {
         VStack{
             Text("\(connectedDeviceName)와 연결됨")

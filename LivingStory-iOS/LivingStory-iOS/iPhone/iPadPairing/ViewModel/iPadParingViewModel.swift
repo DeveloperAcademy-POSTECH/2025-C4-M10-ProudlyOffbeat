@@ -18,10 +18,12 @@ final class iPadPairingViewModel: ObservableObject {
     @Published var isConnected = false
     @Published var showConnectedAlert = false
     @Published var book: BookType?
+    @Published var selectedBookType: FairyTaleID?
     
     init(multipeerManager: MultipeerManager) {
         self.multipeerManager = multipeerManager
         self.setupConnectionObserver()
+        self.setupBookTypeObserver()
     }
     
     // iPad를 의미
@@ -37,12 +39,31 @@ final class iPadPairingViewModel: ObservableObject {
         }
     }
     
+    var receivedBookCoverImageString: String {
+        switch selectedBookType {
+        case .pig: return "PigCover"
+        case .oz: return "OzCover"
+        case .heung: return "HeungCover"
+        case .none: return "PigCover" // 기본값
+        }
+    }
+    
     var connectedDeviceName: String {
         if let device = connectedDevice {
             return device.mcPeerID.displayName
         } else {
             return "연결된 기기 없음"
         }
+    }
+    // 책 타입 관찰
+    private func setupBookTypeObserver() {
+        multipeerManager.$selectedBookType
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] bookType in
+                self?.selectedBookType = bookType
+                print("📚 iPhone에서 받은 책 타입: \(bookType?.rawValue ?? "없음")")
+            }
+            .store(in: &iPadCancellables)
     }
     
     private func setupConnectionObserver() {
