@@ -12,14 +12,24 @@ import SwiftUI
 struct WifiConnectView: View {
     @ObservedObject var viewModel: iPadPairingViewModel
     
-    
     var body: some View {
         VStack(alignment: .center){
-            LottieView(filename: "Wifi", loopModel: .loop)
-                .frame(width: 200)
+            Spacer()
+            if viewModel.isConnected{
+                ConnectedBookView(connectedDeviceName: viewModel.connectedDeviceName, bookCoverImageString: viewModel.bookCoverImageString(book: viewModel.book ?? .pig))
+            }else{
+                LottieView(filename: "Wifi", loopModel: .loop)
+                    .frame(width: 200, height: 200)
+            }
+            Spacer()
             ConnectButtonView(viewModel: viewModel)
-                .padding(.bottom, 78)
+               .padding(.bottom, 78)
         }
         .frame(width: 331, height: 668)
     }
+}
+
+#Preview {
+    WifiConnectView(viewModel: iPadPairingViewModel(multipeerManager: MultipeerManager.shared))
+        .border(.black)
 }
