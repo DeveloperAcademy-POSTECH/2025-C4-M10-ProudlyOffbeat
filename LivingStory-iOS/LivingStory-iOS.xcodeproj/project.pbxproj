@@ -199,7 +199,6 @@
 		052F26AE2E2F08B300E86FA2 /* iPhoneFairyTale */ = {
 			isa = PBXGroup;
 			children = (
-				05CDDF302E31323D00455F62 /* Fire.json */,
 				052F26B12E2F36FA00E86FA2 /* iPhoneFairyTaleView.swift */,
 				052F26AF2E2F092E00E86FA2 /* FairyTaleStatusView.swift */,
 				05CDDF272E2FEC5D00455F62 /* AVFoundation */,
@@ -305,6 +304,7 @@
 		A19ADCA02E2E179C007BBF05 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D500611F2E35F82300B6E1BA /* Lottie */,
 				D54E1C9A2E2E6B4E00661D28 /* Fonts */,
 				D564C4362E27A50E00A50B49 /* Assets.xcassets */,
 				D54E1C9C2E2E6BB200661D28 /* Colors.xcassets */,
@@ -362,6 +362,15 @@
 				A1F4C7622E29DCF700044760 /* BookModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		D500611F2E35F82300B6E1BA /* Lottie */ = {
+			isa = PBXGroup;
+			children = (
+				A129B2A12E34DCD4004D8698 /* Wifi.json */,
+				05CDDF302E31323D00455F62 /* Fire.json */,
+			);
+			path = Lottie;
 			sourceTree = "<group>";
 		};
 		D5360FF92E27D9E4001E15B2 /* App */ = {
@@ -428,7 +437,6 @@
 			isa = PBXGroup;
 			children = (
 				D53610212E280325001E15B2 /* iPadPairingView.swift */,
-				A129B2A12E34DCD4004D8698 /* Wifi.json */,
 				052F26A22E2E5D4700E86FA2 /* SubView */,
 				D53610272E280616001E15B2 /* ViewModel */,
 			);
