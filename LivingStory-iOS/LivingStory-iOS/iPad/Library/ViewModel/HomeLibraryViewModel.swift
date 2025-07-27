@@ -6,9 +6,22 @@
 //
 
 import SwiftUI
+import MultipeerConnectivity
 
 final class HomeLibraryViewModel: ObservableObject {
-    init() { }
+    
+    private let multipeerManager: MultipeerManager
+    
+    init(multipeerManager: MultipeerManager) {
+        self.multipeerManager = multipeerManager
+    }
+    
+    func onLibraryApper() {
+        multipeerManager.disconnectAll()
+    }
+    
+    
+    
     
     @MainActor
     func pushToiPhonePairingView(coordinator: AppCoordinator, bookType: BookType) {
