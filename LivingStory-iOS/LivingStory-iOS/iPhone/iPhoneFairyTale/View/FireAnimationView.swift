@@ -9,7 +9,8 @@ import SwiftUI
 
 struct FireAnimationView: View {
     @ObservedObject var viewModel:iPhoneFairyTaleViewModel
-
+    @ObservedObject var audioManager: AudioInputModel
+    
     var body: some View {
         VStack {
             VStack(alignment: .center, spacing: 10) {
@@ -23,16 +24,11 @@ struct FireAnimationView: View {
             LottieView(filename: "Fire", loopModel: .loop)
                 .frame(width: 100, height: 120)
                 .padding(.bottom, 244)
-                .opacity(viewModel.isDone ? 0 : 1)
+                .opacity(audioManager.isBlowingDetected ? 0 : 1)
+                .animation(.easeInOut, value: audioManager.isBlowingDetected)
         }
-        //AVFoundation에서 데시벨 기반으로 바람 불었음 유무 판단.
-        //startMonitoring 선언 -> 데시벨 변화 관측
         .onAppear {
-            viewModel.audioManager.startMonitoring()
+            audioManager.startMonitoring()
         }
     }
-}
-
-#Preview {
-    FireAnimationView(viewModel: iPhoneFairyTaleViewModel(audioManager: AudioInputModel()))
 }
