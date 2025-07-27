@@ -55,6 +55,9 @@
 		A1D706282E28DFAB008694A8 /* HomeDoorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D706272E28DFAB008694A8 /* HomeDoorView.swift */; };
 		A1D7062C2E28E715008694A8 /* iPhonePairingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D7062B2E28E70D008694A8 /* iPhonePairingViewModel.swift */; };
 		A1F4C7632E29DCFB00044760 /* BookModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F4C7622E29DCF700044760 /* BookModel.swift */; };
+		D50061402E36A27600B6E1BA /* SoundLiterals.swift in Sources */ = {isa = PBXBuildFile; fileRef = D500613F2E36A27300B6E1BA /* SoundLiterals.swift */; };
+		D50061442E36A2D900B6E1BA /* pigBlowEffect.wav in Resources */ = {isa = PBXBuildFile; fileRef = D50061432E36A2D900B6E1BA /* pigBlowEffect.wav */; };
+		D50061452E36A2D900B6E1BA /* pigBackgroundMusic.wav in Resources */ = {isa = PBXBuildFile; fileRef = D50061422E36A2D900B6E1BA /* pigBackgroundMusic.wav */; };
 		D51A0AA22E31121300E4D19B /* ConnectListScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51A0AA12E31120D00E4D19B /* ConnectListScrollView.swift */; };
 		D5360FFB2E27DA0C001E15B2 /* AppRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5360FFA2E27DA08001E15B2 /* AppRoute.swift */; };
 		D5360FFD2E27DA19001E15B2 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5360FFC2E27DA13001E15B2 /* AppCoordinator.swift */; };
@@ -145,6 +148,9 @@
 		A1D706272E28DFAB008694A8 /* HomeDoorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDoorView.swift; sourceTree = "<group>"; };
 		A1D7062B2E28E70D008694A8 /* iPhonePairingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPhonePairingViewModel.swift; sourceTree = "<group>"; };
 		A1F4C7622E29DCF700044760 /* BookModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookModel.swift; sourceTree = "<group>"; };
+		D500613F2E36A27300B6E1BA /* SoundLiterals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundLiterals.swift; sourceTree = "<group>"; };
+		D50061422E36A2D900B6E1BA /* pigBackgroundMusic.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = pigBackgroundMusic.wav; sourceTree = "<group>"; };
+		D50061432E36A2D900B6E1BA /* pigBlowEffect.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = pigBlowEffect.wav; sourceTree = "<group>"; };
 		D51A0AA12E31120D00E4D19B /* ConnectListScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectListScrollView.swift; sourceTree = "<group>"; };
 		D5360FFA2E27DA08001E15B2 /* AppRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRoute.swift; sourceTree = "<group>"; };
 		D5360FFC2E27DA13001E15B2 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
@@ -329,6 +335,7 @@
 		A19ADCA02E2E179C007BBF05 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D50061412E36A2B000B6E1BA /* Sounds */,
 				D500611F2E35F82300B6E1BA /* Lottie */,
 				D54E1C9A2E2E6B4E00661D28 /* Fonts */,
 				D564C4362E27A50E00A50B49 /* Assets.xcassets */,
@@ -397,6 +404,23 @@
 				05CDDF302E31323D00455F62 /* Fire.json */,
 			);
 			path = Lottie;
+			sourceTree = "<group>";
+		};
+		D500613E2E36A26800B6E1BA /* Literals */ = {
+			isa = PBXGroup;
+			children = (
+				D500613F2E36A27300B6E1BA /* SoundLiterals.swift */,
+			);
+			path = Literals;
+			sourceTree = "<group>";
+		};
+		D50061412E36A2B000B6E1BA /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				D50061422E36A2D900B6E1BA /* pigBackgroundMusic.wav */,
+				D50061432E36A2D900B6E1BA /* pigBlowEffect.wav */,
+			);
+			path = Sounds;
 			sourceTree = "<group>";
 		};
 		D5360FF92E27D9E4001E15B2 /* App */ = {
@@ -513,6 +537,7 @@
 		D552B4B32E29F6EB00519860 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				D500613E2E36A26800B6E1BA /* Literals */,
 				A19ADCBA2E2E842F007BBF05 /* Components */,
 				D54E1C992E2E6AAC00661D28 /* DesignSystem */,
 				A19ADCA02E2E179C007BBF05 /* Resources */,
@@ -690,6 +715,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A129B2A22E34DCD4004D8698 /* Wifi.json in Resources */,
+				D50061442E36A2D900B6E1BA /* pigBlowEffect.wav in Resources */,
+				D50061452E36A2D900B6E1BA /* pigBackgroundMusic.wav in Resources */,
 				D54E1C9D2E2E6BB200661D28 /* Colors.xcassets in Resources */,
 				D564C43C2E27A50E00A50B49 /* Assets.xcassets in Resources */,
 				05CDDF312E31323D00455F62 /* Fire.json in Resources */,
@@ -725,6 +752,7 @@
 				A17BF6F12E31C3D2006783D1 /* HomeKitMultipeer+Extexnsion.swift in Sources */,
 				D53610122E27FCFB001E15B2 /* HomeLibraryView.swift in Sources */,
 				D53610292E28064A001E15B2 /* iPhoneIntroViewModel.swift in Sources */,
+				D50061402E36A27600B6E1BA /* SoundLiterals.swift in Sources */,
 				05CDDF232E2FEBA100455F62 /* AudioInputModel.swift in Sources */,
 				A15FAE942E2CD9D200468F16 /* iPadFairyTaleView.swift in Sources */,
 				A12BB7FE2E2FADDF00D58DBA /* FairyTaleInteractionView.swift in Sources */,
