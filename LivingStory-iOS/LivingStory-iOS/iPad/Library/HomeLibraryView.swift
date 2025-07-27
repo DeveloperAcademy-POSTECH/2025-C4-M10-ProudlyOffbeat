@@ -17,15 +17,13 @@ struct HomeLibraryView: View {
             HomeInfoFrameView()
             HomeDoorView(action: { bookType in viewModel.pushToiPhonePairingView(
                 coordinator: coordinator,
-                bookType: bookType)
+                bookType: bookType
+            )
             })
+        }
+        .onAppear {
+            viewModel.onLibraryApper()
         }
     }
 }
 
-#Preview{
-    NavigationStack{
-        HomeLibraryView(viewModel: HomeLibraryViewModel())
-            .environmentObject(AppCoordinator())
-    }
-}

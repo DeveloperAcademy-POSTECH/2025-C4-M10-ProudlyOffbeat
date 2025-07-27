@@ -34,7 +34,7 @@ final class ModuleFactory: FactoryProtocol {
     }
     
     func makeHomeLibraryView() -> HomeLibraryView {
-        let viewModel = HomeLibraryViewModel()
+        let viewModel = HomeLibraryViewModel(multipeerManager: multipeerManager)
         return HomeLibraryView(viewModel: viewModel)
     }
     
