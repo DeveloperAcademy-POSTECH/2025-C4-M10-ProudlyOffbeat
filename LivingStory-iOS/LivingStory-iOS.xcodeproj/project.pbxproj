@@ -47,6 +47,8 @@
 		A19ADCB32E2E8099007BBF05 /* FindYouriPhoneTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19ADCB22E2E8082007BBF05 /* FindYouriPhoneTextView.swift */; };
 		A19ADCB52E2E81F8007BBF05 /* ConnectRightPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19ADCB42E2E81EF007BBF05 /* ConnectRightPageView.swift */; };
 		A19ADCB72E2E8205007BBF05 /* ConncetLeftPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19ADCB62E2E81FD007BBF05 /* ConncetLeftPageView.swift */; };
+		A19B93052E3710C600CADA60 /* iPadHeungInteractionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19B93042E3710B600CADA60 /* iPadHeungInteractionView.swift */; };
+		A19B93072E3710D200CADA60 /* iPadPigInteractionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19B93062E3710CC00CADA60 /* iPadPigInteractionView.swift */; };
 		A1D294732E2B8DAA00695EE2 /* HomeInfoFrameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D294722E2B8DA700695EE2 /* HomeInfoFrameView.swift */; };
 		A1D487FB2E29484100F70879 /* iPhonePairingBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D487FA2E29484100F70879 /* iPhonePairingBackgroundView.swift */; };
 		A1D487FD2E2948AA00F70879 /* PairingBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D487FC2E2948A000F70879 /* PairingBookView.swift */; };
@@ -141,6 +143,8 @@
 		A19ADCB22E2E8082007BBF05 /* FindYouriPhoneTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindYouriPhoneTextView.swift; sourceTree = "<group>"; };
 		A19ADCB42E2E81EF007BBF05 /* ConnectRightPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectRightPageView.swift; sourceTree = "<group>"; };
 		A19ADCB62E2E81FD007BBF05 /* ConncetLeftPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConncetLeftPageView.swift; sourceTree = "<group>"; };
+		A19B93042E3710B600CADA60 /* iPadHeungInteractionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPadHeungInteractionView.swift; sourceTree = "<group>"; };
+		A19B93062E3710CC00CADA60 /* iPadPigInteractionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPadPigInteractionView.swift; sourceTree = "<group>"; };
 		A1D294722E2B8DA700695EE2 /* HomeInfoFrameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInfoFrameView.swift; sourceTree = "<group>"; };
 		A1D487FA2E29484100F70879 /* iPhonePairingBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPhonePairingBackgroundView.swift; sourceTree = "<group>"; };
 		A1D487FC2E2948A000F70879 /* PairingBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairingBookView.swift; sourceTree = "<group>"; };
@@ -293,6 +297,8 @@
 				A15FAE992E2CDC3F00468F16 /* FairyTaleButtonView.swift */,
 				A15FAE9B2E2CE2EF00468F16 /* FairyTaleScriptView.swift */,
 				A12BB7FD2E2FADD600D58DBA /* FairyTaleInteractionView.swift */,
+				A19B93062E3710CC00CADA60 /* iPadPigInteractionView.swift */,
+				A19B93042E3710B600CADA60 /* iPadHeungInteractionView.swift */,
 				A15FAE9D2E2CE49500468F16 /* FairyTaleBackgroundView.swift */,
 			);
 			path = View;
@@ -735,6 +741,7 @@
 				052F269F2E2E5BDC00E86FA2 /* ConnectImageView.swift in Sources */,
 				A15FAE982E2CDA1800468F16 /* iPadFairyTaleViewModel.swift in Sources */,
 				A19ADCAE2E2E7D9A007BBF05 /* iPhoneNoticeTextView.swift in Sources */,
+				A19B93052E3710C600CADA60 /* iPadHeungInteractionView.swift in Sources */,
 				A129B2A42E3533B0004D8698 /* ConnectedBookView.swift in Sources */,
 				D5CA2DB22E31D8EA0022C4BB /* FromiPadConnectedAlert.swift in Sources */,
 				A15FAEA32E2D021100468F16 /* FairyTaleModel.swift in Sources */,
@@ -791,6 +798,7 @@
 				A129B2BF2E36257E004D8698 /* iPhoneFairyTaleModel.swift in Sources */,
 				05CDDF252E2FEC0E00455F62 /* LottieView.swift in Sources */,
 				A15FAE9E2E2CE49500468F16 /* FairyTaleBackgroundView.swift in Sources */,
+				A19B93072E3710D200CADA60 /* iPadPigInteractionView.swift in Sources */,
 				A1D294732E2B8DAA00695EE2 /* HomeInfoFrameView.swift in Sources */,
 				D5EBC28F2E2FF93D006A8782 /* NonconnectionAlert.swift in Sources */,
 				052F269D2E2E5B1C00E86FA2 /* ConnectButtonView.swift in Sources */,
@@ -938,7 +946,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 9S8SHSW95K;
+				DEVELOPMENT_TEAM = 8FKM9FB4PH;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "LivingStory-iOS/Info.plist";
@@ -973,7 +981,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 9S8SHSW95K;
+				DEVELOPMENT_TEAM = 8FKM9FB4PH;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "LivingStory-iOS/Info.plist";
