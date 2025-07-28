@@ -18,10 +18,13 @@ final class iPadPairingViewModel: ObservableObject {
     @Published var isConnected = false
     @Published var showConnectedAlert = false
     @Published var book: BookType?
+    @Published var selectedBookType: FairyTaleID?
+    @Published var isFairyTaleViewShown = false  // ✅ 추가
     
     init(multipeerManager: MultipeerManager) {
         self.multipeerManager = multipeerManager
         self.setupConnectionObserver()
+        self.setupBookTypeObserver()
     }
     
     // iPad를 의미
@@ -37,12 +40,31 @@ final class iPadPairingViewModel: ObservableObject {
         }
     }
     
+    var receivedBookCoverImageString: String {
+        switch selectedBookType {
+        case .pig: return "PigCover"
+        case .oz: return "OzCover"
+        case .heung: return "HeungCover"
+        case .none: return "PigCover" // 기본값
+        }
+    }
+    
     var connectedDeviceName: String {
         if let device = connectedDevice {
             return device.mcPeerID.displayName
         } else {
             return "연결된 기기 없음"
         }
+    }
+    // 책 타입 관찰
+    private func setupBookTypeObserver() {
+        multipeerManager.$selectedBookType
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] bookType in
+                self?.selectedBookType = bookType
+                print("📚 iPhone에서 받은 책 타입: \(bookType?.rawValue ?? "없음")")
+            }
+            .store(in: &iPadCancellables)
     }
     
     private func setupConnectionObserver() {
@@ -130,6 +152,23 @@ final class iPadPairingViewModel: ObservableObject {
     
     func dismissConnectAlert() {
         showConnectedAlert = false
+    }
+    
+    @MainActor
+    func goToFairyTaleView(coordinator: AppCoordinator, bookType: FairyTaleID) {
+        // ViewModel 상태만 체크 (더 간단하고 안전)
+        // 즉시 상태 체크 및 업데이트
+        if isFairyTaleViewShown {
+            print("📱 이미 동화 인터랙션 화면이 표시 중입니다")
+            return
+        }
+        
+        // 상태를 먼저 업데이트 (동시 호출 방지)
+        isFairyTaleViewShown = true
+        print("📱 상태 업데이트: isFairyTaleViewShown = true")
+        
+        coordinator.push(.iPhoneFairyTale(bookType: bookType))
+        print("📱 동화 인터랙션 화면으로 이동: \(bookType.rawValue)")
     }
     
 }

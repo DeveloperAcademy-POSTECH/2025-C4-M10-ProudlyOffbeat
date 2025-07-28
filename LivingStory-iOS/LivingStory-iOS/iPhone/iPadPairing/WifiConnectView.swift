@@ -16,8 +16,11 @@ struct WifiConnectView: View {
         VStack(alignment: .center){
             Spacer()
             if viewModel.isConnected{
-                ConnectedBookView(connectedDeviceName: viewModel.connectedDeviceName, bookCoverImageString: viewModel.bookCoverImageString(book: viewModel.book ?? .pig))
-            }else{
+                ConnectedBookView(
+                    connectedDeviceName: viewModel.connectedDeviceName,
+                    bookCoverImageString: viewModel.receivedBookCoverImageString
+                )
+            } else {
                 LottieView(filename: "Wifi", loopModel: .loop)
                     .frame(width: 200, height: 200)
             }
