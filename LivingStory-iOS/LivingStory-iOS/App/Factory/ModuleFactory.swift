@@ -25,6 +25,7 @@ final class ModuleFactory: FactoryProtocol {
     static let shared = ModuleFactory()
     
     private let multipeerManager = MultipeerManager.shared
+    private let homeKitManager = HomeKitManager.shared
     
     private init() {}
     
@@ -45,7 +46,7 @@ final class ModuleFactory: FactoryProtocol {
     }
     
     func makeiPadFairyTaleView(book: BookType) -> iPadFairyTaleView {
-        let viewModel = iPadFairyTaleViewModel(bookType: book, multipeerManager: multipeerManager)
+        let viewModel = iPadFairyTaleViewModel(bookType: book, multipeerManager: multipeerManager, homeKitManager: homeKitManager)
         return iPadFairyTaleView(viewModel: viewModel)
     }
     

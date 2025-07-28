@@ -32,9 +32,15 @@ struct iPadFairyTaleView: View {
                     }
                 )
             } else if let book = viewModel.selectedBook, viewModel.currentPage == book.pages.count - 1 {
-                FairyTaleLastPageButtonView(leftaction: {
+                FairyTaleLastPageButtonView(
+                    leftaction: {
                     viewModel.decreaseIndex()
-                })
+                    },
+                    homeAction: {
+                        viewModel.returnToHome(coordinator: coordinator)
+                    }
+                    
+                )
             }
             
             FairyTaleScriptView(script: viewModel.currentScript)
@@ -57,6 +63,9 @@ struct iPadFairyTaleView: View {
                     viewModel.dismissInteractionCompleteAlert()
                 }
             }
+        }
+        onAppear {
+            viewModel.setUpPigFairyTaleLighting()
         }
     }
 }

@@ -1,15 +1,15 @@
 //
-//  HomeKit.swift
+//  HomeKitManager+Extension.swift
 //  LivingStory-iOS
 //
-//  Created by 문창재 on 7/24/25.
+//  Created by Demian Yoo on 7/28/25.
 //
-import Foundation
+
 import HomeKit
 
-// MARK: - HMHomeManagerDelegate
 extension HomeKitManager: HMHomeManagerDelegate {
     func homeManagerDidUpdateHomes(_ manager: HMHomeManager) {
-        updateAccessories()
+        print("홈 정보 업데이트 됨.")
+        updateAccessoriesAndScenes()
     }
 }

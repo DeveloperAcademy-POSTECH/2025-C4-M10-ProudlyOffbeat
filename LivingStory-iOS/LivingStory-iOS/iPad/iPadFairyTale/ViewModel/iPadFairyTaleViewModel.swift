@@ -9,6 +9,7 @@ import SwiftUI
 
 final class iPadFairyTaleViewModel: ObservableObject {
     private let multipeerManager: MultipeerManager
+    private let homeKitManager: HomeKitManager
     
     @Published var currentPage: Int = 0
     @Published var selectedBook: StoryBook?
@@ -18,8 +19,9 @@ final class iPadFairyTaleViewModel: ObservableObject {
     @Published var isInteractionTriggered: Bool = false
     @Published var showInteractionCompleteAlert: Bool = false
     
-    init(bookType: BookType, multipeerManager: MultipeerManager) {
+    init(bookType: BookType, multipeerManager: MultipeerManager, homeKitManager: HomeKitManager) {
         self.multipeerManager = multipeerManager
+        self.homeKitManager = homeKitManager
         selectBook(by: bookType)
         setupNotificationObserver()
         
@@ -41,6 +43,27 @@ final class iPadFairyTaleViewModel: ObservableObject {
     var currentInteraction: InteractionType {
         selectedBook?.pages[currentPage].interaction ?? .none
     }
+    
+    // 돼지 동화 시작시 조명 설정
+    func setUpPigFairyTaleLighting() {
+        guard let bookType = selectedBook?.type else { return }
+        
+        if bookType == .pig {
+            homeKitManager.setPigInteractionLighting(page: 0)
+            print("🐷 돼지 동화 시작 - 조명 켜기")
+        }
+    }
+    
+    // 3번째 페이지(인덱스 3)에서만 조명 끄기
+    func turnOffLightsOnPage3() {
+        guard let bookType = selectedBook?.type else { return }
+        
+        if bookType == .pig && currentPage == 3 {
+            homeKitManager.setPigInteractionLighting(page: 3)
+            print("🐷 3번째 페이지 - 조명 끄기")
+        }
+    }
+    
     
     // interaction 보내기
     func iPadSendInteraction() {
@@ -103,18 +126,18 @@ final class iPadFairyTaleViewModel: ObservableObject {
     }
     
     private func afterInteractionGoToNextPage() {
-          guard let selectedBook = selectedBook else { return }
-          
-          // 현재 페이지가 마지막 페이지가 아니면 다음 페이지로
-          if currentPage + 1 < selectedBook.pages.count {
-              currentPage += 1
-              isInteractionCompleted = false
-              isInteractionTriggered = false
-              print("📖 자동으로 다음 페이지로 이동: \(currentPage + 1)페이지")
-          } else {
-              print("📖 마지막 페이지입니다")
-          }
-      }
+        guard let selectedBook = selectedBook else { return }
+        
+        // 현재 페이지가 마지막 페이지가 아니면 다음 페이지로
+        if currentPage + 1 < selectedBook.pages.count {
+            currentPage += 1
+            isInteractionCompleted = false
+            isInteractionTriggered = false
+            print("📖 자동으로 다음 페이지로 이동: \(currentPage + 1)페이지")
+        } else {
+            print("📖 마지막 페이지입니다")
+        }
+    }
     
     func increaseIndex(){
         //다음 버튼 로직
@@ -131,6 +154,12 @@ final class iPadFairyTaleViewModel: ObservableObject {
         if currentPage + 1 < selectedBook.pages.count {
             currentPage += 1
             
+            // 뷰 렌더링 완료 후 조명 제어
+            Task { @MainActor in
+                if self.currentPage == 3 {
+                    self.turnOffLightsOnPage3()
+                }
+            }
             isInteractionCompleted = false
             isInteractionTriggered = false
         }
