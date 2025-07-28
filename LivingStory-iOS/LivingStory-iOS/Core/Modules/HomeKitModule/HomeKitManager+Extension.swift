@@ -9,7 +9,12 @@ import HomeKit
 
 extension HomeKitManager: HMHomeManagerDelegate {
     func homeManagerDidUpdateHomes(_ manager: HMHomeManager) {
-        print("홈 정보 업데이트 됨.")
-        updateAccessoriesAndScenes()
+        print("🏠 homeManagerDidUpdateHomes 호출됨!")
+        print("🏠 홈 개수: \(manager.homes.count)")
+        
+        DispatchQueue.main.async {
+            self.isHomeKitReady = true
+            print("✅ HomeKit 준비 완료!")
+        }
     }
 }

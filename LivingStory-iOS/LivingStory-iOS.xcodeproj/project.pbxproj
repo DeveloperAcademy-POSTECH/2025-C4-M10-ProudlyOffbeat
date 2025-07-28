@@ -61,7 +61,7 @@
 		D50061402E36A27600B6E1BA /* SoundLiterals.swift in Sources */ = {isa = PBXBuildFile; fileRef = D500613F2E36A27300B6E1BA /* SoundLiterals.swift */; };
 		D50061442E36A2D900B6E1BA /* pigBlowEffect.wav in Resources */ = {isa = PBXBuildFile; fileRef = D50061432E36A2D900B6E1BA /* pigBlowEffect.wav */; };
 		D50061452E36A2D900B6E1BA /* pigBackgroundMusic.wav in Resources */ = {isa = PBXBuildFile; fileRef = D50061422E36A2D900B6E1BA /* pigBackgroundMusic.wav */; };
-		D518D80A2E3744430088AB6F /* HomeKitManager+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D518D8092E3744360088AB6F /* HomeKitManager+Extension.swift */; };
+		D518575B2E37623700F4335E /* HomeKitManager+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D518575A2E37622D00F4335E /* HomeKitManager+Extension.swift */; };
 		D51A0AA22E31121300E4D19B /* ConnectListScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51A0AA12E31120D00E4D19B /* ConnectListScrollView.swift */; };
 		D5360FFB2E27DA0C001E15B2 /* AppRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5360FFA2E27DA08001E15B2 /* AppRoute.swift */; };
 		D5360FFD2E27DA19001E15B2 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5360FFC2E27DA13001E15B2 /* AppCoordinator.swift */; };
@@ -158,7 +158,8 @@
 		D500613F2E36A27300B6E1BA /* SoundLiterals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundLiterals.swift; sourceTree = "<group>"; };
 		D50061422E36A2D900B6E1BA /* pigBackgroundMusic.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = pigBackgroundMusic.wav; sourceTree = "<group>"; };
 		D50061432E36A2D900B6E1BA /* pigBlowEffect.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = pigBlowEffect.wav; sourceTree = "<group>"; };
-		D518D8092E3744360088AB6F /* HomeKitManager+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeKitManager+Extension.swift"; sourceTree = "<group>"; };
+		D518575A2E37622D00F4335E /* HomeKitManager+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeKitManager+Extension.swift"; sourceTree = "<group>"; };
+		D518575D2E37682700F4335E /* LivingStory-iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "LivingStory-iOS.entitlements"; sourceTree = "<group>"; };
 		D51A0AA12E31120D00E4D19B /* ConnectListScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectListScrollView.swift; sourceTree = "<group>"; };
 		D5360FFA2E27DA08001E15B2 /* AppRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRoute.swift; sourceTree = "<group>"; };
 		D5360FFC2E27DA13001E15B2 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
@@ -334,7 +335,7 @@
 		A17BF6E92E31C314006783D1 /* HomeKitModule */ = {
 			isa = PBXGroup;
 			children = (
-				D518D8092E3744360088AB6F /* HomeKitManager+Extension.swift */,
+				D518575A2E37622D00F4335E /* HomeKitManager+Extension.swift */,
 				A17BF6F22E32319D006783D1 /* HomeKitModels.swift */,
 				A17BF6EC2E31C3AB006783D1 /* HomeKitManager.swift */,
 			);
@@ -611,6 +612,7 @@
 		D564C4392E27A50E00A50B49 /* LivingStory-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				D518575D2E37682700F4335E /* LivingStory-iOS.entitlements */,
 				A19ADCA52E2E17FA007BBF05 /* Info.plist */,
 				D5360FF92E27D9E4001E15B2 /* App */,
 				D552B4B32E29F6EB00519860 /* Core */,
@@ -768,7 +770,7 @@
 				A1D487FB2E29484100F70879 /* iPhonePairingBackgroundView.swift in Sources */,
 				A19ADCB72E2E8205007BBF05 /* ConncetLeftPageView.swift in Sources */,
 				A15FAE852E2BE01400468F16 /* ConnectCellView.swift in Sources */,
-				D518D80A2E3744430088AB6F /* HomeKitManager+Extension.swift in Sources */,
+				D518575B2E37623700F4335E /* HomeKitManager+Extension.swift in Sources */,
 				A19ADCB52E2E81F8007BBF05 /* ConnectRightPageView.swift in Sources */,
 				D5360FFD2E27DA19001E15B2 /* AppCoordinator.swift in Sources */,
 				D53610252E2804AA001E15B2 /* iPadIntroViewModel.swift in Sources */,
@@ -964,6 +966,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "LivingStory-iOS/LivingStory-iOS.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9S8SHSW95K;
@@ -999,6 +1002,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "LivingStory-iOS/LivingStory-iOS.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9S8SHSW95K;

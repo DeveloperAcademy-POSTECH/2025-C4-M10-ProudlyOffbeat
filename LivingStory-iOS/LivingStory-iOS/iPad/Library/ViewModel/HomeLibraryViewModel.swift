@@ -11,13 +11,16 @@ import MultipeerConnectivity
 final class HomeLibraryViewModel: ObservableObject {
     
     private let multipeerManager: MultipeerManager
+    private let homeKitManager: HomeKitManager
     
-    init(multipeerManager: MultipeerManager) {
+    init(multipeerManager: MultipeerManager, homeKitManager: HomeKitManager) {
         self.multipeerManager = multipeerManager
+        self.homeKitManager = homeKitManager
     }
     
     func onLibraryApper() {
         multipeerManager.disconnectAll()
+        homeKitManager.setDefaultLighting()
     }
     
     

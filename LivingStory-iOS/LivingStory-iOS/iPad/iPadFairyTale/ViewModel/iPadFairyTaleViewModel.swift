@@ -44,23 +44,35 @@ final class iPadFairyTaleViewModel: ObservableObject {
         selectedBook?.pages[currentPage].interaction ?? .none
     }
     
-    // 돼지 동화 시작시 조명 설정
     func setUpPigFairyTaleLighting() {
         guard let bookType = selectedBook?.type else { return }
         
         if bookType == .pig {
-            homeKitManager.setPigInteractionLighting(page: 0)
-            print("🐷 돼지 동화 시작 - 조명 켜기")
+            // HomeKit이 준비될 때까지 기다렸다가 실행
+            if homeKitManager.isHomeKitReady {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                    self.homeKitManager.setPigLighting(pageIndex: 0)
+                    print("🐷 돼지 동화 시작 - 조명 켜기")
+                }
+            } else {
+                // HomeKit이 준비될 때까지 재시도
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                    self.setUpPigFairyTaleLighting()
+                }
+            }
         }
     }
     
-    // 3번째 페이지(인덱스 3)에서만 조명 끄기
     func turnOffLightsOnPage3() {
         guard let bookType = selectedBook?.type else { return }
         
         if bookType == .pig && currentPage == 3 {
-            homeKitManager.setPigInteractionLighting(page: 3)
-            print("🐷 3번째 페이지 - 조명 끄기")
+            if homeKitManager.isHomeKitReady {
+                homeKitManager.setPigLighting(pageIndex: 3)
+                print(" 3번째 페이지 - 조명 끄기")
+            } else {
+                print("⚠️ HomeKit이 준비되지 않아 조명 제어를 건너뜁니다")
+            }
         }
     }
     
@@ -134,6 +146,11 @@ final class iPadFairyTaleViewModel: ObservableObject {
             isInteractionCompleted = false
             isInteractionTriggered = false
             print("📖 자동으로 다음 페이지로 이동: \(currentPage + 1)페이지")
+            
+            if currentPage == 3 {
+                print(" 3번째 페이지 도달! 조명 끄기 시도")
+                turnOffLightsOnPage3()
+            }
         } else {
             print("📖 마지막 페이지입니다")
         }
@@ -153,13 +170,6 @@ final class iPadFairyTaleViewModel: ObservableObject {
         // 다음 페이지로 이동
         if currentPage + 1 < selectedBook.pages.count {
             currentPage += 1
-            
-            // 뷰 렌더링 완료 후 조명 제어
-            Task { @MainActor in
-                if self.currentPage == 3 {
-                    self.turnOffLightsOnPage3()
-                }
-            }
             isInteractionCompleted = false
             isInteractionTriggered = false
         }

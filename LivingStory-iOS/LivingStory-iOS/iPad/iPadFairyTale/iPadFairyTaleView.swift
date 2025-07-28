@@ -64,8 +64,10 @@ struct iPadFairyTaleView: View {
                 }
             }
         }
-        onAppear {
-            viewModel.setUpPigFairyTaleLighting()
+        .onAppear {
+            DispatchQueue.main.async {
+                viewModel.setUpPigFairyTaleLighting()
+            }
         }
     }
 }
