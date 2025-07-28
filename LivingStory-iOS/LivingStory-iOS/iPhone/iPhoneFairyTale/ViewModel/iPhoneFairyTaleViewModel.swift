@@ -12,7 +12,7 @@ import Combine
 final class iPhoneFairyTaleViewModel: ObservableObject{
     
     private let multipeerManager: MultipeerManager
-    private let bookType: FairyTaleID
+    internal let bookType: FairyTaleID
     private var cancellables = Set<AnyCancellable>()
     
     init(multipeerManager: MultipeerManager, bookType: FairyTaleID) {
@@ -36,6 +36,22 @@ final class iPhoneFairyTaleViewModel: ObservableObject{
     }
     
     func sendLanternInteractionCompleted() {
+        let message = "\(bookType.rawValue)::\(FairyInteractionSignal.done.rawValue)"
+        guard let data = message.data(using: .utf8) else { return }
+        do {
+            try multipeerManager.session.send(data, toPeers: multipeerManager.session.connectedPeers, with: .reliable)
+            print("�� iPhone → iPad 인터랙션 완료 메시지 전송: \(message)")
+            
+            // ✅ 인터랙션 완료 후 홈으로 이동
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {  // 1초 후 이동
+                NotificationCenter.default.post(name: .goToIPhoneRoot, object: nil)
+            }
+        } catch {
+            print("❌ iPhone → iPad 인터랙션 완료 메시지 전송 실패: \(error)")
+        }
+    }
+    
+    func sendSawInteractionCompleted() {
         let message = "\(bookType.rawValue)::\(FairyInteractionSignal.done.rawValue)"
         guard let data = message.data(using: .utf8) else { return }
         do {

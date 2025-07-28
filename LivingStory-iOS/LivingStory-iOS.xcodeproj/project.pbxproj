@@ -46,6 +46,12 @@
 		A19ADCB32E2E8099007BBF05 /* FindYouriPhoneTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19ADCB22E2E8082007BBF05 /* FindYouriPhoneTextView.swift */; };
 		A19ADCB52E2E81F8007BBF05 /* ConnectRightPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19ADCB42E2E81EF007BBF05 /* ConnectRightPageView.swift */; };
 		A19ADCB72E2E8205007BBF05 /* ConncetLeftPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19ADCB62E2E81FD007BBF05 /* ConncetLeftPageView.swift */; };
+		A19B93052E3710C600CADA60 /* iPadHeungInteractionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19B93042E3710B600CADA60 /* iPadHeungInteractionView.swift */; };
+		A19B93072E3710D200CADA60 /* iPadPigInteractionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19B93062E3710CC00CADA60 /* iPadPigInteractionView.swift */; };
+		A19B930C2E371E7C00CADA60 /* iPhoneHeungInteractionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19B930B2E371E7100CADA60 /* iPhoneHeungInteractionView.swift */; };
+		A19B93342E375F8600CADA60 /* CoreMotionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19B93332E375F8100CADA60 /* CoreMotionManager.swift */; };
+		A19B93372E37611C00CADA60 /* Sawing1.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A19B93362E37611C00CADA60 /* Sawing1.m4a */; };
+		A19B93392E3761DE00CADA60 /* Sawing2.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A19B93382E3761DE00CADA60 /* Sawing2.m4a */; };
 		A1D294732E2B8DAA00695EE2 /* HomeInfoFrameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D294722E2B8DA700695EE2 /* HomeInfoFrameView.swift */; };
 		A1D487FB2E29484100F70879 /* iPhonePairingBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D487FA2E29484100F70879 /* iPhonePairingBackgroundView.swift */; };
 		A1D487FD2E2948AA00F70879 /* PairingBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D487FC2E2948A000F70879 /* PairingBookView.swift */; };
@@ -145,6 +151,12 @@
 		A19ADCB22E2E8082007BBF05 /* FindYouriPhoneTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindYouriPhoneTextView.swift; sourceTree = "<group>"; };
 		A19ADCB42E2E81EF007BBF05 /* ConnectRightPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectRightPageView.swift; sourceTree = "<group>"; };
 		A19ADCB62E2E81FD007BBF05 /* ConncetLeftPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConncetLeftPageView.swift; sourceTree = "<group>"; };
+		A19B93042E3710B600CADA60 /* iPadHeungInteractionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPadHeungInteractionView.swift; sourceTree = "<group>"; };
+		A19B93062E3710CC00CADA60 /* iPadPigInteractionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPadPigInteractionView.swift; sourceTree = "<group>"; };
+		A19B930B2E371E7100CADA60 /* iPhoneHeungInteractionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPhoneHeungInteractionView.swift; sourceTree = "<group>"; };
+		A19B93332E375F8100CADA60 /* CoreMotionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreMotionManager.swift; sourceTree = "<group>"; };
+		A19B93362E37611C00CADA60 /* Sawing1.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Sawing1.m4a; sourceTree = "<group>"; };
+		A19B93382E3761DE00CADA60 /* Sawing2.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Sawing2.m4a; sourceTree = "<group>"; };
 		A1D294722E2B8DA700695EE2 /* HomeInfoFrameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInfoFrameView.swift; sourceTree = "<group>"; };
 		A1D487FA2E29484100F70879 /* iPhonePairingBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPhonePairingBackgroundView.swift; sourceTree = "<group>"; };
 		A1D487FC2E2948A000F70879 /* PairingBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairingBookView.swift; sourceTree = "<group>"; };
@@ -247,8 +259,9 @@
 		A129B2B72E361292004D8698 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				05CDDF1E2E2FEB2E00455F62 /* FireAnimationView.swift */,
+				A19B930B2E371E7100CADA60 /* iPhoneHeungInteractionView.swift */,
 				05CDDF1C2E2FEB0C00455F62 /* iPhoneInteractionView.swift */,
+				05CDDF1E2E2FEB2E00455F62 /* FireAnimationView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -264,6 +277,7 @@
 		A129B2BB2E3612DA004D8698 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A19B930D2E375F5900CADA60 /* CoreMotion */,
 				A129B2BE2E362577004D8698 /* iPhoneFairyTaleModel.swift */,
 				05CDDF272E2FEC5D00455F62 /* AVFoundation */,
 			);
@@ -305,6 +319,8 @@
 				A15FAE992E2CDC3F00468F16 /* FairyTaleButtonView.swift */,
 				A15FAE9B2E2CE2EF00468F16 /* FairyTaleScriptView.swift */,
 				A12BB7FD2E2FADD600D58DBA /* FairyTaleInteractionView.swift */,
+				A19B93062E3710CC00CADA60 /* iPadPigInteractionView.swift */,
+				A19B93042E3710B600CADA60 /* iPadHeungInteractionView.swift */,
 				A15FAE9D2E2CE49500468F16 /* FairyTaleBackgroundView.swift */,
 			);
 			path = View;
@@ -351,6 +367,7 @@
 			isa = PBXGroup;
 			children = (
 				D50061412E36A2B000B6E1BA /* Sounds */,
+				A19B93352E37610C00CADA60 /* Sound */,
 				D500611F2E35F82300B6E1BA /* Lottie */,
 				D54E1C9A2E2E6B4E00661D28 /* Fonts */,
 				D564C4362E27A50E00A50B49 /* Assets.xcassets */,
@@ -387,6 +404,23 @@
 				A12BB7F72E2F3F3200D58DBA /* LSBottonButtonStackView.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		A19B930D2E375F5900CADA60 /* CoreMotion */ = {
+			isa = PBXGroup;
+			children = (
+				A19B93332E375F8100CADA60 /* CoreMotionManager.swift */,
+			);
+			path = CoreMotion;
+			sourceTree = "<group>";
+		};
+		A19B93352E37610C00CADA60 /* Sound */ = {
+			isa = PBXGroup;
+			children = (
+				A19B93362E37611C00CADA60 /* Sawing1.m4a */,
+				A19B93382E3761DE00CADA60 /* Sawing2.m4a */,
+			);
+			path = Sound;
 			sourceTree = "<group>";
 		};
 		A1D294702E29E37700695EE2 /* Products */ = {
@@ -753,9 +787,11 @@
 				A129B2A22E34DCD4004D8698 /* Wifi.json in Resources */,
 				D50061442E36A2D900B6E1BA /* pigBlowEffect.wav in Resources */,
 				D50061452E36A2D900B6E1BA /* pigBackgroundMusic.wav in Resources */,
+				A19B93372E37611C00CADA60 /* Sawing1.m4a in Resources */,
 				D54E1C9D2E2E6BB200661D28 /* Colors.xcassets in Resources */,
 				D564C43C2E27A50E00A50B49 /* Assets.xcassets in Resources */,
 				05CDDF312E31323D00455F62 /* Fire.json in Resources */,
+				A19B93392E3761DE00CADA60 /* Sawing2.m4a in Resources */,
 				A19ADCA22E2E17B3007BBF05 /* BinggraeSamanco-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -771,6 +807,7 @@
 				A15FAE982E2CDA1800468F16 /* iPadFairyTaleViewModel.swift in Sources */,
 				D51857612E37995100F4335E /* iPhoneAirPlayButtonView.swift in Sources */,
 				A19ADCAE2E2E7D9A007BBF05 /* iPhoneNoticeTextView.swift in Sources */,
+				A19B93052E3710C600CADA60 /* iPadHeungInteractionView.swift in Sources */,
 				A129B2A42E3533B0004D8698 /* ConnectedBookView.swift in Sources */,
 				D5CA2DB22E31D8EA0022C4BB /* FromiPadConnectedAlert.swift in Sources */,
 				A15FAEA32E2D021100468F16 /* FairyTaleModel.swift in Sources */,
@@ -797,6 +834,7 @@
 				D5EBC2892E2FEE1D006A8782 /* ConnectedAlert.swift in Sources */,
 				D5FFF9FE2E2D5D93004C6586 /* MultipeerManager+Extension.swift in Sources */,
 				A19ADCB12E2E7EAC007BBF05 /* PeerConnectButtonView.swift in Sources */,
+				A19B93342E375F8600CADA60 /* CoreMotionManager.swift in Sources */,
 				D51A0AA22E31121300E4D19B /* ConnectListScrollView.swift in Sources */,
 				A15FAE892E2BF57800468F16 /* iPhoneNoticeView.swift in Sources */,
 				D50061352E368F3400B6E1BA /* InteractionComplete.swift in Sources */,
@@ -829,10 +867,12 @@
 				A129B2BF2E36257E004D8698 /* iPhoneFairyTaleModel.swift in Sources */,
 				05CDDF252E2FEC0E00455F62 /* LottieView.swift in Sources */,
 				A15FAE9E2E2CE49500468F16 /* FairyTaleBackgroundView.swift in Sources */,
+				A19B93072E3710D200CADA60 /* iPadPigInteractionView.swift in Sources */,
 				A1D294732E2B8DAA00695EE2 /* HomeInfoFrameView.swift in Sources */,
 				D5EBC28F2E2FF93D006A8782 /* NonconnectionAlert.swift in Sources */,
 				052F269D2E2E5B1C00E86FA2 /* ConnectButtonView.swift in Sources */,
 				D500612D2E365DA200B6E1BA /* FairyTaleInteraction.swift in Sources */,
+				A19B930C2E371E7C00CADA60 /* iPhoneHeungInteractionView.swift in Sources */,
 				D5360FFF2E27DA23001E15B2 /* RootNavigationView.swift in Sources */,
 				A1F4C7632E29DCFB00044760 /* BookModel.swift in Sources */,
 				A1D706282E28DFAB008694A8 /* HomeDoorView.swift in Sources */,
@@ -977,7 +1017,7 @@
 				CODE_SIGN_ENTITLEMENTS = "LivingStory-iOS/LivingStory-iOS.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 9S8SHSW95K;
+				DEVELOPMENT_TEAM = 8FKM9FB4PH;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "LivingStory-iOS/Info.plist";
@@ -1013,7 +1053,7 @@
 				CODE_SIGN_ENTITLEMENTS = "LivingStory-iOS/LivingStory-iOS.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 9S8SHSW95K;
+				DEVELOPMENT_TEAM = 8FKM9FB4PH;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "LivingStory-iOS/Info.plist";

@@ -48,7 +48,7 @@ struct iPadFairyTaleView: View {
             if viewModel.currentPage == 2 {
                 FairyTaleInteractionView(action: {
                     viewModel.iPadSendInteraction()
-                })
+                }, bookType: viewModel.selectedBook?.type ?? .pig)
             }
             
             if let book = viewModel.selectedBook, viewModel.currentPage == book.pages.count - 1 {
