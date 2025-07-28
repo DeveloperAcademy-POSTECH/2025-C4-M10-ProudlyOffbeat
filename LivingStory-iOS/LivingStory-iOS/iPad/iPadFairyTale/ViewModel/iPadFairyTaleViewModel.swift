@@ -6,10 +6,14 @@
 //
 
 import SwiftUI
+import AVFoundation
 
 final class iPadFairyTaleViewModel: ObservableObject {
     private let multipeerManager: MultipeerManager
     private let homeKitManager: HomeKitManager
+    private var backgroundAudioPlayer: AVAudioPlayer?
+    private var lightingRetryCount = 0
+    private let maxLightingRetries = 5
     
     @Published var currentPage: Int = 0
     @Published var selectedBook: StoryBook?
@@ -28,7 +32,9 @@ final class iPadFairyTaleViewModel: ObservableObject {
     }
     
     deinit {
+        stopPigBackgroundSound()
         NotificationCenter.default.removeObserver(self)
+        
     }
     
     var currentBackground: String {
@@ -54,10 +60,18 @@ final class iPadFairyTaleViewModel: ObservableObject {
                     self.homeKitManager.setPigLighting(pageIndex: 0)
                     print("🐷 돼지 동화 시작 - 조명 켜기")
                 }
+                lightingRetryCount = 0
             } else {
-                // HomeKit이 준비될 때까지 재시도
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                    self.setUpPigFairyTaleLighting()
+                // 재시도 횟수 제한
+                if lightingRetryCount < maxLightingRetries {
+                    lightingRetryCount += 1
+                    print("🏠 HomeKit 재시도 \(lightingRetryCount)/\(maxLightingRetries)")
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                        self.setUpPigFairyTaleLighting()
+                    }
+                } else {
+                    print("❌ HomeKit 조명 설정 실패 - 최대 재시도 횟수 초과")
+                    lightingRetryCount = 0  // 카운트 리셋
                 }
             }
         }
@@ -204,6 +218,54 @@ final class iPadFairyTaleViewModel: ObservableObject {
             selectedBook = book
             currentPage = 0
         }
+    }
+    
+    func setUpPigBackgroundSound() {
+        guard let bookType = selectedBook?.type else { return }
+        
+        if bookType == .pig {
+            // HomePod 관련 코드 제거 - iPad 스피커만 사용
+            playBackgroundSound()
+        }
+    }
+    
+    func playBackgroundSound() {
+        let session = AVAudioSession.sharedInstance()
+        try? session.setCategory(.playback, mode: .default, options: [.mixWithOthers, .allowAirPlay])
+        try? session.setActive(true)
+        
+        guard let url = Bundle.main.url(forResource: "pigBackgroundMusic", withExtension: "wav") else {
+            print("❌ pigBackgroundMusic.wav 파일을 찾을 수 없습니다")
+            return
+        }
+        
+        do {
+            // backgroundAudioPlayer 프로퍼티에 저장
+            backgroundAudioPlayer = try AVAudioPlayer(contentsOf: url)
+            backgroundAudioPlayer?.numberOfLoops = -1  // 무한 반복
+            backgroundAudioPlayer?.volume = 1.0        // 최대 볼륨
+            backgroundAudioPlayer?.play()
+            
+            print("🔊 홈팟이든 뭐든 지금 출력 경로로 소리 나감")
+            
+            // 재생 상태 확인 (디버깅용)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                if self.backgroundAudioPlayer?.isPlaying == true {
+                    print("✅ [iPad] 백그라운드 음악 재생 중")
+                } else {
+                    print("❌ [iPad] 백그라운드 음악 재생 안 됨")
+                }
+            }
+            
+        } catch {
+            print("❌ 재생 실패: \(error)")
+        }
+    }
+    
+    func stopPigBackgroundSound() {
+        backgroundAudioPlayer?.stop()
+        backgroundAudioPlayer = nil
+        print("🎵 돼지 동화 백그라운드 음악 중지")
     }
     
 }

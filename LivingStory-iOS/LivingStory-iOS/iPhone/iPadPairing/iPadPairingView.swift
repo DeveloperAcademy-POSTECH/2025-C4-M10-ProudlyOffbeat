@@ -45,3 +45,8 @@ struct iPadPairingView: View {
             }        }
     }
 }
+
+#Preview {
+    iPadPairingView(viewModel: iPadPairingViewModel(multipeerManager: MultipeerManager.shared))
+        .environmentObject(AppCoordinator()) // 직접 주입해줘야 함
+}

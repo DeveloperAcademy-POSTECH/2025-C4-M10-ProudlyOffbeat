@@ -14,6 +14,13 @@ struct WifiConnectView: View {
     
     var body: some View {
         VStack(alignment: .center){
+            HStack {
+                Spacer()
+                iPhoneAirPlayButtonView()
+                    .frame(width: 44, height: 44)
+                    .padding(.top, 20)
+                    .padding(.trailing, 20)
+            }
             Spacer()
             if viewModel.isConnected{
                 ConnectedBookView(
@@ -26,7 +33,7 @@ struct WifiConnectView: View {
             }
             Spacer()
             ConnectButtonView(viewModel: viewModel)
-               .padding(.bottom, 78)
+                .padding(.bottom, 78)
         }
         .frame(width: 331, height: 668)
     }

@@ -62,6 +62,8 @@
 		D50061442E36A2D900B6E1BA /* pigBlowEffect.wav in Resources */ = {isa = PBXBuildFile; fileRef = D50061432E36A2D900B6E1BA /* pigBlowEffect.wav */; };
 		D50061452E36A2D900B6E1BA /* pigBackgroundMusic.wav in Resources */ = {isa = PBXBuildFile; fileRef = D50061422E36A2D900B6E1BA /* pigBackgroundMusic.wav */; };
 		D518575B2E37623700F4335E /* HomeKitManager+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D518575A2E37622D00F4335E /* HomeKitManager+Extension.swift */; };
+		D518575F2E37885D00F4335E /* iPadAirPlayButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D518575E2E37883B00F4335E /* iPadAirPlayButtonView.swift */; };
+		D51857612E37995100F4335E /* iPhoneAirPlayButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51857602E37994600F4335E /* iPhoneAirPlayButtonView.swift */; };
 		D51A0AA22E31121300E4D19B /* ConnectListScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51A0AA12E31120D00E4D19B /* ConnectListScrollView.swift */; };
 		D5360FFB2E27DA0C001E15B2 /* AppRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5360FFA2E27DA08001E15B2 /* AppRoute.swift */; };
 		D5360FFD2E27DA19001E15B2 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5360FFC2E27DA13001E15B2 /* AppCoordinator.swift */; };
@@ -160,6 +162,8 @@
 		D50061432E36A2D900B6E1BA /* pigBlowEffect.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = pigBlowEffect.wav; sourceTree = "<group>"; };
 		D518575A2E37622D00F4335E /* HomeKitManager+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeKitManager+Extension.swift"; sourceTree = "<group>"; };
 		D518575D2E37682700F4335E /* LivingStory-iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "LivingStory-iOS.entitlements"; sourceTree = "<group>"; };
+		D518575E2E37883B00F4335E /* iPadAirPlayButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPadAirPlayButtonView.swift; sourceTree = "<group>"; };
+		D51857602E37994600F4335E /* iPhoneAirPlayButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPhoneAirPlayButtonView.swift; sourceTree = "<group>"; };
 		D51A0AA12E31120D00E4D19B /* ConnectListScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectListScrollView.swift; sourceTree = "<group>"; };
 		D5360FFA2E27DA08001E15B2 /* AppRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRoute.swift; sourceTree = "<group>"; };
 		D5360FFC2E27DA13001E15B2 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
@@ -205,6 +209,7 @@
 		052F26A22E2E5D4700E86FA2 /* SubView */ = {
 			isa = PBXGroup;
 			children = (
+				D51857602E37994600F4335E /* iPhoneAirPlayButtonView.swift */,
 				052F269E2E2E5BDC00E86FA2 /* ConnectImageView.swift */,
 				A129B2A32E35338D004D8698 /* ConnectedBookView.swift */,
 				052F269C2E2E5B1C00E86FA2 /* ConnectButtonView.swift */,
@@ -357,6 +362,7 @@
 		A19ADCAF2E2E7E69007BBF05 /* SubView */ = {
 			isa = PBXGroup;
 			children = (
+				D518575E2E37883B00F4335E /* iPadAirPlayButtonView.swift */,
 				D51A0AA12E31120D00E4D19B /* ConnectListScrollView.swift */,
 				A19ADCB62E2E81FD007BBF05 /* ConncetLeftPageView.swift */,
 				A19ADCB42E2E81EF007BBF05 /* ConnectRightPageView.swift */,
@@ -763,6 +769,7 @@
 			files = (
 				052F269F2E2E5BDC00E86FA2 /* ConnectImageView.swift in Sources */,
 				A15FAE982E2CDA1800468F16 /* iPadFairyTaleViewModel.swift in Sources */,
+				D51857612E37995100F4335E /* iPhoneAirPlayButtonView.swift in Sources */,
 				A19ADCAE2E2E7D9A007BBF05 /* iPhoneNoticeTextView.swift in Sources */,
 				A129B2A42E3533B0004D8698 /* ConnectedBookView.swift in Sources */,
 				D5CA2DB22E31D8EA0022C4BB /* FromiPadConnectedAlert.swift in Sources */,
@@ -776,6 +783,7 @@
 				D53610252E2804AA001E15B2 /* iPadIntroViewModel.swift in Sources */,
 				D552B4B72E29F75D00519860 /* MultipeerManager.swift in Sources */,
 				A17BF6ED2E31C3B2006783D1 /* HomeKitManager.swift in Sources */,
+				D518575F2E37885D00F4335E /* iPadAirPlayButtonView.swift in Sources */,
 				A12BB7FC2E2FA23200D58DBA /* LSReturnToHomeButtonView.swift in Sources */,
 				A15FAE9A2E2CDC8200468F16 /* FairyTaleButtonView.swift in Sources */,
 				A1D487FD2E2948AA00F70879 /* PairingBookView.swift in Sources */,

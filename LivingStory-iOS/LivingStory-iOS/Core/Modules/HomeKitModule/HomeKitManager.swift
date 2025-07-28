@@ -13,7 +13,6 @@ final class HomeKitManager: NSObject, ObservableObject {
     static let shared = HomeKitManager()
     
     @Published var isHomeKitReady = false
-
     
     private override init() {
         super.init()
@@ -64,4 +63,5 @@ final class HomeKitManager: NSObject, ObservableObject {
         executeScene(named: AppDefaultLighting.defaultShortCut)
         print("🏠 기본 조명 설정: \(AppDefaultLighting.defaultShortCut)")
     }
+    
 }

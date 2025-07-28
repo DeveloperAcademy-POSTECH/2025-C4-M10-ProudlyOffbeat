@@ -67,7 +67,11 @@ struct iPadFairyTaleView: View {
         .onAppear {
             DispatchQueue.main.async {
                 viewModel.setUpPigFairyTaleLighting()
+                viewModel.setUpPigBackgroundSound()
             }
+        }
+        .onDisappear {
+            viewModel.stopPigBackgroundSound()
         }
     }
 }
