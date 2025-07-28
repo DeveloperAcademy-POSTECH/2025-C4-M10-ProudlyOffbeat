@@ -26,11 +26,16 @@ struct iPhoneHeungInteractionView: View {
                         .progressViewStyle(LinearProgressViewStyle(tint: .red))
                         .padding()
                 }.frame(width: 700,height: 10)
-                .padding(.bottom, 300)
-                    
+                    .padding(.bottom, 300)
+                
                 Spacer()
             }.rotationEffect(.degrees(90))
                 .frame(width: UIScreen.main.bounds.width)
+        }
+        .onAppear {
+            if !CoreMotionManager.shared.motionManager.isAccelerometerActive {
+                CoreMotionManager.shared.startMotionUpdates()
+            }
         }
     }
 }
