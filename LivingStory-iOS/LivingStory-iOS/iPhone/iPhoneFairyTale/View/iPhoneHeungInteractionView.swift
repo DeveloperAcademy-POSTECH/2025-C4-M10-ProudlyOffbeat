@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct iPhoneHeungInteractionView: View {
-    @State private var progress: Double = 0.4
+    @State private var progress: Double = 0.7
+    @ObservedObject var viewModel: iPhoneFairyTaleViewModel
     
     var body: some View {
         ZStack{
@@ -26,5 +27,5 @@ struct iPhoneHeungInteractionView: View {
 }
 
 #Preview {
-    iPhoneHeungInteractionView()
+    iPhoneHeungInteractionView(viewModel: iPhoneFairyTaleViewModel(multipeerManager: MultipeerManager.shared, bookType: .heung))
 }

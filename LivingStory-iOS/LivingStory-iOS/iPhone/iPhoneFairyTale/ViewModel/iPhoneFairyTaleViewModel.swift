@@ -12,7 +12,7 @@ import Combine
 final class iPhoneFairyTaleViewModel: ObservableObject{
     
     private let multipeerManager: MultipeerManager
-    private let bookType: FairyTaleID
+    internal let bookType: FairyTaleID
     private var cancellables = Set<AnyCancellable>()
     
     init(multipeerManager: MultipeerManager, bookType: FairyTaleID) {

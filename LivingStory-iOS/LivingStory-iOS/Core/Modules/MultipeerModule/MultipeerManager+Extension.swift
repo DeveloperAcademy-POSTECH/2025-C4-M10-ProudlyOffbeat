@@ -88,6 +88,10 @@ extension MultipeerManager: MCSessionDelegate {
                 print("🏠 [iPhone] 흥부전 인터렉션 시작!")
                 NotificationCenter.default.post(name: .heungInteractionStart, object: nil)
                 
+            case (.heung, .done):
+                print("✅ [iPad] 흥부전 인터렉션 완료!")
+                NotificationCenter.default.post(name: .heungInteractionCompleted, object: nil) // ✅ NotificationCenter만 사용
+                
             case (.oz, .triggered):
                 print("🌪️ [iPhone] 오즈 인터렉션 시작!")
                 NotificationCenter.default.post(name: .ozInteractionStart, object: nil)
