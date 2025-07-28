@@ -17,6 +17,7 @@ protocol FactoryProtocol {
     //MARK: 아이폰
     func makeIntroViewForiPhone() -> iPhoneIntroView
     func makeiPadPairingView() -> iPadPairingView
+    func makeiPhonePigInteractionView(bookType: FairyTaleID ) -> iPhoneFairytailView
 }
 
 final class ModuleFactory: FactoryProtocol {
@@ -44,7 +45,7 @@ final class ModuleFactory: FactoryProtocol {
     }
     
     func makeiPadFairyTaleView(book: BookType) -> iPadFairyTaleView {
-        let viewModel = iPadFairyTaleViewModel(bookType: book)
+        let viewModel = iPadFairyTaleViewModel(bookType: book, multipeerManager: multipeerManager)
         return iPadFairyTaleView(viewModel: viewModel)
     }
     
@@ -58,6 +59,11 @@ final class ModuleFactory: FactoryProtocol {
     func makeiPadPairingView() -> iPadPairingView {
         let viewModel = iPadPairingViewModel(multipeerManager: multipeerManager)
         return iPadPairingView(viewModel: viewModel)
+    }
+    
+    func makeiPhonePigInteractionView(bookType: FairyTaleID ) -> iPhoneFairytailView {
+        let viewModel = iPhoneFairyTaleViewModel(multipeerManager: multipeerManager, bookType: bookType)
+        return iPhoneFairytailView(viewModel: viewModel)
     }
     
 }

@@ -12,14 +12,12 @@ struct iPadPairingView: View {
     @ObservedObject var viewModel: iPadPairingViewModel
     
     var body: some View {
-        ZStack{
+        ZStack {
             Image("Room(cut)")
                 .resizable()
                 .ignoresSafeArea(edges:.all)
             Image("iPhoneBackground")
             WifiConnectView(viewModel: viewModel)
-            
-            
             
             if viewModel.showConnectedAlert {
                 Color.black.opacity(0.3)
@@ -32,10 +30,18 @@ struct iPadPairingView: View {
                 )
             }
         }
+        .onReceive(NotificationCenter.default.publisher(for: .pigInteractionStart)) { _ in
+            if let bookType = viewModel.selectedBookType {
+                viewModel.goToFairyTaleView(coordinator: coordinator, bookType: bookType)
+            }
+        }
+        .onReceive(NotificationCenter.default.publisher(for: .heungInteractionStart)) { _ in
+            if let bookType = viewModel.selectedBookType {
+                viewModel.goToFairyTaleView(coordinator: coordinator, bookType: bookType)
+            }        }
+        .onReceive(NotificationCenter.default.publisher(for: .ozInteractionStart)) { _ in
+            if let bookType = viewModel.selectedBookType {
+                viewModel.goToFairyTaleView(coordinator: coordinator, bookType: bookType)
+            }        }
     }
-}
-
-#Preview {
-    iPadPairingView(viewModel: iPadPairingViewModel(multipeerManager: MultipeerManager.shared))
-        .environmentObject(AppCoordinator())
 }

@@ -55,6 +55,10 @@
 		A1D706282E28DFAB008694A8 /* HomeDoorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D706272E28DFAB008694A8 /* HomeDoorView.swift */; };
 		A1D7062C2E28E715008694A8 /* iPhonePairingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D7062B2E28E70D008694A8 /* iPhonePairingViewModel.swift */; };
 		A1F4C7632E29DCFB00044760 /* BookModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F4C7622E29DCF700044760 /* BookModel.swift */; };
+		D500612D2E365DA200B6E1BA /* FairyTaleInteraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = D500612C2E365D9100B6E1BA /* FairyTaleInteraction.swift */; };
+		D50061312E36601400B6E1BA /* NotificationCenter+.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50061302E36601000B6E1BA /* NotificationCenter+.swift */; };
+		D50061332E36692000B6E1BA /* BookSelectionSignal.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50061322E36691400B6E1BA /* BookSelectionSignal.swift */; };
+		D50061352E368F3400B6E1BA /* InteractionComplete.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50061342E368F2200B6E1BA /* InteractionComplete.swift */; };
 		D51A0AA22E31121300E4D19B /* ConnectListScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51A0AA12E31120D00E4D19B /* ConnectListScrollView.swift */; };
 		D5360FFB2E27DA0C001E15B2 /* AppRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5360FFA2E27DA08001E15B2 /* AppRoute.swift */; };
 		D5360FFD2E27DA19001E15B2 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5360FFC2E27DA13001E15B2 /* AppCoordinator.swift */; };
@@ -145,6 +149,10 @@
 		A1D706272E28DFAB008694A8 /* HomeDoorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDoorView.swift; sourceTree = "<group>"; };
 		A1D7062B2E28E70D008694A8 /* iPhonePairingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPhonePairingViewModel.swift; sourceTree = "<group>"; };
 		A1F4C7622E29DCF700044760 /* BookModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookModel.swift; sourceTree = "<group>"; };
+		D500612C2E365D9100B6E1BA /* FairyTaleInteraction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FairyTaleInteraction.swift; sourceTree = "<group>"; };
+		D50061302E36601000B6E1BA /* NotificationCenter+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotificationCenter+.swift"; sourceTree = "<group>"; };
+		D50061322E36691400B6E1BA /* BookSelectionSignal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookSelectionSignal.swift; sourceTree = "<group>"; };
+		D50061342E368F2200B6E1BA /* InteractionComplete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractionComplete.swift; sourceTree = "<group>"; };
 		D51A0AA12E31120D00E4D19B /* ConnectListScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectListScrollView.swift; sourceTree = "<group>"; };
 		D5360FFA2E27DA08001E15B2 /* AppRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRoute.swift; sourceTree = "<group>"; };
 		D5360FFC2E27DA13001E15B2 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
@@ -271,6 +279,7 @@
 		A15FAE8B2E2BF95400468F16 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D50061322E36691400B6E1BA /* BookSelectionSignal.swift */,
 				A15FAE822E2BDFBB00468F16 /* PeerModel.swift */,
 			);
 			path = Model;
@@ -399,6 +408,22 @@
 			path = Lottie;
 			sourceTree = "<group>";
 		};
+		D500612E2E365DA600B6E1BA /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				D500612C2E365D9100B6E1BA /* FairyTaleInteraction.swift */,
+			);
+			path = Enum;
+			sourceTree = "<group>";
+		};
+		D500612F2E365FFE00B6E1BA /* NotificationCenter */ = {
+			isa = PBXGroup;
+			children = (
+				D50061302E36601000B6E1BA /* NotificationCenter+.swift */,
+			);
+			path = NotificationCenter;
+			sourceTree = "<group>";
+		};
 		D5360FF92E27D9E4001E15B2 /* App */ = {
 			isa = PBXGroup;
 			children = (
@@ -524,6 +549,8 @@
 		D552B4B42E29F6F300519860 /* MultipeerModule */ = {
 			isa = PBXGroup;
 			children = (
+				D500612F2E365FFE00B6E1BA /* NotificationCenter */,
+				D500612E2E365DA600B6E1BA /* Enum */,
 				D5FFF9FB2E2D5D5E004C6586 /* MultipeerModels.swift */,
 				D552B4B62E29F75800519860 /* MultipeerManager.swift */,
 				D5FFF9FD2E2D5D7D004C6586 /* MultipeerManager+Extension.swift */,
@@ -609,6 +636,7 @@
 		D5EBC2842E2FEDAA006A8782 /* Alerts */ = {
 			isa = PBXGroup;
 			children = (
+				D50061342E368F2200B6E1BA /* InteractionComplete.swift */,
 				D5CA2DB12E31D8D60022C4BB /* FromiPadConnectedAlert.swift */,
 				D5EBC28E2E2FF930006A8782 /* NonconnectionAlert.swift */,
 				D5EBC28A2E2FEE33006A8782 /* DisconnectedAlert.swift */,
@@ -733,11 +761,13 @@
 				A19ADCB12E2E7EAC007BBF05 /* PeerConnectButtonView.swift in Sources */,
 				D51A0AA22E31121300E4D19B /* ConnectListScrollView.swift in Sources */,
 				A15FAE892E2BF57800468F16 /* iPhoneNoticeView.swift in Sources */,
+				D50061352E368F3400B6E1BA /* InteractionComplete.swift in Sources */,
 				A129B2BD2E361303004D8698 /* iPhoneFairyTaleViewModel.swift in Sources */,
 				D5FFF9FC2E2D5D67004C6586 /* MultipeerModels.swift in Sources */,
 				A1D7062C2E28E715008694A8 /* iPhonePairingViewModel.swift in Sources */,
 				A15FAE832E2BDFBE00468F16 /* PeerModel.swift in Sources */,
 				A19ADCB32E2E8099007BBF05 /* FindYouriPhoneTextView.swift in Sources */,
+				D50061332E36692000B6E1BA /* BookSelectionSignal.swift in Sources */,
 				D536102F2E280CF0001E15B2 /* iPadParingViewModel.swift in Sources */,
 				D53610142E27FE72001E15B2 /* iPhonePairingView.swift in Sources */,
 				05CDDF1D2E2FEB0C00455F62 /* iPhoneInteractionView.swift in Sources */,
@@ -764,6 +794,7 @@
 				A1D294732E2B8DAA00695EE2 /* HomeInfoFrameView.swift in Sources */,
 				D5EBC28F2E2FF93D006A8782 /* NonconnectionAlert.swift in Sources */,
 				052F269D2E2E5B1C00E86FA2 /* ConnectButtonView.swift in Sources */,
+				D500612D2E365DA200B6E1BA /* FairyTaleInteraction.swift in Sources */,
 				D5360FFF2E27DA23001E15B2 /* RootNavigationView.swift in Sources */,
 				A1F4C7632E29DCFB00044760 /* BookModel.swift in Sources */,
 				A1D706282E28DFAB008694A8 /* HomeDoorView.swift in Sources */,
@@ -772,6 +803,7 @@
 				D536101B2E27FF34001E15B2 /* iPadIntroView.swift in Sources */,
 				D536100B2E27FBF7001E15B2 /* ModuleFactory.swift in Sources */,
 				D53610222E28032C001E15B2 /* iPadPairingView.swift in Sources */,
+				D50061312E36601400B6E1BA /* NotificationCenter+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -906,7 +938,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 8FKM9FB4PH;
+				DEVELOPMENT_TEAM = 9S8SHSW95K;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "LivingStory-iOS/Info.plist";
@@ -941,7 +973,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 8FKM9FB4PH;
+				DEVELOPMENT_TEAM = 9S8SHSW95K;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "LivingStory-iOS/Info.plist";

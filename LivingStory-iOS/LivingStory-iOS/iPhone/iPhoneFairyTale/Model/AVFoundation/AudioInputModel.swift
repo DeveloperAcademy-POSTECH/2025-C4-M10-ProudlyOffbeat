@@ -13,8 +13,11 @@ class AudioInputModel: ObservableObject {
     private let threshold: Float = -10.0 // 바람 인식 기준
 
     @Published var isBlowingDetected = false
+    var onBlowingCompleted: (() -> Void)?
 
-    func startMonitoring() {
+    func startMonitoring(onCompleted: @escaping () -> Void) {
+        self.onBlowingCompleted = onCompleted
+        
         let audioSession = AVAudioSession.sharedInstance()
                 do {
                     try audioSession.setCategory(.playAndRecord, mode: .default, options: [.defaultToSpeaker])
@@ -48,6 +51,8 @@ class AudioInputModel: ObservableObject {
                     DispatchQueue.main.async {
                         self.isBlowingDetected = true
                         self.stopMonitoring() // ✅ 한 번 감지되면 바로 중단
+                        
+                        self.onBlowingCompleted?()
                     }
                 }
             }

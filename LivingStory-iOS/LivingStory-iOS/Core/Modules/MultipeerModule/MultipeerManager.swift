@@ -18,6 +18,8 @@ final class MultipeerManager: NSObject, ObservableObject {
     @Published internal var discoveredDevices: [PeerDevice] = []
     @Published internal var connectedDevices: [PeerDevice] = []
     
+    @Published var selectedBookType: FairyTaleID?
+    
     
     // MARK: - Core Components
     private(set) var session: MCSession
@@ -174,33 +176,39 @@ final class MultipeerManager: NSObject, ObservableObject {
         advertiser?.delegate = nil
         advertiser = nil
         
-        if !session.connectedPeers.isEmpty {
-            session.disconnect()
-            print("📱 [iPhone] 세션 연결 완전 해제")
-        }
+        session.disconnect()
         
         // 2. ✅ 안전한 세션 해제
         DispatchQueue.main.async {
             self.connectionState = .disconnected
             self.connectedDevices.removeAll()
+            self.selectedBookType = nil
         }
         
     }
     
     //MARK: 메세지 전송
     
-    /// 특정 기기에게만 메세지 전송
-    func sendMessage(_ message: String) {
-        guard !session.connectedPeers.isEmpty else { return }
+    //MARK: iPad
+    func sendSelectedBookToiPhone(bookType: FairyTaleID) {
+        let message = "\(bookType.rawValue)::\(BookSelectionSignal.selected.rawValue)"
+        guard let data = message.data(using: .utf8) else { return }
         
-        if let data = message.data(using: .utf8) {
-            do {
-                try session.send(data, toPeers: session.connectedPeers, with: .reliable)
-                print("✅ 메시지 전송: \(message)")
-            } catch {
-                print("❌ 전송 실패: \(error)")
-            }
+        do {
+            try session.send(data, toPeers: session.connectedPeers, with: .reliable)
+            print(" 책 선택 메시지 전송 완료: \(message)")
+        } catch {
+            print("❌ 메시지 전송 실패: \(error)")
         }
+    }
+    
+    
+    /// 연결된 모든 아이폰에게 전달
+    func sendInteractionMessage(fairyID: FairyTaleID, signal: FairyInteractionSignal) {
+        let message = "\(fairyID.rawValue)::\(signal.rawValue)"
+        guard let data = message.data(using: .utf8) else { return }
+        try? session.send(data, toPeers: session.connectedPeers, with: .reliable)
+        print("📤 [SEND] \(message)")
     }
     
     // MARK: - 기기 이름 관리

@@ -33,15 +33,80 @@ extension MultipeerManager: MCSessionDelegate {
         }
     }
     
+    /// [iPad ↔ iPhone 공통] 메시지 수신 처리
     func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID) {
         if let message = String(data: data, encoding: .utf8) {
-            print("📨 메시지 수신: \(message) from \(peerID.displayName)")
-            // ✅ iPad로부터 연결 해제 요청을 받으면 자체 연결 해제
+            print("�� 메시지 수신: \(message) from \(peerID.displayName)")
+            
+            // ✅ 연결 해제 메시지 먼저 처리
             if message == "DISCONNECT_REQUEST" {
-                print("🔌 [iPhone] iPad로부터 연결 해제 요청 수신 - 자체 연결 해제 실행")
+                print("📱 [iPhone] DISCONNECT_REQUEST 처리 시작!")
                 DispatchQueue.main.async {
+                    print("�� [iPhone] iPhoneDisconnectSelf() 호출!")
                     self.iPhoneDisconnectSelf()
                 }
+                return
+            }
+            
+            // 🆕 새로운 "::" 방식 파싱
+            let components = message.components(separatedBy: "::")
+            
+            if components.count == 2 {
+                // ✅ 책 선택 메시지 파싱 추가
+                if let fairyID = FairyTaleID(rawValue: components[0]),
+                   let signal = BookSelectionSignal(rawValue: components[1]) {
+                    
+                    handleBookSelectionMessage(fairyID: fairyID, signal: signal)
+                }
+                // 기존 인터랙션 메시지 파싱
+                else if let fairyID = FairyTaleID(rawValue: components[0]),
+                        let signal = FairyInteractionSignal(rawValue: components[1]) {
+                    
+                    handleInteractionMessage(fairyID: fairyID, signal: signal, from: peerID)
+                }
+                else {
+                    print("⚠️ 알 수 없는 메시지: \(message)")
+                }
+            }
+        }
+    }
+    
+    
+    //  메시지 타입별 처리 메서드
+    private func handleInteractionMessage(fairyID: FairyTaleID, signal: FairyInteractionSignal, from peerID: MCPeerID) {
+        DispatchQueue.main.async {
+            switch (fairyID, signal) {
+            case (.pig, .triggered):
+                print("🐷 [iPhone] 돼지 삼형제 인터렉션 시작!")
+                NotificationCenter.default.post(name: .pigInteractionStart, object: nil) // ✅ NotificationCenter만 사용
+                
+            case (.pig, .done):
+                print("✅ [iPad] 돼지 인터렉션 완료!")
+                NotificationCenter.default.post(name: .pigInteractionCompleted, object: nil) // ✅ NotificationCenter만 사용
+                
+            case (.heung, .triggered):
+                print("🏠 [iPhone] 흥부전 인터렉션 시작!")
+                NotificationCenter.default.post(name: .heungInteractionStart, object: nil)
+                
+            case (.oz, .triggered):
+                print("🌪️ [iPhone] 오즈 인터렉션 시작!")
+                NotificationCenter.default.post(name: .ozInteractionStart, object: nil)
+                
+            default:
+                print("⚠️ 처리되지 않은 인터렉션: \(fairyID)::\(signal)")
+            }
+        }
+    }
+    
+    // 책 선택 메서드
+    private func handleBookSelectionMessage(fairyID: FairyTaleID, signal: BookSelectionSignal) {
+        DispatchQueue.main.async {
+            switch signal {
+            case .selected:
+                self.selectedBookType = fairyID
+                print("�� [iPhone] 선택된 책: \(fairyID)")
+                // Notification 발송으로 iPhone 앱에 알림
+                NotificationCenter.default.post(name: .bookSelected, object: fairyID)
             }
         }
     }

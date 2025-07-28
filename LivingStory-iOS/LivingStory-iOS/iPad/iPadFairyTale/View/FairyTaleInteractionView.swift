@@ -27,8 +27,9 @@ struct FairyTaleInteractionView: View {
             Image("Light")
                 .scaleEffect(isScaled ? 1.2 : 1.0)
                 
-        }.padding(.leading, 718)
-            .padding(.bottom, 96)
+        }
+        .padding(.leading, 718)
+        .padding(.bottom, 96)
     }
 }
 
