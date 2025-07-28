@@ -18,10 +18,19 @@ struct iPhoneHeungInteractionView: View {
                 .ignoresSafeArea()
             VStack{
                 Spacer()
-                ProgressView(value: progress)
-                    .progressViewStyle(LinearProgressViewStyle(tint: .red))
-                    .frame(height: 10)
-            }
+                ZStack{
+                    RoundedRectangle(cornerRadius: 30)
+                        .foregroundStyle(.white)
+                        .frame(width: 700, height: 30)
+                    ProgressView(value: progress)
+                        .progressViewStyle(LinearProgressViewStyle(tint: .red))
+                        .padding()
+                }.frame(width: 700,height: 10)
+                .padding(.bottom, 300)
+                    
+                Spacer()
+            }.rotationEffect(.degrees(90))
+                .frame(width: UIScreen.main.bounds.width)
         }
     }
 }
