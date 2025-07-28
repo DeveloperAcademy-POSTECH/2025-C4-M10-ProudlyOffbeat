@@ -27,6 +27,7 @@ struct iPadHeungInteractionView: View {
             Image("Saw")
                 .scaleEffect(isScaled ? 1.2 : 1.0)
         }
+        .padding(.trailing, 31)
     }
 }
 
