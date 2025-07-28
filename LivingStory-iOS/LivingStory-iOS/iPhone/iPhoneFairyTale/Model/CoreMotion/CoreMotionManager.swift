@@ -13,6 +13,7 @@ class CoreMotionManager {
     internal let motionManager = CMMotionManager()
     private var sawingSoundIndex = 0
     private let sawingSounds = ["Sawing1", "Sawing2"]
+    var onShake: (() -> Void)?
     
     func startMotionUpdates() {
         if motionManager.isAccelerometerAvailable {
@@ -26,18 +27,13 @@ class CoreMotionManager {
                     DispatchQueue.main.async {
                         // 톱질 할 때마다 사용될 메소드들
                         self.playSound()
+                        self.onShake?()
                         //mcService.send(message: "SHAKE_DETECTED")
                     }
                 }
             }
         }
     }
-    
-//        .onAppear {
-//            if !motionManager.isAccelerometerActive {
-//                startMotionUpdates()
-//            }
-//        }
     
     func playSound() {
         do {

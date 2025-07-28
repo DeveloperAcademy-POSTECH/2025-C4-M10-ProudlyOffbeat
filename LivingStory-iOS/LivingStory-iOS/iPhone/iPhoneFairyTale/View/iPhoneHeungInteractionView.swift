@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct iPhoneHeungInteractionView: View {
-    @State private var progress: Double = 0.7
+    @State private var shakeCount = 0
+       let targetShakeCount = 20
     @ObservedObject var viewModel: iPhoneFairyTaleViewModel
     
     var body: some View {
@@ -22,7 +23,7 @@ struct iPhoneHeungInteractionView: View {
                     RoundedRectangle(cornerRadius: 30)
                         .foregroundStyle(.white)
                         .frame(width: 700, height: 30)
-                    ProgressView(value: progress)
+                    ProgressView(value: Double(shakeCount) / Double(targetShakeCount))
                         .progressViewStyle(LinearProgressViewStyle(tint: .red))
                         .padding()
                 }.frame(width: 700,height: 10)
@@ -33,9 +34,20 @@ struct iPhoneHeungInteractionView: View {
                 .frame(width: UIScreen.main.bounds.width)
         }
         .onAppear {
+            CoreMotionManager.shared.onShake = {
+                            if shakeCount < targetShakeCount {
+                                shakeCount += 1
+                                if shakeCount >= targetShakeCount {
+                                            viewModel.sendLanternInteractionCompleted()
+                                        }
+                            }
+                        }
             if !CoreMotionManager.shared.motionManager.isAccelerometerActive {
                 CoreMotionManager.shared.startMotionUpdates()
             }
+        }
+        .onDisappear {
+            CoreMotionManager.shared.onShake = nil // 메모리 누수 방지
         }
     }
 }
