@@ -9,12 +9,17 @@ import SwiftUI
 
 struct FairyTaleEnddingView: View {
     var body: some View {
-        ZStack{
-            Image("PigBand")
-                .padding(.trailing, 380)
-            Image("Wolf")
-                .padding(.leading, 800)
-        }.frame(width: UIScreen.main.bounds.width)
+        VStack {
+            Image("PigEndText")
+                .padding(.top, 130)
+            HStack {
+                Image("PigBand")
+                    .padding(.leading, 190)
+                Image("Wolf")
+                    .padding(.trailing, 30)
+            }
+            .padding(.bottom, 100)
+        }
     }
 }
 

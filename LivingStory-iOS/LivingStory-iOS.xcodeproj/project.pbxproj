@@ -38,7 +38,6 @@
 		A17BF69F2E3128BB006783D1 /* FairyTaleLastPageButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17BF69E2E3128AE006783D1 /* FairyTaleLastPageButtonView.swift */; };
 		A17BF6A12E312B26006783D1 /* FairyTaleEnddingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17BF6A02E312B1B006783D1 /* FairyTaleEnddingView.swift */; };
 		A17BF6ED2E31C3B2006783D1 /* HomeKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17BF6EC2E31C3AB006783D1 /* HomeKitManager.swift */; };
-		A17BF6F12E31C3D2006783D1 /* HomeKitMultipeer+Extexnsion.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17BF6F02E31C3CD006783D1 /* HomeKitMultipeer+Extexnsion.swift */; };
 		A17BF6F32E3231A4006783D1 /* HomeKitModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17BF6F22E32319D006783D1 /* HomeKitModels.swift */; };
 		A19ADCA22E2E17B3007BBF05 /* BinggraeSamanco-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A19ADCA12E2E17B3007BBF05 /* BinggraeSamanco-Bold.ttf */; };
 		A19ADCA42E2E17BB007BBF05 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19ADCA32E2E17B9007BBF05 /* Fonts.swift */; };
@@ -65,6 +64,12 @@
 		D50061312E36601400B6E1BA /* NotificationCenter+.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50061302E36601000B6E1BA /* NotificationCenter+.swift */; };
 		D50061332E36692000B6E1BA /* BookSelectionSignal.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50061322E36691400B6E1BA /* BookSelectionSignal.swift */; };
 		D50061352E368F3400B6E1BA /* InteractionComplete.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50061342E368F2200B6E1BA /* InteractionComplete.swift */; };
+		D50061402E36A27600B6E1BA /* SoundLiterals.swift in Sources */ = {isa = PBXBuildFile; fileRef = D500613F2E36A27300B6E1BA /* SoundLiterals.swift */; };
+		D50061442E36A2D900B6E1BA /* pigBlowEffect.wav in Resources */ = {isa = PBXBuildFile; fileRef = D50061432E36A2D900B6E1BA /* pigBlowEffect.wav */; };
+		D50061452E36A2D900B6E1BA /* pigBackgroundMusic.wav in Resources */ = {isa = PBXBuildFile; fileRef = D50061422E36A2D900B6E1BA /* pigBackgroundMusic.wav */; };
+		D518575B2E37623700F4335E /* HomeKitManager+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D518575A2E37622D00F4335E /* HomeKitManager+Extension.swift */; };
+		D518575F2E37885D00F4335E /* iPadAirPlayButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D518575E2E37883B00F4335E /* iPadAirPlayButtonView.swift */; };
+		D51857612E37995100F4335E /* iPhoneAirPlayButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51857602E37994600F4335E /* iPhoneAirPlayButtonView.swift */; };
 		D51A0AA22E31121300E4D19B /* ConnectListScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51A0AA12E31120D00E4D19B /* ConnectListScrollView.swift */; };
 		D5360FFB2E27DA0C001E15B2 /* AppRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5360FFA2E27DA08001E15B2 /* AppRoute.swift */; };
 		D5360FFD2E27DA19001E15B2 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5360FFC2E27DA13001E15B2 /* AppCoordinator.swift */; };
@@ -137,7 +142,6 @@
 		A17BF69E2E3128AE006783D1 /* FairyTaleLastPageButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FairyTaleLastPageButtonView.swift; sourceTree = "<group>"; };
 		A17BF6A02E312B1B006783D1 /* FairyTaleEnddingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FairyTaleEnddingView.swift; sourceTree = "<group>"; };
 		A17BF6EC2E31C3AB006783D1 /* HomeKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeKitManager.swift; sourceTree = "<group>"; };
-		A17BF6F02E31C3CD006783D1 /* HomeKitMultipeer+Extexnsion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeKitMultipeer+Extexnsion.swift"; sourceTree = "<group>"; };
 		A17BF6F22E32319D006783D1 /* HomeKitModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeKitModels.swift; sourceTree = "<group>"; };
 		A19ADCA12E2E17B3007BBF05 /* BinggraeSamanco-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BinggraeSamanco-Bold.ttf"; sourceTree = "<group>"; };
 		A19ADCA32E2E17B9007BBF05 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
@@ -165,6 +169,13 @@
 		D50061302E36601000B6E1BA /* NotificationCenter+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotificationCenter+.swift"; sourceTree = "<group>"; };
 		D50061322E36691400B6E1BA /* BookSelectionSignal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookSelectionSignal.swift; sourceTree = "<group>"; };
 		D50061342E368F2200B6E1BA /* InteractionComplete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractionComplete.swift; sourceTree = "<group>"; };
+		D500613F2E36A27300B6E1BA /* SoundLiterals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundLiterals.swift; sourceTree = "<group>"; };
+		D50061422E36A2D900B6E1BA /* pigBackgroundMusic.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = pigBackgroundMusic.wav; sourceTree = "<group>"; };
+		D50061432E36A2D900B6E1BA /* pigBlowEffect.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = pigBlowEffect.wav; sourceTree = "<group>"; };
+		D518575A2E37622D00F4335E /* HomeKitManager+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeKitManager+Extension.swift"; sourceTree = "<group>"; };
+		D518575D2E37682700F4335E /* LivingStory-iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "LivingStory-iOS.entitlements"; sourceTree = "<group>"; };
+		D518575E2E37883B00F4335E /* iPadAirPlayButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPadAirPlayButtonView.swift; sourceTree = "<group>"; };
+		D51857602E37994600F4335E /* iPhoneAirPlayButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPhoneAirPlayButtonView.swift; sourceTree = "<group>"; };
 		D51A0AA12E31120D00E4D19B /* ConnectListScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectListScrollView.swift; sourceTree = "<group>"; };
 		D5360FFA2E27DA08001E15B2 /* AppRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRoute.swift; sourceTree = "<group>"; };
 		D5360FFC2E27DA13001E15B2 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
@@ -210,6 +221,7 @@
 		052F26A22E2E5D4700E86FA2 /* SubView */ = {
 			isa = PBXGroup;
 			children = (
+				D51857602E37994600F4335E /* iPhoneAirPlayButtonView.swift */,
 				052F269E2E2E5BDC00E86FA2 /* ConnectImageView.swift */,
 				A129B2A32E35338D004D8698 /* ConnectedBookView.swift */,
 				052F269C2E2E5B1C00E86FA2 /* ConnectButtonView.swift */,
@@ -344,8 +356,8 @@
 		A17BF6E92E31C314006783D1 /* HomeKitModule */ = {
 			isa = PBXGroup;
 			children = (
+				D518575A2E37622D00F4335E /* HomeKitManager+Extension.swift */,
 				A17BF6F22E32319D006783D1 /* HomeKitModels.swift */,
-				A17BF6F02E31C3CD006783D1 /* HomeKitMultipeer+Extexnsion.swift */,
 				A17BF6EC2E31C3AB006783D1 /* HomeKitManager.swift */,
 			);
 			path = HomeKitModule;
@@ -354,6 +366,7 @@
 		A19ADCA02E2E179C007BBF05 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D50061412E36A2B000B6E1BA /* Sounds */,
 				A19B93352E37610C00CADA60 /* Sound */,
 				D500611F2E35F82300B6E1BA /* Lottie */,
 				D54E1C9A2E2E6B4E00661D28 /* Fonts */,
@@ -366,6 +379,7 @@
 		A19ADCAF2E2E7E69007BBF05 /* SubView */ = {
 			isa = PBXGroup;
 			children = (
+				D518575E2E37883B00F4335E /* iPadAirPlayButtonView.swift */,
 				D51A0AA12E31120D00E4D19B /* ConnectListScrollView.swift */,
 				A19ADCB62E2E81FD007BBF05 /* ConncetLeftPageView.swift */,
 				A19ADCB42E2E81EF007BBF05 /* ConnectRightPageView.swift */,
@@ -456,6 +470,23 @@
 				D50061302E36601000B6E1BA /* NotificationCenter+.swift */,
 			);
 			path = NotificationCenter;
+			sourceTree = "<group>";
+		};
+		D500613E2E36A26800B6E1BA /* Literals */ = {
+			isa = PBXGroup;
+			children = (
+				D500613F2E36A27300B6E1BA /* SoundLiterals.swift */,
+			);
+			path = Literals;
+			sourceTree = "<group>";
+		};
+		D50061412E36A2B000B6E1BA /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				D50061422E36A2D900B6E1BA /* pigBackgroundMusic.wav */,
+				D50061432E36A2D900B6E1BA /* pigBlowEffect.wav */,
+			);
+			path = Sounds;
 			sourceTree = "<group>";
 		};
 		D5360FF92E27D9E4001E15B2 /* App */ = {
@@ -572,6 +603,7 @@
 		D552B4B32E29F6EB00519860 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				D500613E2E36A26800B6E1BA /* Literals */,
 				A19ADCBA2E2E842F007BBF05 /* Components */,
 				D54E1C992E2E6AAC00661D28 /* DesignSystem */,
 				A19ADCA02E2E179C007BBF05 /* Resources */,
@@ -620,6 +652,7 @@
 		D564C4392E27A50E00A50B49 /* LivingStory-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				D518575D2E37682700F4335E /* LivingStory-iOS.entitlements */,
 				A19ADCA52E2E17FA007BBF05 /* Info.plist */,
 				D5360FF92E27D9E4001E15B2 /* App */,
 				D552B4B32E29F6EB00519860 /* Core */,
@@ -752,6 +785,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A129B2A22E34DCD4004D8698 /* Wifi.json in Resources */,
+				D50061442E36A2D900B6E1BA /* pigBlowEffect.wav in Resources */,
+				D50061452E36A2D900B6E1BA /* pigBackgroundMusic.wav in Resources */,
 				A19B93372E37611C00CADA60 /* Sawing1.m4a in Resources */,
 				D54E1C9D2E2E6BB200661D28 /* Colors.xcassets in Resources */,
 				D564C43C2E27A50E00A50B49 /* Assets.xcassets in Resources */,
@@ -770,6 +805,7 @@
 			files = (
 				052F269F2E2E5BDC00E86FA2 /* ConnectImageView.swift in Sources */,
 				A15FAE982E2CDA1800468F16 /* iPadFairyTaleViewModel.swift in Sources */,
+				D51857612E37995100F4335E /* iPhoneAirPlayButtonView.swift in Sources */,
 				A19ADCAE2E2E7D9A007BBF05 /* iPhoneNoticeTextView.swift in Sources */,
 				A19B93052E3710C600CADA60 /* iPadHeungInteractionView.swift in Sources */,
 				A129B2A42E3533B0004D8698 /* ConnectedBookView.swift in Sources */,
@@ -778,18 +814,20 @@
 				A1D487FB2E29484100F70879 /* iPhonePairingBackgroundView.swift in Sources */,
 				A19ADCB72E2E8205007BBF05 /* ConncetLeftPageView.swift in Sources */,
 				A15FAE852E2BE01400468F16 /* ConnectCellView.swift in Sources */,
+				D518575B2E37623700F4335E /* HomeKitManager+Extension.swift in Sources */,
 				A19ADCB52E2E81F8007BBF05 /* ConnectRightPageView.swift in Sources */,
 				D5360FFD2E27DA19001E15B2 /* AppCoordinator.swift in Sources */,
 				D53610252E2804AA001E15B2 /* iPadIntroViewModel.swift in Sources */,
 				D552B4B72E29F75D00519860 /* MultipeerManager.swift in Sources */,
 				A17BF6ED2E31C3B2006783D1 /* HomeKitManager.swift in Sources */,
+				D518575F2E37885D00F4335E /* iPadAirPlayButtonView.swift in Sources */,
 				A12BB7FC2E2FA23200D58DBA /* LSReturnToHomeButtonView.swift in Sources */,
 				A15FAE9A2E2CDC8200468F16 /* FairyTaleButtonView.swift in Sources */,
 				A1D487FD2E2948AA00F70879 /* PairingBookView.swift in Sources */,
 				A12BB7F42E2F3D6300D58DBA /* LSLeftButtonView.swift in Sources */,
-				A17BF6F12E31C3D2006783D1 /* HomeKitMultipeer+Extexnsion.swift in Sources */,
 				D53610122E27FCFB001E15B2 /* HomeLibraryView.swift in Sources */,
 				D53610292E28064A001E15B2 /* iPhoneIntroViewModel.swift in Sources */,
+				D50061402E36A27600B6E1BA /* SoundLiterals.swift in Sources */,
 				05CDDF232E2FEBA100455F62 /* AudioInputModel.swift in Sources */,
 				A15FAE942E2CD9D200468F16 /* iPadFairyTaleView.swift in Sources */,
 				A12BB7FE2E2FADDF00D58DBA /* FairyTaleInteractionView.swift in Sources */,
@@ -976,6 +1014,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "LivingStory-iOS/LivingStory-iOS.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 8FKM9FB4PH;
@@ -1011,6 +1050,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "LivingStory-iOS/LivingStory-iOS.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 8FKM9FB4PH;

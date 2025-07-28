@@ -8,22 +8,28 @@
 import SwiftUI
 
 struct FairyTaleLastPageButtonView: View {
-    let leftaction:()->Void
+    let leftaction:() -> Void
+    let homeAction:() -> Void
     
     var body: some View {
         VStack{
+            HStack{
+                LSReturnToHomeButtonView(action: homeAction)
+                Spacer()
+            }
             Spacer()
             HStack{
                 LSLeftButtonView(action: leftaction)
                 Spacer()
             }
         }
+        .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
     }
 }
 
 #Preview {
     ZStack{
-        FairyTaleLastPageButtonView(leftaction: {})
+        FairyTaleLastPageButtonView(leftaction: {},homeAction: {})
         FairyTaleEnddingView()
     }
     
