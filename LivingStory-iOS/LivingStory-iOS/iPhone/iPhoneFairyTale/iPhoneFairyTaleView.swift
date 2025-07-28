@@ -12,9 +12,20 @@ struct iPhoneFairytailView: View {
     @ObservedObject var viewModel: iPhoneFairyTaleViewModel
     
     var body: some View {
-        iPhoneInteractionView(viewModel: viewModel)
-            .onReceive(NotificationCenter.default.publisher(for: .goToIPhoneRoot)) { _ in
-                coordinator.goToIPhoneRoot()  // ✅ 홈으로 이동
-            }
+        switch viewModel.bookType{
+        case .pig:
+            iPhoneInteractionView(viewModel: viewModel)
+                .onReceive(NotificationCenter.default.publisher(for: .goToIPhoneRoot)) { _ in
+                    coordinator.goToIPhoneRoot()  // ✅ 홈으로 이동
+                }
+        case .heung:
+            iPhoneHeungInteractionView(viewModel: viewModel)
+                .onReceive(NotificationCenter.default.publisher(for: .goToIPhoneRoot)) { _ in
+                    coordinator.goToIPhoneRoot()  // ✅ 홈으로 이동
+                }
+        case .oz:
+            Text("Oz 인터랙션")
+        }
+        
     }
 }
