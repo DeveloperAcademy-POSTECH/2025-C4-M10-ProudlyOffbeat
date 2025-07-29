@@ -42,8 +42,8 @@ struct iPhoneHeungInteractionView: View {
                                     DispatchQueue.main.async {
                                         print("인터랙션 완료")
                                         CoreMotionManager.shared.stopMotionUpdates()
-                                        AudioInputModel().playGoldSound()
-                                    }   
+                                        //AudioInputModel.shared.playGoldSound() 아이폰에서 나는 소리
+                                    }
                                         }
                             }
                         }

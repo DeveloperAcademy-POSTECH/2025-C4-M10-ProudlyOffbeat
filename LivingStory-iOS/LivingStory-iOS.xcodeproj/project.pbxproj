@@ -52,9 +52,10 @@
 		A19B93342E375F8600CADA60 /* CoreMotionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19B93332E375F8100CADA60 /* CoreMotionManager.swift */; };
 		A19B93372E37611C00CADA60 /* Sawing1.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A19B93362E37611C00CADA60 /* Sawing1.m4a */; };
 		A19B93392E3761DE00CADA60 /* Sawing2.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A19B93382E3761DE00CADA60 /* Sawing2.m4a */; };
-		A1C3B35C2E3875D200FD7B21 /* EndingMusic.wav in Resources */ = {isa = PBXBuildFile; fileRef = A1C3B3592E3875D200FD7B21 /* EndingMusic.wav */; };
+		A1C3B35C2E3875D200FD7B21 /* PigEndingMusic.wav in Resources */ = {isa = PBXBuildFile; fileRef = A1C3B3592E3875D200FD7B21 /* PigEndingMusic.wav */; };
 		A1C3B35D2E3875D200FD7B21 /* HeungBackgroundMusic.wav in Resources */ = {isa = PBXBuildFile; fileRef = A1C3B35A2E3875D200FD7B21 /* HeungBackgroundMusic.wav */; };
 		A1C3B35E2E3875D200FD7B21 /* HeungGold.wav in Resources */ = {isa = PBXBuildFile; fileRef = A1C3B35B2E3875D200FD7B21 /* HeungGold.wav */; };
+		A1C3B3602E38D71300FD7B21 /* HeungEndingMusic.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A1C3B35F2E38D71300FD7B21 /* HeungEndingMusic.m4a */; };
 		A1D294732E2B8DAA00695EE2 /* HomeInfoFrameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D294722E2B8DA700695EE2 /* HomeInfoFrameView.swift */; };
 		A1D487FB2E29484100F70879 /* iPhonePairingBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D487FA2E29484100F70879 /* iPhonePairingBackgroundView.swift */; };
 		A1D487FD2E2948AA00F70879 /* PairingBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D487FC2E2948A000F70879 /* PairingBookView.swift */; };
@@ -160,9 +161,10 @@
 		A19B93332E375F8100CADA60 /* CoreMotionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreMotionManager.swift; sourceTree = "<group>"; };
 		A19B93362E37611C00CADA60 /* Sawing1.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Sawing1.m4a; sourceTree = "<group>"; };
 		A19B93382E3761DE00CADA60 /* Sawing2.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Sawing2.m4a; sourceTree = "<group>"; };
-		A1C3B3592E3875D200FD7B21 /* EndingMusic.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = EndingMusic.wav; sourceTree = "<group>"; };
+		A1C3B3592E3875D200FD7B21 /* PigEndingMusic.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = PigEndingMusic.wav; sourceTree = "<group>"; };
 		A1C3B35A2E3875D200FD7B21 /* HeungBackgroundMusic.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = HeungBackgroundMusic.wav; sourceTree = "<group>"; };
 		A1C3B35B2E3875D200FD7B21 /* HeungGold.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = HeungGold.wav; sourceTree = "<group>"; };
+		A1C3B35F2E38D71300FD7B21 /* HeungEndingMusic.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = HeungEndingMusic.m4a; sourceTree = "<group>"; };
 		A1D294722E2B8DA700695EE2 /* HomeInfoFrameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInfoFrameView.swift; sourceTree = "<group>"; };
 		A1D487FA2E29484100F70879 /* iPhonePairingBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPhonePairingBackgroundView.swift; sourceTree = "<group>"; };
 		A1D487FC2E2948A000F70879 /* PairingBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairingBookView.swift; sourceTree = "<group>"; };
@@ -481,8 +483,9 @@
 			children = (
 				D50061422E36A2D900B6E1BA /* pigBackgroundMusic.wav */,
 				D50061432E36A2D900B6E1BA /* pigBlowEffect.wav */,
-				A1C3B3592E3875D200FD7B21 /* EndingMusic.wav */,
+				A1C3B3592E3875D200FD7B21 /* PigEndingMusic.wav */,
 				A1C3B35A2E3875D200FD7B21 /* HeungBackgroundMusic.wav */,
+				A1C3B35F2E38D71300FD7B21 /* HeungEndingMusic.m4a */,
 				A1C3B35B2E3875D200FD7B21 /* HeungGold.wav */,
 				A19B93362E37611C00CADA60 /* Sawing1.m4a */,
 				A19B93382E3761DE00CADA60 /* Sawing2.m4a */,
@@ -786,13 +789,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				A129B2A22E34DCD4004D8698 /* Wifi.json in Resources */,
-				A1C3B35C2E3875D200FD7B21 /* EndingMusic.wav in Resources */,
+				A1C3B35C2E3875D200FD7B21 /* PigEndingMusic.wav in Resources */,
 				A1C3B35D2E3875D200FD7B21 /* HeungBackgroundMusic.wav in Resources */,
 				A1C3B35E2E3875D200FD7B21 /* HeungGold.wav in Resources */,
 				D50061442E36A2D900B6E1BA /* pigBlowEffect.wav in Resources */,
 				D50061452E36A2D900B6E1BA /* pigBackgroundMusic.wav in Resources */,
 				A19B93372E37611C00CADA60 /* Sawing1.m4a in Resources */,
 				D54E1C9D2E2E6BB200661D28 /* Colors.xcassets in Resources */,
+				A1C3B3602E38D71300FD7B21 /* HeungEndingMusic.m4a in Resources */,
 				D564C43C2E27A50E00A50B49 /* Assets.xcassets in Resources */,
 				05CDDF312E31323D00455F62 /* Fire.json in Resources */,
 				A19B93392E3761DE00CADA60 /* Sawing2.m4a in Resources */,

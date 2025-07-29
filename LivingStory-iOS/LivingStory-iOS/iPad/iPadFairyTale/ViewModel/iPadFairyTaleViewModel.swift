@@ -114,6 +114,7 @@ final class iPadFairyTaleViewModel: ObservableObject {
             if homeKitManager.isHomeKitReady{
                 homeKitManager.setHeungLighting(pageIndex: 3)
                 print(" 3번째 페이지 - 보물 나왔을 때 조명")
+                AudioInputModel.shared.playGoldSound()
             }
         }
     }
