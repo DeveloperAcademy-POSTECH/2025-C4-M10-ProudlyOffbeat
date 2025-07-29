@@ -39,6 +39,11 @@ struct iPhoneHeungInteractionView: View {
                                 shakeCount += 1
                                 if shakeCount >= targetShakeCount {
                                             viewModel.sendLanternInteractionCompleted()
+                                    DispatchQueue.main.async {
+                                        print("인터랙션 완료")
+                                        CoreMotionManager.shared.stopMotionUpdates()
+                                        AudioInputModel().playGoldSound()
+                                    }   
                                         }
                             }
                         }

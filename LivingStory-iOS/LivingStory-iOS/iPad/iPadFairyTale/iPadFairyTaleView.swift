@@ -49,6 +49,9 @@ struct iPadFairyTaleView: View {
                 FairyTaleInteractionView(action: {
                     viewModel.iPadSendInteraction()
                 }, bookType: viewModel.selectedBook?.type ?? .pig)
+                .onAppear {
+                        viewModel.sawingMood()
+                }
             }
             
             if let book = viewModel.selectedBook, viewModel.currentPage == book.pages.count - 1 {
@@ -66,8 +69,9 @@ struct iPadFairyTaleView: View {
         }
         .onAppear {
             DispatchQueue.main.async {
-                viewModel.setUpPigFairyTaleLighting()
-                viewModel.setUpPigBackgroundSound()
+                viewModel.setUpPigFairyTaleLighting() // 분기 되어있음
+                viewModel.setUpPigBackgroundSound() // 분기 되어있음 
+            
             }
         }
         .onDisappear {

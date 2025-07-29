@@ -10,4 +10,9 @@ import Foundation
 enum SoundLiterals {
     static let pigBackgroundMusic = "pigBackgroundMusic"
     static let pigBlowSound = "pigBlowEffect"
+    
+    static let HeungGold = "HeungGold"
+    static let HeungBackgroundMusic = "HeungBackgroundMusic"
+    
+    static let EndingMusic = "EndingMusic"
 }

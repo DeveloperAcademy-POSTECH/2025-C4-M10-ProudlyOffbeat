@@ -35,6 +35,12 @@ class CoreMotionManager {
         }
     }
     
+    func stopMotionUpdates() {
+        motionManager.stopAccelerometerUpdates()
+    }
+    
+
+    
     func playSound() {
         do {
             try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)

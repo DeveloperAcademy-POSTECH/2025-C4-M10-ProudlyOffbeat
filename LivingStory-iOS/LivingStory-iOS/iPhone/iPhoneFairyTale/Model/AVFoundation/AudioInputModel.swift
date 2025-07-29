@@ -88,6 +88,26 @@ class AudioInputModel: ObservableObject {
         }
     }
     
+    internal func playGoldSound() {
+        let audioSession = AVAudioSession.sharedInstance()
+        try? audioSession.setCategory(.playback, mode: .default, options: [.mixWithOthers, .allowAirPlay])
+        try? audioSession.setActive(true)
+        
+        guard let soundURL = Bundle.main.url(forResource: "HeungGold", withExtension: "wav") else {
+            print("❌ HeungGold.wav 파일을 찾을 수 없습니다")
+            return
+        }
+        
+        do {
+            audioPlayer = try AVAudioPlayer(contentsOf: soundURL)
+            audioPlayer?.volume = 1.0
+            audioPlayer?.play()
+            print(" 보물 효과음 재생: HeungGold")
+        } catch {
+            print("❌ 효과음 재생 실패: \(error)")
+        }
+    }
+    
     func stopMonitoring() {
         audioRecorder?.stop()
         if let timer = timer {

@@ -59,6 +59,12 @@ final class HomeKitManager: NSObject, ObservableObject {
         print("돼지 동화 \(pageIndex)페이지 조명 설정: \(scene.shortcutName)")
     }
     
+    func setHeungLighting(pageIndex: Int) {
+        let scene = HeungFairyTaleScene(rawValue: pageIndex) ?? .page0
+        executeScene(named: scene.shortcutName)
+        print("흥부 동화 \(pageIndex)페이지 조명 설정: \(scene.shortcutName)")
+    }
+    
     func setDefaultLighting() {
         executeScene(named: AppDefaultLighting.defaultShortCut)
         print("🏠 기본 조명 설정: \(AppDefaultLighting.defaultShortCut)")

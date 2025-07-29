@@ -32,13 +32,16 @@ enum HeungFairyTaleScene: Int, FairyTaleSceneProtocol {
     case page2 = 2
     case page3 = 3
     case page4 = 4
+    case page5 = 5
     
     var shortcutName: String {
         switch self {
-        case .page0, .page1, .page2, .page4:
-            return "HeungLightOn" // 흥부놀부용 조명 단축어
-        case .page3:
-            return "HeungLightOff"
+        case .page0, .page1:
+            return "HeungStart" // 흥부놀부용 조명 단축어
+        case .page2:
+            return "HeungInteraction"
+        case .page3, .page4, .page5:
+            return "HeungTreasure"
         }
     }
 }
