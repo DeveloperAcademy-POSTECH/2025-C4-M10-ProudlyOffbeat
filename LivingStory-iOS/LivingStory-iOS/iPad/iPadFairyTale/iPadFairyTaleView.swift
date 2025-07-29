@@ -66,7 +66,7 @@ struct iPadFairyTaleView: View {
             }
             
             if let book = viewModel.selectedBook, viewModel.currentPage == book.pages.count - 1 {
-                FairyTaleEnddingView()
+                FairyTaleEnddingView(bookType: viewModel.selectedBook?.type ?? .pig)
             }
             // ✅ 인터랙션 완료 알림
             if viewModel.showInteractionCompleteAlert {

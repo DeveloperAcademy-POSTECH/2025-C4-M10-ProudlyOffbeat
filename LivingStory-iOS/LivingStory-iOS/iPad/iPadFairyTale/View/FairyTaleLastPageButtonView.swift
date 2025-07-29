@@ -30,7 +30,7 @@ struct FairyTaleLastPageButtonView: View {
 #Preview {
     ZStack{
         FairyTaleLastPageButtonView(leftaction: {},homeAction: {})
-        FairyTaleEnddingView()
+        FairyTaleEnddingView(bookType: .pig)
     }
     
 }

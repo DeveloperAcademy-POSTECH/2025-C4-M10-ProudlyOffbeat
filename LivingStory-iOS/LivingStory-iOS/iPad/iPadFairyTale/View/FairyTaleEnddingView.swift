@@ -8,21 +8,31 @@
 import SwiftUI
 
 struct FairyTaleEnddingView: View {
+    let bookType: BookType
+    
     var body: some View {
-        VStack {
-            Image("PigEndText")
-                .padding(.top, 130)
-            HStack {
-                Image("PigBand")
-                    .padding(.leading, 190)
-                Image("Wolf")
-                    .padding(.trailing, 30)
+        VStack{
+            Image("EndingText")
+                .padding(.top, 135)
+            Spacer()
+            if bookType == .pig{
+                HStack{
+                    Image("PigBand")
+                        .resizable()
+                        .frame(width: 700, height: 700)
+                    Image("Wolf")
+                        .resizable()
+                        .frame(width: 600, height: 600)
+                }
+            }else{
+                Image("HeungEnding")
             }
-            .padding(.bottom, 100)
+            
+            
         }
     }
 }
 
 #Preview {
-    FairyTaleEnddingView()
+    FairyTaleEnddingView(bookType: .pig)
 }
