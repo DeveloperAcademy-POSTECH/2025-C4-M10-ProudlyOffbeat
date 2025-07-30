@@ -11,6 +11,7 @@ import SwiftUI
 // "연결하기" 버튼과 "WifiImage" 합치는 SubView
 struct WifiConnectView: View {
     @ObservedObject var viewModel: iPadPairingViewModel
+    @State private var playLottie = false
     
     var body: some View {
         VStack(alignment: .center){
@@ -28,11 +29,11 @@ struct WifiConnectView: View {
                     bookCoverImageString: viewModel.receivedBookCoverImageString
                 )
             } else {
-                LottieView(filename: "Wifi", loopModel: .loop)
+                LottieView(filename: "Wifi", loopMode: .loop, isPlaying: $playLottie)
                     .frame(width: 200, height: 200)
             }
             Spacer()
-            ConnectButtonView(viewModel: viewModel)
+            ConnectButtonView(viewModel: viewModel, playLottie: $playLottie)
                 .padding(.bottom, 78)
         }
         .frame(width: 331, height: 668)

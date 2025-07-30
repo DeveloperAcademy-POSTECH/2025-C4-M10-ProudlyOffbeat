@@ -12,6 +12,7 @@ import SwiftUI
 struct ConnectButtonView: View {
 
     @ObservedObject var viewModel: iPadPairingViewModel
+    @Binding var playLottie:Bool
     
     private var iPadConnectionButtonText: String {
         if viewModel.isConnected {
@@ -36,6 +37,7 @@ struct ConnectButtonView: View {
     var body: some View {
         Button(action: {
             viewModel.handleConnectionButtonAction()
+            playLottie.toggle()
         })
         {
             Text(iPadConnectionButtonText) //MCP 연결 여부에 따라 텍스트 변환
