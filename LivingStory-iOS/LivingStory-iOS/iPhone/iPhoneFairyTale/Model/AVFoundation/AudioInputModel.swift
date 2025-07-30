@@ -13,6 +13,8 @@ class AudioInputModel: ObservableObject {
     private var timer: Timer?
     private let threshold: Float = -5.5 // 바람 인식 기준
     
+    static let shared = AudioInputModel()
+    
     @Published var isBlowingDetected = false
     var onBlowingCompleted: (() -> Void)?
     
@@ -88,6 +90,64 @@ class AudioInputModel: ObservableObject {
         }
     }
     
+    internal func playGoldSound() {
+        let audioSession = AVAudioSession.sharedInstance()
+        try? audioSession.setCategory(.playback, mode: .default, options: [.mixWithOthers, .allowAirPlay])
+        try? audioSession.setActive(true)
+        
+        guard let soundURL = Bundle.main.url(forResource: "HeungGold", withExtension: "wav") else {
+            print("❌ HeungGold.wav 파일을 찾을 수 없습니다")
+            return
+        }
+        
+        do {
+            audioPlayer = try AVAudioPlayer(contentsOf: soundURL)
+            audioPlayer?.volume = 1.0
+            audioPlayer?.play()
+            print(" 보물 효과음 재생: HeungGold")
+        } catch {
+            print("❌ 효과음 재생 실패: \(error)")
+        }
+    }
+    
+    internal func playPigEndingSound() {
+        let audioSession = AVAudioSession.sharedInstance()
+        try? audioSession.setCategory(.playback, mode: .default, options: [.mixWithOthers, .allowAirPlay])
+        try? audioSession.setActive(true)
+        
+        guard let soundURL = Bundle.main.url(forResource: "PigEndingMusic", withExtension: "wav") else {
+            print("❌ PigEndingMusic.wav 파일을 찾을 수 없습니다")
+            return
+        }
+        
+        do {
+            audioPlayer = try AVAudioPlayer(contentsOf: soundURL)
+            audioPlayer?.volume = 1.0
+            audioPlayer?.play()
+        } catch {
+            print("❌ 효과음 재생 실패: \(error)")
+        }
+    }
+    
+    internal func playHeungEndingSound() {
+        let audioSession = AVAudioSession.sharedInstance()
+        try? audioSession.setCategory(.playback, mode: .default, options: [.mixWithOthers, .allowAirPlay])
+        try? audioSession.setActive(true)
+        
+        guard let soundURL = Bundle.main.url(forResource: "HeungEndingMusic", withExtension: "m4a") else {
+            print("❌ HeungEndingMusic.mpa 파일을 찾을 수 없습니다")
+            return
+        }
+        
+        do {
+            audioPlayer = try AVAudioPlayer(contentsOf: soundURL)
+            audioPlayer?.volume = 1.0
+            audioPlayer?.play()
+        } catch {
+            print("❌ 효과음 재생 실패: \(error)")
+        }
+    }
+    
     func stopMonitoring() {
         audioRecorder?.stop()
         if let timer = timer {
@@ -97,6 +157,12 @@ class AudioInputModel: ObservableObject {
         timer = nil
         audioPlayer?.stop()
         audioPlayer = nil
+    }
+    
+    func stopEndingSound() {
+        audioPlayer?.stop()
+        audioPlayer = nil
+        print("🎵 엔딩 음악 중지")
     }
 }
 

@@ -74,6 +74,27 @@ final class iPadFairyTaleViewModel: ObservableObject {
                     lightingRetryCount = 0  // 카운트 리셋
                 }
             }
+        }else if bookType == .heung {
+            print("흥 타입 임")
+            if homeKitManager.isHomeKitReady {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                    self.homeKitManager.setHeungLighting(pageIndex: 0)
+                    print("흥부 동화 시작 - 조명 켜기")
+                }
+                lightingRetryCount = 0
+            } else {
+                // 재시도 횟수 제한
+                if lightingRetryCount < maxLightingRetries {
+                    lightingRetryCount += 1
+                    print("🏠 HomeKit 재시도 \(lightingRetryCount)/\(maxLightingRetries)")
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                        self.setUpPigFairyTaleLighting()
+                    }
+                } else {
+                    print("❌ HomeKit 조명 설정 실패 - 최대 재시도 횟수 초과")
+                    lightingRetryCount = 0  // 카운트 리셋
+                }
+            }
         }
     }
     
@@ -84,12 +105,33 @@ final class iPadFairyTaleViewModel: ObservableObject {
             if homeKitManager.isHomeKitReady {
                 homeKitManager.setPigLighting(pageIndex: 3)
                 print(" 3번째 페이지 - 조명 끄기")
-            } else {
+            }
+            else {
                 print("⚠️ HomeKit이 준비되지 않아 조명 제어를 건너뜁니다")
+            }
+        } else if bookType == .heung && currentPage == 3{
+            print("인터랙션 끝나고 흥부 4페이지임")
+            if homeKitManager.isHomeKitReady{
+                homeKitManager.setHeungLighting(pageIndex: 3)
+                print(" 3번째 페이지 - 보물 나왔을 때 조명")
+                AudioInputModel.shared.playGoldSound()
             }
         }
     }
     
+    func sawingMood(){
+        guard let bookType = selectedBook?.type else { return }
+        
+        if bookType == .heung && currentPage == 2{
+            if homeKitManager.isHomeKitReady {
+                homeKitManager.setHeungLighting(pageIndex: 2)
+                print(" 2번째 페이지 - 톱질하는 느낌!!")
+            }
+            else {
+                print("⚠️ HomeKit이 준비되지 않아 조명 제어를 건너뜁니다")
+            }
+        }
+    }
     
     // interaction 보내기
     func iPadSendInteraction() {
@@ -146,7 +188,7 @@ final class iPadFairyTaleViewModel: ObservableObject {
             self.isInteractionCompleted = true
             self.isInteractionTriggered = false
             print("✅ iPad: 인터렉션 완료!")
-            
+            // 여기서도 흥부랑 아돼삼 구분 필요함.
             self.afterInteractionGoToNextPage()
         }
     }
@@ -163,6 +205,7 @@ final class iPadFairyTaleViewModel: ObservableObject {
             
             if currentPage == 3 {
                 print(" 3번째 페이지 도달! 조명 끄기 시도")
+                // 여기서도 흥부랑 아돼삼 구분 필요
                 turnOffLightsOnPage3()
             }
         } else {
@@ -225,17 +268,21 @@ final class iPadFairyTaleViewModel: ObservableObject {
         
         if bookType == .pig {
             // HomePod 관련 코드 제거 - iPad 스피커만 사용
-            playBackgroundSound()
+            let music:String = SoundLiterals.pigBackgroundMusic
+            playBackgroundSound(music: music)
+        }else if bookType == .heung{
+            let music:String = SoundLiterals.HeungBackgroundMusic
+            playBackgroundSound(music: music)
         }
     }
     
-    func playBackgroundSound() {
+    func playBackgroundSound(music: String) {
         let session = AVAudioSession.sharedInstance()
         try? session.setCategory(.playback, mode: .default, options: [.mixWithOthers, .allowAirPlay])
         try? session.setActive(true)
         
-        guard let url = Bundle.main.url(forResource: "pigBackgroundMusic", withExtension: "wav") else {
-            print("❌ pigBackgroundMusic.wav 파일을 찾을 수 없습니다")
+        guard let url = Bundle.main.url(forResource: "\(music)", withExtension: "wav") else {
+            print("❌ \(music).wav 파일을 찾을 수 없습니다")
             return
         }
         
@@ -265,7 +312,7 @@ final class iPadFairyTaleViewModel: ObservableObject {
     func stopPigBackgroundSound() {
         backgroundAudioPlayer?.stop()
         backgroundAudioPlayer = nil
-        print("🎵 돼지 동화 백그라운드 음악 중지")
+        print("🎵 동화 백그라운드 음악 중지")
     }
     
 }

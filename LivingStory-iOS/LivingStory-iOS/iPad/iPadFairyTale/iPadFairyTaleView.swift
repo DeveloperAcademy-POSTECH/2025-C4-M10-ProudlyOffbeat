@@ -31,7 +31,7 @@ struct iPadFairyTaleView: View {
                         viewModel.increaseIndex()
                     }
                 )
-            } else if let book = viewModel.selectedBook, viewModel.currentPage == book.pages.count - 1 {
+            } else if let book = viewModel.selectedBook, viewModel.currentPage == book.pages.count - 1 { // 마지막 페이지일 때
                 FairyTaleLastPageButtonView(
                     leftaction: {
                     viewModel.decreaseIndex()
@@ -41,6 +41,17 @@ struct iPadFairyTaleView: View {
                     }
                     
                 )
+                .onAppear {
+                    if viewModel.selectedBook?.type == .pig {
+                        print("개콘 재생")
+                        viewModel.stopPigBackgroundSound()
+                        AudioInputModel.shared.playPigEndingSound()
+                    }else{
+                        print("흥보가 기가막혀 재생")
+                        viewModel.stopPigBackgroundSound()
+                        AudioInputModel.shared.playHeungEndingSound()
+                    }
+                }
             }
             
             FairyTaleScriptView(script: viewModel.currentScript)
@@ -49,10 +60,13 @@ struct iPadFairyTaleView: View {
                 FairyTaleInteractionView(action: {
                     viewModel.iPadSendInteraction()
                 }, bookType: viewModel.selectedBook?.type ?? .pig)
+                .onAppear {
+                        viewModel.sawingMood()
+                }
             }
             
             if let book = viewModel.selectedBook, viewModel.currentPage == book.pages.count - 1 {
-                FairyTaleEnddingView()
+                FairyTaleEnddingView(bookType: viewModel.selectedBook?.type ?? .pig)
             }
             // ✅ 인터랙션 완료 알림
             if viewModel.showInteractionCompleteAlert {
@@ -66,12 +80,14 @@ struct iPadFairyTaleView: View {
         }
         .onAppear {
             DispatchQueue.main.async {
-                viewModel.setUpPigFairyTaleLighting()
-                viewModel.setUpPigBackgroundSound()
+                viewModel.setUpPigFairyTaleLighting() // 분기 되어있음
+                viewModel.setUpPigBackgroundSound() // 분기 되어있음 
+            
             }
         }
         .onDisappear {
             viewModel.stopPigBackgroundSound()
+            AudioInputModel.shared.stopEndingSound()
         }
     }
 }

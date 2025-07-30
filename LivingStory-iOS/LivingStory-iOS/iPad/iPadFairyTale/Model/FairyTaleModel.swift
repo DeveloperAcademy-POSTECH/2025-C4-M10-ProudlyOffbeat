@@ -31,7 +31,8 @@ struct StoryBook {
                 StoryPage(backgroundImageName: "Heung2", script: "흥부와 흥부의 아내는 보름달만큼 커다란 박을 땄지요.\n'이 바가지 복 바가지 슬근슬근 톱질하세'\n두 사람은 노래를 부르며 박을 탔어요", interaction: nil),
                 StoryPage(backgroundImageName: "Heung3", script: "", interaction: .saw),
                 StoryPage(backgroundImageName: "Heung4", script: "이게 웬 금은보화람!!", interaction: nil),
-                StoryPage(backgroundImageName: "Heung5", script: "흥부의 가족들은 부자가 되었어요.", interaction: nil)
+                StoryPage(backgroundImageName: "Heung5", script: "흥부의 가족들은 부자가 되었어요.", interaction: nil),
+                StoryPage(backgroundImageName: "Heung6", script: "", interaction: nil)
             ])
         ]
 }
