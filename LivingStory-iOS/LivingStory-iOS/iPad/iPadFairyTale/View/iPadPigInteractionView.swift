@@ -24,9 +24,13 @@ struct iPadPigInteractionView: View {
             action() //multipeer send 메소드
             print("아이폰으로 돼지 인터랙션 메시지 전송")
         }label: {
-            Image("Light")
-                .scaleEffect(isScaled ? 1.2 : 1.0)
-                
+            ZStack{
+                Image("Light")
+                    .scaleEffect(isScaled ? 1.2 : 1.0)
+                Text("여기를 터치!")
+                    .foregroundStyle(.red)
+                    .font(LSFont.fairyTaleFont)
+            }
         }
         .padding(.leading, 718)
         .padding(.bottom, 96)

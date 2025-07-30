@@ -23,7 +23,3 @@ struct FairyTaleInteractionView: View {
     }
 }
 
-
-#Preview {
-    FairyTaleInteractionView(action: {}, bookType: .pig)
-}
