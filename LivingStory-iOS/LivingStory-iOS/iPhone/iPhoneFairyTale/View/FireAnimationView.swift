@@ -21,7 +21,7 @@ struct FireAnimationView: View {
             }
             .padding(.bottom, 315)
             
-            LottieView(filename: "Fire", loopModel: .loop)
+            LottieView(filename: "Fire", loopMode: .loop, isPlaying: .constant(true))
                 .frame(width: 100, height: 120)
                 .padding(.bottom, 244)
                 .opacity(audioManager.isBlowingDetected ? 0 : 1)

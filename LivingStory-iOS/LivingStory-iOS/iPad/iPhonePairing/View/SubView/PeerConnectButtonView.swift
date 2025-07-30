@@ -12,11 +12,11 @@ struct PeerConnectButtonView: View {
     let action: () -> Void
     
     private var buttonText: String {
-        isConnected ? "연결끊기" : "연결하기"
+        isConnected ? "연결취소" : "연결하기"
     }
     
     private var buttonColor: Color {
-        isConnected ? .gray : Color(red: 0.17, green: 0.4, blue: 0.96)
+        isConnected ? .red : .lsPrimary
     }
     
     var body: some View {
@@ -26,7 +26,7 @@ struct PeerConnectButtonView: View {
             ZStack{
                 Rectangle()
                     .foregroundColor(.clear)
-                    .frame(width: 65, height: 30)
+                    .frame(width: 80, height: 36)
                     .background(buttonColor)
                     .cornerRadius(5)
                 Text(buttonText)

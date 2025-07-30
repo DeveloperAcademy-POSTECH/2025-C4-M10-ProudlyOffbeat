@@ -16,10 +16,14 @@ enum PigFairyTaleScene: Int, FairyTaleSceneProtocol{
     
     var shortcutName: String {
         switch self {
-        case .page0, .page1, .page2, .page4, .page5:
+        case .page0, .page1:
+            return "PigStart"
+        case .page2:
             return "PigLightOn"
-        case .page3:
+        case .page3, .page4:
             return "PigLightOff"
+        case .page5:
+            return "LightEnding"
         }
     }
     
@@ -40,8 +44,10 @@ enum HeungFairyTaleScene: Int, FairyTaleSceneProtocol {
             return "HeungStart" // 흥부놀부용 조명 단축어
         case .page2:
             return "HeungInteraction"
-        case .page3, .page4, .page5:
+        case .page3, .page4:
             return "HeungTreasure"
+        case .page5:
+            return "LightEnding"
         }
     }
 }

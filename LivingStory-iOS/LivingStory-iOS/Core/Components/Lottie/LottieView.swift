@@ -10,22 +10,34 @@ import Lottie
 
 struct LottieView: UIViewRepresentable {
     let filename: String
-    let loopModel: LottieLoopMode
+    let loopMode: LottieLoopMode
+    @Binding var isPlaying: Bool
     
-    func makeUIView(context: Context) -> Lottie.LottieAnimationView {
-        let animationView = LottieAnimationView(name: filename)
-        //loop 재생
-        animationView.loopMode = loopModel
-        animationView.contentMode = .scaleAspectFit
-        animationView.translatesAutoresizingMaskIntoConstraints = true // 💡 프레임 기반 레이아웃 사용
-        animationView.clipsToBounds = true
-        animationView.play()
-        
-        return animationView
+    class Coordinator {
+        var animationView: LottieAnimationView?
     }
     
-    func updateUIView(_ uiView: Lottie.LottieAnimationView, context: Context) {
+    func makeCoordinator() -> Coordinator {
+        Coordinator()
+    }
+    
+    func makeUIView(context: Context) -> LottieAnimationView {
+        let animationView = LottieAnimationView(name: filename)
+        animationView.loopMode = loopMode
+        animationView.contentMode = .scaleAspectFit
+        animationView.translatesAutoresizingMaskIntoConstraints = true
+        animationView.clipsToBounds = true
         
+        context.coordinator.animationView = animationView
+        return animationView
+    }
+
+    func updateUIView(_ uiView: LottieAnimationView, context: Context) {
+        if isPlaying {
+            uiView.play()
+            } else {
+            uiView.stop()
+        }
     }
 }
 

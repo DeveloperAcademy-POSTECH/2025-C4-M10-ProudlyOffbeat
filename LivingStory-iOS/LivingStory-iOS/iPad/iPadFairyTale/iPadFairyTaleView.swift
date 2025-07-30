@@ -61,12 +61,15 @@ struct iPadFairyTaleView: View {
                     viewModel.iPadSendInteraction()
                 }, bookType: viewModel.selectedBook?.type ?? .pig)
                 .onAppear {
-                        viewModel.sawingMood()
+                        viewModel.interactionMood()
                 }
             }
             
             if let book = viewModel.selectedBook, viewModel.currentPage == book.pages.count - 1 {
                 FairyTaleEnddingView(bookType: viewModel.selectedBook?.type ?? .pig)
+                    .onAppear {
+                        viewModel.endingMood()
+                    }
             }
             // ✅ 인터랙션 완료 알림
             if viewModel.showInteractionCompleteAlert {

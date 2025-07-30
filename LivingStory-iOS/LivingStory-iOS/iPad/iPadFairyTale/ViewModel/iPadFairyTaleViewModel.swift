@@ -98,7 +98,7 @@ final class iPadFairyTaleViewModel: ObservableObject {
         }
     }
     
-    func turnOffLightsOnPage3() {
+    func afterInteractionMood() {
         guard let bookType = selectedBook?.type else { return }
         
         if bookType == .pig && currentPage == 3 {
@@ -119,13 +119,33 @@ final class iPadFairyTaleViewModel: ObservableObject {
         }
     }
     
-    func sawingMood(){
+    func endingMood(){
+        if homeKitManager.isHomeKitReady {
+            homeKitManager.setHeungLighting(pageIndex: 5)
+            print("엔딩장면 무드")
+        }
+        else {
+            print("⚠️ HomeKit이 준비되지 않아 조명 제어를 건너뜁니다")
+        }
+    }
+    
+    func interactionMood(){
         guard let bookType = selectedBook?.type else { return }
         
         if bookType == .heung && currentPage == 2{
             if homeKitManager.isHomeKitReady {
                 homeKitManager.setHeungLighting(pageIndex: 2)
                 print(" 2번째 페이지 - 톱질하는 느낌!!")
+            }
+            else {
+                print("⚠️ HomeKit이 준비되지 않아 조명 제어를 건너뜁니다")
+            }
+        }
+        
+        if bookType == .pig && currentPage == 2{
+            if homeKitManager.isHomeKitReady {
+                homeKitManager.setPigLighting(pageIndex: 2)
+                print(" 2번째 페이지 - 불 끄는 느낌!!")
             }
             else {
                 print("⚠️ HomeKit이 준비되지 않아 조명 제어를 건너뜁니다")
@@ -206,7 +226,7 @@ final class iPadFairyTaleViewModel: ObservableObject {
             if currentPage == 3 {
                 print(" 3번째 페이지 도달! 조명 끄기 시도")
                 // 여기서도 흥부랑 아돼삼 구분 필요
-                turnOffLightsOnPage3()
+                afterInteractionMood()
             }
         } else {
             print("📖 마지막 페이지입니다")
