@@ -37,7 +37,11 @@ struct ConnectButtonView: View {
     var body: some View {
         Button(action: {
             viewModel.handleConnectionButtonAction()
-            playLottie.toggle()
+            if viewModel.isConnected {
+                playLottie = false
+            }else{
+                playLottie.toggle()
+            }
         })
         {
             Text(iPadConnectionButtonText) //MCP 연결 여부에 따라 텍스트 변환

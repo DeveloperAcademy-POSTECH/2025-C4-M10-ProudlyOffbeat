@@ -27,7 +27,11 @@ struct WifiConnectView: View {
                 ConnectedBookView(
                     connectedDeviceName: viewModel.connectedDeviceName,
                     bookCoverImageString: viewModel.receivedBookCoverImageString
-                )
+                ).onAppear {
+                    print("연결됨")
+                        playLottie = false
+                    print(playLottie)
+                }
             } else {
                 LottieView(filename: "Wifi", loopMode: .loop, isPlaying: $playLottie)
                     .frame(width: 200, height: 200)
