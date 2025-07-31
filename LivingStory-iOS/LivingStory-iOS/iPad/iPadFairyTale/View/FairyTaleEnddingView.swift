@@ -14,21 +14,21 @@ struct FairyTaleEnddingView: View {
         VStack{
             Image("EndingText")
                 .padding(.top, 135)
-            Spacer()
+           // Spacer()
             if bookType == .pig{
                 HStack{
                     Image("PigBand")
                         .resizable()
-                        .frame(width: 700, height: 700)
+                        .frame(width: 500, height: 500)
                     Image("Wolf")
                         .resizable()
-                        .frame(width: 600, height: 600)
+                        .frame(width: 500, height: 500)
                 }
             }else{
                 Image("HeungEnding")
             }
             
-            
+        
         }
     }
 }
